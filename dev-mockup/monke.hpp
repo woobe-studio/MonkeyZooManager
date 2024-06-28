@@ -144,7 +144,7 @@ namespace Security {
 
     private:
         AuthDaemon();
-
+        
     public:
         static AuthDaemon* getInstance();
         void login(User* user);
@@ -167,7 +167,7 @@ namespace Utility {
 
     private:
         LoggingDaemon();
-
+        
     public:
         static LoggingDaemon* getInstance();
         void logAction(const std::string& action);
