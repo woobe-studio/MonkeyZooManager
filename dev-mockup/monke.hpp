@@ -7,6 +7,7 @@
 #include <streambuf>
 #include <iostream>
 
+namespace Monke{
 class Space;
 class Animal;
 enum class Rarity;
@@ -83,7 +84,7 @@ protected:
 public:
     Animal();
     virtual ~Animal();
-    virtual void setSpace(Space* zoo);
+    virtual void setSpace(Space* newSpace);
     virtual Space* getSpace();
     virtual void setName(const std::string& animalName);
     virtual std::string getName();
@@ -202,5 +203,6 @@ class Lemur : public Monkey {
         void setEnabledAuth(bool value);
         void setEnabledAdminActions(bool value);
     };
+}
 
 #endif

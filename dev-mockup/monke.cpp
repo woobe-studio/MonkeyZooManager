@@ -3,6 +3,8 @@
 #include <functional>
 #include <string>
 
+
+namespace Monke{
 AuthDaemon* AuthDaemon::instance = nullptr;
 LoggingDaemon* LoggingDaemon::instance = nullptr;
 
@@ -67,11 +69,11 @@ int Space::setCapacity(int newCapacity){
 	}
 }
 
-int Space::getCapacity(){return -15;}
+int Space::getCapacity(){return this->capacity;}
 
 int Space::addAnimal(Animal *animal){return -15;}
 int Space::removeAnimal(Animal *animal){return -15;}
-int Space::getCount(){return -15;}
+int Space::getCount(){return this->animals.size();}
 
 Animal::Animal(){
 	space=nullptr;
@@ -80,8 +82,8 @@ Animal::Animal(){
 Animal::~Animal(){
 }
 
-void Animal::setSpace(Space *zoo){}
-void Animal::setAge(int animalAge){}
+void Animal::setSpace(Space *newSpace){this->space=newSpace;}
+void Animal::setAge(int animalAge){this->age=animalAge;}
 void Animal::setName(const std::string &animalName){this->name.assign(animalName);}
 void Animal::setRarity(Rarity animalRarity){this->rarity=animalRarity;}
 Space* Animal::getSpace(){return this->space;};
@@ -142,7 +144,7 @@ Note::~Note(){
 Animal* Note::getAnimal(){return this->animal;}
 long Note::getDate(){return this->date;}
 std::string Note::getNote(){return this->note;}
-//AuthDaemon
+
 AuthDaemon::AuthDaemon(){
 	loggedInUser = nullptr;
 }
@@ -213,7 +215,6 @@ void LoggingDaemon::destroyDaemon(){
 	instance = nullptr;
 }
 
-
 	void LoggingDaemon::logAction(const std::string& action){}
         void LoggingDaemon::logAuth(User* user){}
         bool LoggingDaemon::getEnabledAction(){return false;}
@@ -222,4 +223,4 @@ void LoggingDaemon::destroyDaemon(){
         void LoggingDaemon::setEnabledAction(bool value){}
         void LoggingDaemon::setEnabledAuth(bool value){}
         void LoggingDaemon::setEnabledAdminActions(bool value){}
-
+}
