@@ -3,8 +3,8 @@
 #include <functional>
 #include <string>
 
-
 AuthDaemon* AuthDaemon::instance = nullptr;
+LoggingDaemon* LoggingDaemon::instance = nullptr;
 
 Zoo::Zoo(){
 	std::vector<Space*> spaces;
@@ -16,14 +16,13 @@ Zoo::~Zoo(){
 }
 
 int Zoo::setZooName(std::string newName){
-	this->name=newName;
+	this->name.assign(newName);
 	return 0;
 }
 
 std::string Zoo::getZooName(){
 	return this->name;
 }
-
 
 int Zoo::addSpace(Space *spaceToAdd){
 	try{
@@ -39,7 +38,9 @@ int Zoo::removeSpace(Space *spaceToRemove){
 	std::vector<Space*>::iterator iterSpaces = spaces.begin();
 	while(iterSpaces != spaces.end()){
 		if(spaceToRemove==(spaces)[iterSpaces-spaces.begin()]){
+			try{
 			(spaces).erase(iterSpaces);
+			} catch (...) {return -20;}
 			return 0;
 		}
 		iterSpaces++;
@@ -72,6 +73,39 @@ int Space::addAnimal(Animal *animal){return -15;}
 int Space::removeAnimal(Animal *animal){return -15;}
 int Space::getCount(){return -15;}
 
+Animal::Animal(){
+	space=nullptr;
+}
+
+Animal::~Animal(){
+}
+
+void Animal::setSpace(Space *zoo){}
+void Animal::setAge(int animalAge){}
+void Animal::setName(const std::string &animalName){this->name.assign(animalName);}
+void Animal::setRarity(Rarity animalRarity){this->rarity=animalRarity;}
+Space* Animal::getSpace(){return this->space;};
+std::string Animal::getName(){return this->name;}
+int Animal::getAge(){return this->age;}
+Rarity Animal::getRarity(){return this->rarity;}
+void Animal::addNote(Note *newNote){}
+int Animal::removeNote(Note *noteToRemove){return -15;}
+
+User::User(){
+	this->accType=0;
+	this->accessToZoo=nullptr;
+}
+
+User::User(std::string iusername, std::string ipassword, int iaccType, Zoo* izoo){
+	this->username.assign(iusername);
+	this->password.assign(ipassword);
+	this->accType=iaccType;
+	this->accessToZoo=izoo;
+}
+
+User::~User(){
+}
+
 void User::setZoo(Zoo *newZoo){
 	this->accessToZoo=newZoo;
 }
@@ -97,6 +131,18 @@ Zoo* User::getZoo(){
 	return this->accessToZoo;
 }
 
+Note::Note(){
+	this->animal=nullptr;
+}
+
+Note::~Note(){
+
+}
+
+Animal* Note::getAnimal(){return this->animal;}
+long Note::getDate(){return this->date;}
+std::string Note::getNote(){return this->note;}
+//AuthDaemon
 AuthDaemon::AuthDaemon(){
 	loggedInUser = nullptr;
 }
@@ -115,12 +161,12 @@ int AuthDaemon::login(User* user){
 
 AuthDaemon* AuthDaemon::getInstance(){
         if (instance == nullptr) {
-            instance = new AuthDaemon();
+		instance = new AuthDaemon();
         }
         return instance;
     }
 
-void AuthDaemon::destroyDaemon() {
+void AuthDaemon::destroyDaemon(){
 	if(instance)
 		delete instance;
     instance = nullptr;
@@ -138,18 +184,42 @@ int AuthDaemon::login(const std::string& username, const std::string& password){
 	return -5;
 }
 
-void logout(){};
-        bool isLoggedIn(User* user){return true;}
-        bool isLoggedInUserAdmin() {return false;}
-        void addUser(User* user){}
-        void remUser(User* user){}
+	void AuthDaemon::logout(){this->loggedInUser=nullptr;};
+        bool AuthDaemon::isLoggedIn(User* user){return true;}
+        bool AuthDaemon::isLoggedInUserAdmin() {return false;}
+        void AuthDaemon::addUser(User* user){}
+        void AuthDaemon::remUser(User* user){}
+
+LoggingDaemon::LoggingDaemon(){
+	this->enabledAuth=true;
+	this->enabledAction=true;
+	this->enabledAdminActions=true;
+}
+
+LoggingDaemon::~LoggingDaemon(){
+
+}
+
+LoggingDaemon* LoggingDaemon::getInstance(){
+        if (instance == nullptr) {
+		instance = new LoggingDaemon();
+        }
+        return instance;
+}
+
+void LoggingDaemon::destroyDaemon(){
+	if(instance)
+		delete instance;
+	instance = nullptr;
+}
 
 
-	void logAction(const std::string& action);
-        void logAuth(User* user);
-        bool getEnabledAction();
-        bool getEnabledAuth();
-        bool getEnabledAdminActions();
-        void setEnabledAction(bool value);
-        void setEnabledAuth(bool value);
-        void setEnabledAdminActions(bool value);
+	void LoggingDaemon::logAction(const std::string& action){}
+        void LoggingDaemon::logAuth(User* user){}
+        bool LoggingDaemon::getEnabledAction(){return false;}
+        bool LoggingDaemon::getEnabledAuth(){return false;}
+        bool LoggingDaemon::getEnabledAdminActions(){return false;}
+        void LoggingDaemon::setEnabledAction(bool value){}
+        void LoggingDaemon::setEnabledAuth(bool value){}
+        void LoggingDaemon::setEnabledAdminActions(bool value){}
+

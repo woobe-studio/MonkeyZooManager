@@ -78,14 +78,21 @@ protected:
     std::string name;
     int age;
     Rarity rarity;
+    std::vector<Note> notes;
 
 public:
-    void setSpace(Space* zoo);
-    Space* getSpace();
-    void setName(const std::string& animalName);
-    std::string getName();
-    void setAge(int animalAge);
-    int getAge();
+    Animal();
+    virtual ~Animal();
+    virtual void setSpace(Space* zoo);
+    virtual Space* getSpace();
+    virtual void setName(const std::string& animalName);
+    virtual std::string getName();
+    virtual void setAge(int animalAge);
+    virtual int getAge();
+    virtual void setRarity(Rarity animalRarity);
+    virtual Rarity getRarity();
+    virtual void addNote(Note* newNote);
+    virtual int removeNote(Note* noteToRemove);
 };
 
 class Monkey : public Animal {
@@ -98,9 +105,11 @@ private:
     std::string note;
 
 public:
-    Animal* getAnimal();
-    long getDate();
-    std::string getNote();
+    Note();
+    virtual ~Note();
+    virtual Animal* getAnimal();
+    virtual long getDate();
+    virtual std::string getNote();
 };
 
 class MedicalNote : public Note {
@@ -133,6 +142,9 @@ class Lemur : public Monkey {
         Zoo* accessToZoo;
 
     public:
+        User();
+        User(std::string username, std::string password, int accType, Zoo* zoo);
+        ~User();
         std::string getUsername();
         void setUsername(const std::string& username);
         std::string getPassword();
@@ -175,10 +187,12 @@ class Lemur : public Monkey {
 
     private:
         LoggingDaemon();
-        ~LoggingDaemon();
+        //~LoggingDaemon();
         
     public:
+        ~LoggingDaemon();
         static LoggingDaemon* getInstance();
+        static void destroyDaemon();
         void logAction(const std::string& action);
         void logAuth(User* user);
         bool getEnabledAction();
