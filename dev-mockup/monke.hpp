@@ -1,8 +1,11 @@
+#ifndef MONKE_H
+#define MONKE_H
 #include <stdlib.h>
 #include <vector>
 #include <stdio.h>
 #include <string>
 #include <streambuf>
+#include <iostream>
 
 class Space;
 class Animal;
@@ -40,11 +43,13 @@ class Zoo{
 
 class Space{
 	protected:
-	std::vector<Animal*> animals;
+        std::vector<Animal*> animals;
 	int capacity;
 	int count;
-
+        
 	public:
+        Space();
+        virtual ~Space();
 	virtual int addAnimal(Animal* animal);
 	virtual int removeAnimal(Animal* animal);
 	virtual int getCapacity();
@@ -120,13 +125,12 @@ class Lemur : public Monkey {
 };
 
 
-namespace Security {
     class User {
     private:
         std::string username;
         std::string password;
         int accType;
-        std::vector<Zoo*> accessToZoo;
+        Zoo* accessToZoo;
 
     public:
         std::string getUsername();
@@ -134,6 +138,9 @@ namespace Security {
         std::string getPassword();
         void setPassword(const std::string& password);
         Zoo* getZoo();
+        int setAccType(int newType);
+        int getAccType();
+        void setZoo(Zoo* newZoo);
     };
 
     class AuthDaemon {
@@ -144,20 +151,21 @@ namespace Security {
 
     private:
         AuthDaemon();
+        //~AuthDaemon();
         
     public:
+        ~AuthDaemon();
         static AuthDaemon* getInstance();
-        void login(User* user);
-        void login(const std::string& username, const std::string& password);
-        void logout(User* user);
+        static void destroyDaemon();
+        int login(User* user);
+        int login(const std::string& username, const std::string& password);
+        void logout();
         bool isLoggedIn(User* user);
         bool isLoggedInUserAdmin();
         void addUser(User* user);
         void remUser(User* user);
     };
-}
 
-namespace Utility {
     class LoggingDaemon {
     private:
         static LoggingDaemon* instance;
@@ -167,11 +175,12 @@ namespace Utility {
 
     private:
         LoggingDaemon();
+        ~LoggingDaemon();
         
     public:
         static LoggingDaemon* getInstance();
         void logAction(const std::string& action);
-        void logAuth(Security::User* user);
+        void logAuth(User* user);
         bool getEnabledAction();
         bool getEnabledAuth();
         bool getEnabledAdminActions();
@@ -179,4 +188,5 @@ namespace Utility {
         void setEnabledAuth(bool value);
         void setEnabledAdminActions(bool value);
     };
-}
+
+#endif

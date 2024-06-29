@@ -4,6 +4,8 @@
 #include <string>
 
 
+AuthDaemon* AuthDaemon::instance = nullptr;
+
 Zoo::Zoo(){
 	std::vector<Space*> spaces;
 }
@@ -21,6 +23,7 @@ int Zoo::setZooName(std::string newName){
 std::string Zoo::getZooName(){
 	return this->name;
 }
+
 
 int Zoo::addSpace(Space *spaceToAdd){
 	try{
@@ -44,6 +47,16 @@ int Zoo::removeSpace(Space *spaceToRemove){
 	return -6;
 }
 
+Space::Space(){
+	std::vector<Animal*> animals;
+}
+
+Space::~Space(){
+	for (auto iterAnimals : animals) {
+		delete iterAnimals;
+	}
+}
+
 int Space::setCapacity(int newCapacity){
 	if(newCapacity<count)
 		return 1;
@@ -53,46 +66,90 @@ int Space::setCapacity(int newCapacity){
 	}
 }
 
+int Space::getCapacity(){return -15;}
+
+int Space::addAnimal(Animal *animal){return -15;}
+int Space::removeAnimal(Animal *animal){return -15;}
+int Space::getCount(){return -15;}
+
+void User::setZoo(Zoo *newZoo){
+	this->accessToZoo=newZoo;
+}
+
+
 std::string User::getUsername(){
 	return this->username;
 }
 
-void User::setUsername(std::string newUsername){
-	this->username=newUsername;
+void User::setUsername(const std::string& newUsername){
+	this->username.assign(newUsername);
 }
 
 std::string User::getPassword(){
 	return this->password;
 }
 
-void User::setPassword(std::string newPassword){
-	this->password=newPassword;
+void User::setPassword(const std::string& newPassword){
+	this->password.assign(newPassword);
 }
 
 Zoo* User::getZoo(){
-	return this->zoo;
+	return this->accessToZoo;
 }
 
 AuthDaemon::AuthDaemon(){
-	if (this->instance==NULL)
-		this->instance=new AuthDaemon;
+	loggedInUser = nullptr;
 }
 
 AuthDaemon::~AuthDaemon(){
-	if (this->instance!=NULL){
-		delete this->instance;
-		this->instance=NULL;
+	for (User* user : users) {
+		delete user;
 	}
+	users.clear();
 }
 
+
 int AuthDaemon::login(User* user){
+	return 0;
+}
+
+AuthDaemon* AuthDaemon::getInstance(){
+        if (instance == nullptr) {
+            instance = new AuthDaemon();
+        }
+        return instance;
+    }
+
+void AuthDaemon::destroyDaemon() {
+	if(instance)
+		delete instance;
+    instance = nullptr;
+}
+
+int AuthDaemon::login(const std::string& username, const std::string& password){
 	std::vector<User*>::iterator iterUsers = users.begin();
 	while(iterUsers != users.end()){
-		if(user->username==((users)[iterSpaces-spaces.begin()])->username and user->password==((users)[iterSpaces-spaces.begin()])){
-			this->loggedInUser=user;
+		if(username==((users)[iterUsers-users.begin()])->getUsername() and password==((users)[iterUsers-users.begin()])->getPassword()){
+			this->loggedInUser=((users)[iterUsers-users.begin()]);
 			return 0;
 		}
-		iterSpaces++;
+		iterUsers++;
 	}
 	return -5;
 }
+
+void logout(){};
+        bool isLoggedIn(User* user){return true;}
+        bool isLoggedInUserAdmin() {return false;}
+        void addUser(User* user){}
+        void remUser(User* user){}
+
+
+	void logAction(const std::string& action);
+        void logAuth(User* user);
+        bool getEnabledAction();
+        bool getEnabledAuth();
+        bool getEnabledAdminActions();
+        void setEnabledAction(bool value);
+        void setEnabledAuth(bool value);
+        void setEnabledAdminActions(bool value);
