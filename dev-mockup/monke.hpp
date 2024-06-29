@@ -6,7 +6,7 @@
 
 class Space;
 class Animal;
-class Rarity;
+enum class Rarity;
 class Monkey;
 class Note;
 class MedicalNote;
