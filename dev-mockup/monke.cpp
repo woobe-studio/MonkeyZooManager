@@ -3,7 +3,6 @@
 #include <functional>
 #include <string>
 
-
 namespace Monke{
 AuthDaemon* AuthDaemon::instance = nullptr;
 LoggingDaemon* LoggingDaemon::instance = nullptr;
@@ -25,6 +24,7 @@ int Zoo::setZooName(std::string newName){
 std::string Zoo::getZooName(){
 	return this->name;
 }
+
 
 int Zoo::addSpace(Space *spaceToAdd){
 	try{
@@ -49,6 +49,7 @@ int Zoo::removeSpace(Space *spaceToRemove){
 	}
 	return -6;
 }
+
 
 Space::Space(){
 	std::vector<Animal*> animals;
@@ -93,12 +94,13 @@ Rarity Animal::getRarity(){return this->rarity;}
 void Animal::addNote(Note *newNote){}
 int Animal::removeNote(Note *noteToRemove){return -15;}
 
+
 User::User(){
-	this->accType=0;
+	this->accType=userType::STANDARD;
 	this->accessToZoo=nullptr;
 }
 
-User::User(std::string iusername, std::string ipassword, int iaccType, Zoo* izoo){
+User::User(std::string iusername, std::string ipassword, userType iaccType, Zoo* izoo){
 	this->username.assign(iusername);
 	this->password.assign(ipassword);
 	this->accType=iaccType;
@@ -144,7 +146,6 @@ Note::~Note(){
 Animal* Note::getAnimal(){return this->animal;}
 long Note::getDate(){return this->date;}
 std::string Note::getNote(){return this->note;}
-
 AuthDaemon::AuthDaemon(){
 	loggedInUser = nullptr;
 }
@@ -192,6 +193,7 @@ int AuthDaemon::login(const std::string& username, const std::string& password){
         void AuthDaemon::addUser(User* user){}
         void AuthDaemon::remUser(User* user){}
 
+
 LoggingDaemon::LoggingDaemon(){
 	this->enabledAuth=true;
 	this->enabledAction=true;
@@ -215,12 +217,14 @@ void LoggingDaemon::destroyDaemon(){
 	instance = nullptr;
 }
 
+
 	void LoggingDaemon::logAction(const std::string& action){}
-        void LoggingDaemon::logAuth(User* user){}
+        void LoggingDaemon::logAuth(User* user, const std::string& action){}
+        void LoggingDaemon::logAdminAction(User* user, const std::string& action){};
         bool LoggingDaemon::getEnabledAction(){return false;}
         bool LoggingDaemon::getEnabledAuth(){return false;}
-        bool LoggingDaemon::getEnabledAdminActions(){return false;}
+        bool LoggingDaemon::getEnabledAdminAction(){return false;}
         void LoggingDaemon::setEnabledAction(bool value){}
         void LoggingDaemon::setEnabledAuth(bool value){}
-        void LoggingDaemon::setEnabledAdminActions(bool value){}
+        void LoggingDaemon::setEnabledAdminAction(bool value){}
 }

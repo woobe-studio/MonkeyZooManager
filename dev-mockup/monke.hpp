@@ -66,11 +66,11 @@ class Enclosure : public Space{};
 
 
 enum class Rarity {
-    Common,
-    Uncommon,
-    Rare,
-    Legendary,
-    Epic
+    COMMON,
+    UNCOMMON,
+    RARE,
+    EPIC,
+    LEGENDARY
 };
 
 class Animal {
@@ -134,17 +134,21 @@ class NightMonkey : public Monkey {
 class Lemur : public Monkey {
 };
 
+enum class userType {
+    STANDARD,
+    ADMIN
+};
 
     class User {
     private:
         std::string username;
         std::string password;
-        int accType;
+        userType accType;
         Zoo* accessToZoo;
 
     public:
         User();
-        User(std::string username, std::string password, int accType, Zoo* zoo);
+        User(std::string username, std::string password, userType accType, Zoo* zoo);
         ~User();
         std::string getUsername();
         void setUsername(const std::string& username);
@@ -155,6 +159,8 @@ class Lemur : public Monkey {
         int getAccType();
         void setZoo(Zoo* newZoo);
     };
+
+
 
     class AuthDaemon {
     private:
@@ -179,6 +185,8 @@ class Lemur : public Monkey {
         void remUser(User* user);
     };
 
+    
+
     class LoggingDaemon {
     private:
         static LoggingDaemon* instance;
@@ -195,13 +203,14 @@ class Lemur : public Monkey {
         static LoggingDaemon* getInstance();
         static void destroyDaemon();
         void logAction(const std::string& action);
-        void logAuth(User* user);
+        void logAuth(User* user, const std::string& action);
+        void logAdminAction(User* user, const std::string& action);
         bool getEnabledAction();
         bool getEnabledAuth();
-        bool getEnabledAdminActions();
+        bool getEnabledAdminAction();
         void setEnabledAction(bool value);
         void setEnabledAuth(bool value);
-        void setEnabledAdminActions(bool value);
+        void setEnabledAdminAction(bool value);
     };
 }
 
