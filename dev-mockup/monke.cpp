@@ -1,4 +1,5 @@
 #include "monke.hpp"
+#include "../libs/bcrypt.h"
 #include <cstdio>
 #include <functional>
 #include <string>
@@ -62,10 +63,10 @@ Space::~Space(){
 }
 
 int Space::setCapacity(int newCapacity){
-	if(newCapacity<count)
+	if(newCapacity<this->count)
 		return 1;
 	else{
-		count=newCapacity;
+		this->count=newCapacity;
 		return 0;
 	}
 }
@@ -75,6 +76,14 @@ int Space::getCapacity(){return this->capacity;}
 int Space::addAnimal(Animal *animal){return -15;}
 int Space::removeAnimal(Animal *animal){return -15;}
 int Space::getCount(){return this->animals.size();}
+
+bool Space::isFull(){
+	return (this->capacity<=this->getCount())? true : false;
+}
+
+bool Space::isEmpty(){
+	return (this->getCount())? false : true;
+}
 
 Animal::Animal(){
 	space=nullptr;
@@ -123,12 +132,13 @@ void User::setUsername(const std::string& newUsername){
 	this->username.assign(newUsername);
 }
 
-std::string User::getPassword(){
-	return this->password;
+bool User::checkPassword(const std::string& providedPassword){
+	bool a = bcrypt::validatePassword(providedPassword, this->password);
+	return true;
 }
 
 void User::setPassword(const std::string& newPassword){
-	this->password.assign(newPassword);
+	this->password.assign(bcrypt::generateHash(newPassword));
 }
 
 Zoo* User::getZoo(){
@@ -178,7 +188,7 @@ void AuthDaemon::destroyDaemon(){
 int AuthDaemon::login(const std::string& username, const std::string& password){
 	std::vector<User*>::iterator iterUsers = users.begin();
 	while(iterUsers != users.end()){
-		if(username==((users)[iterUsers-users.begin()])->getUsername() and password==((users)[iterUsers-users.begin()])->getPassword()){
+		if(username==((users)[iterUsers-users.begin()])->getUsername() and ((users)[iterUsers-users.begin()])->checkPassword(password)){
 			this->loggedInUser=((users)[iterUsers-users.begin()]);
 			return 0;
 		}
@@ -218,13 +228,13 @@ void LoggingDaemon::destroyDaemon(){
 }
 
 
-	void LoggingDaemon::logAction(const std::string& action){}
-        void LoggingDaemon::logAuth(User* user, const std::string& action){}
-        void LoggingDaemon::logAdminAction(User* user, const std::string& action){};
-        bool LoggingDaemon::getEnabledAction(){return false;}
-        bool LoggingDaemon::getEnabledAuth(){return false;}
-        bool LoggingDaemon::getEnabledAdminAction(){return false;}
-        void LoggingDaemon::setEnabledAction(bool value){}
-        void LoggingDaemon::setEnabledAuth(bool value){}
-        void LoggingDaemon::setEnabledAdminAction(bool value){}
+void LoggingDaemon::logAction(const std::string& action){}
+void LoggingDaemon::logAuth(User* user, const std::string& action){}
+void LoggingDaemon::logAdminAction(User* user, const std::string& action){};
+bool LoggingDaemon::getEnabledAction(){return this->enabledAction;}
+bool LoggingDaemon::getEnabledAuth(){return this->enabledAuth;}
+bool LoggingDaemon::getEnabledAdminAction(){return this->enabledAdminActions;}
+void LoggingDaemon::setEnabledAction(bool value){this->enabledAction=value;}
+void LoggingDaemon::setEnabledAuth(bool value){this->enabledAuth=value;}
+void LoggingDaemon::setEnabledAdminAction(bool value){this->enabledAdminActions=value;}
 }

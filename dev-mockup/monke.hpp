@@ -11,6 +11,7 @@ namespace Monke{
 class Space;
 class Animal;
 enum class Rarity;
+enum class userType;
 class Monkey;
 class Note;
 class MedicalNote;
@@ -56,6 +57,8 @@ class Space{
 	virtual int getCapacity();
 	virtual int setCapacity(int newCapacity);
 	virtual int getCount();
+        virtual bool isFull();
+        virtual bool isEmpty();
 };
 
 class Cage : public Space{};
@@ -152,7 +155,7 @@ enum class userType {
         ~User();
         std::string getUsername();
         void setUsername(const std::string& username);
-        std::string getPassword();
+        bool checkPassword(const std::string& password);
         void setPassword(const std::string& password);
         Zoo* getZoo();
         int setAccType(int newType);
