@@ -34,37 +34,58 @@ class LoggingDaemon;
 
 
 class Zoo{
-	private:
-	std::string name;
-	std::vector<Space*> spaces;
-	public:
-	Zoo();
-	~Zoo();
-	int setZooName(std::string newName);
-	std::string getZooName();
-	int addSpace(Space* spaceToAdd);
-	int removeSpace(Space* spaceToRemove);
+private:
+    std::string name;
+    std::vector<Space*> spaces;
+public:
+    Zoo();
+    ~Zoo();
+    int setZooName(std::string newName);
+    std::string getZooName();
+    int addSpace(Space* spaceToAdd);
+    int removeSpace(Space* spaceToRemove);
 };
 
 class Space{
-	protected:
-        std::vector<Animal*> animals;
-	int capacity;
-	int count;
-        
-	public:
-        Space();
-        virtual ~Space();
-	virtual int addAnimal(Animal* animal);
-	virtual int removeAnimal(Animal* animal);
-	virtual int getCapacity();
-	virtual int setCapacity(int newCapacity);
-	virtual int getCount();
-        virtual bool isFull();
-        virtual bool isEmpty();
+protected:
+    std::vector<Animal*> animals;
+    int capacity;
+
+public:
+    Space();
+    virtual ~Space();
+    virtual int getCapacity();
+    virtual int getCount();
+    virtual Animal* getAnimal(int countInVector);
+
+    virtual int setCapacity(int newCapacity);
+    virtual int addAnimal(Animal* animal);
+    virtual int removeAnimal(Animal* animal);
+
+    virtual bool isFull();
+    virtual bool isEmpty();
 };
 
-class Cage : public Space{};
+class Cage : public Space{
+private:
+    int cageId;
+    std::string cageName;
+    int numberOfCameras;
+    std::string cageColor;
+public:
+    Cage();
+    ~Cage();
+
+    int getCageId();
+    std::string getName();
+    int getNumberOfCams();
+    std::string getCageColor();
+
+    void setCageId(int newCageId);
+    void setName(std::string newName);
+    void setNumberOfCams(int newNumberOfCams);
+    void setCageColor(std::string newCageColor);
+};
 
 class Hospital : public Space{};
 
