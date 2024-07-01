@@ -134,7 +134,7 @@ bool User::checkPassword(const std::string& providedPassword){
 }
 
 void User::setPassword(const std::string& newPassword){
-	this->password=bcrypt::generateHash(newPassword);
+	this->password=bcrypt::generateHash(newPassword, 5);
 }
 
 Zoo* User::getZoo(){
