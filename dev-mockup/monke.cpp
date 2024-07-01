@@ -1,8 +1,5 @@
 #include "monke.hpp"
-#include "../libs/bcrypt.h"
-#include <cstdio>
-#include <functional>
-#include <string>
+#include <vector>
 
 namespace Monke{
 AuthDaemon* AuthDaemon::instance = nullptr;
@@ -12,7 +9,7 @@ Zoo::Zoo(){
 	std::vector<Space*> spaces;
 }
 Zoo::~Zoo(){
-	for (auto iterSpaces : spaces) {
+	for (auto iterSpaces : spaces){
 		delete iterSpaces;
 	}
 }
@@ -73,7 +70,7 @@ int Space::setCapacity(int newCapacity){
 
 int Space::getCapacity(){return this->capacity;}
 
-int Space::addAnimal(Animal *animal){return -15;}
+int Space::addAnimal(Animal *animal){animals.push_back(animal); return 0;}
 int Space::removeAnimal(Animal *animal){return -15;}
 int Space::getCount(){return this->animals.size();}
 
@@ -110,8 +107,8 @@ User::User(){
 }
 
 User::User(std::string iusername, std::string ipassword, userType iaccType, Zoo* izoo){
-	this->username.assign(iusername);
-	this->password.assign(ipassword);
+	this->username=iusername;
+	this->setPassword(ipassword);
 	this->accType=iaccType;
 	this->accessToZoo=izoo;
 }
@@ -129,16 +126,15 @@ std::string User::getUsername(){
 }
 
 void User::setUsername(const std::string& newUsername){
-	this->username.assign(newUsername);
+	this->username=newUsername;
 }
 
 bool User::checkPassword(const std::string& providedPassword){
-	bool a = bcrypt::validatePassword(providedPassword, this->password);
-	return true;
+	return bcrypt::validatePassword(providedPassword, this->password);
 }
 
 void User::setPassword(const std::string& newPassword){
-	this->password.assign(bcrypt::generateHash(newPassword));
+	this->password=bcrypt::generateHash(newPassword);
 }
 
 Zoo* User::getZoo(){
@@ -168,8 +164,12 @@ AuthDaemon::~AuthDaemon(){
 }
 
 
-int AuthDaemon::login(User* user){
-	return 0;
+int AuthDaemon::forceLogin(User* user){
+	if(user!=nullptr){
+		this->loggedInUser=user;
+		return 0;
+	}
+	return 1;
 }
 
 AuthDaemon* AuthDaemon::getInstance(){
@@ -200,8 +200,46 @@ int AuthDaemon::login(const std::string& username, const std::string& password){
 	void AuthDaemon::logout(){this->loggedInUser=nullptr;};
         bool AuthDaemon::isLoggedIn(User* user){return true;}
         bool AuthDaemon::isLoggedInUserAdmin() {return false;}
-        void AuthDaemon::addUser(User* user){}
-        void AuthDaemon::remUser(User* user){}
+
+	bool AuthDaemon::doesUsernameExist(std::string username){
+		std::vector<User*>::iterator iterUsers = this->users.begin();
+		while(iterUsers != this->users.end()){
+			if(!(((users)[iterUsers-this->users.begin()])->getUsername().compare(username))){
+				return true;
+			}
+			iterUsers++;
+		}
+		return false;
+	}
+
+	int AuthDaemon::addUser(User* user){
+		if(!this->doesUsernameExist(user->getUsername())){
+			try {
+				this->users.push_back(user);
+			} catch (...) {
+				return -20;
+			}
+			return 0;
+		}
+		return -12;
+	}
+
+	int AuthDaemon::remUser(User* user){
+		std::vector<User*>::iterator iterUsers = this->users.begin();
+		while(iterUsers != this->users.end()){
+			if(user->getUsername()==((users)[iterUsers-this->users.begin()])->getUsername()){
+				try {
+					iterUsers=this->users.erase(iterUsers);
+				} catch (...) {
+					iterUsers++;
+					return -20;
+				}
+				return 0;
+			}
+			iterUsers++;
+		}
+		return -5;
+	}
 
 
 LoggingDaemon::LoggingDaemon(){

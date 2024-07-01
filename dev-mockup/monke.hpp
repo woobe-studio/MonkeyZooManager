@@ -6,6 +6,9 @@
 #include <string>
 #include <streambuf>
 #include <iostream>
+#include <cstdio>
+#include <functional>
+#include "../libs/bcrypt.h"
 
 namespace Monke{
 class Space;
@@ -179,13 +182,16 @@ enum class userType {
         ~AuthDaemon();
         static AuthDaemon* getInstance();
         static void destroyDaemon();
-        int login(User* user);
         int login(const std::string& username, const std::string& password);
         void logout();
         bool isLoggedIn(User* user);
         bool isLoggedInUserAdmin();
-        void addUser(User* user);
-        void remUser(User* user);
+        bool doesUsernameExist(std::string username);
+        int addUser(User* user);
+        int remUser(User* user);
+        int remUser(std::string user);
+
+        int forceLogin(User* user);
     };
 
     
