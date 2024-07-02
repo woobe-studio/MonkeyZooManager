@@ -1,4 +1,6 @@
 #include "monke.hpp"
+#include <algorithm>
+
 
 namespace Monke{
 Note::Note(){
@@ -7,7 +9,7 @@ Note::Note(){
 }
 
 Note::~Note(){
-	if (!this->date)
+	if (this->date)
 		delete this->date;
 }
 
@@ -35,13 +37,17 @@ int Note::setTimeNow(){
 	time_t now = time(0);
 	tm* dt = localtime(&now);
 
+	if (!this->date)
+		this->date = new tm;
+
 	memcpy(this->date, dt, sizeof(tm));
 
 	return 0;
 }
 
 int Note::setTime(tm *newLtm){
-
+	if (!this->date)
+		this->date = new tm;
 	memcpy(this->date, newLtm, sizeof(tm));
 	return 0;
 }
