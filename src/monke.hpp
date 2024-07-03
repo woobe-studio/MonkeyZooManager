@@ -292,7 +292,7 @@ namespace Monke
     {
     public:
         static tm *getNewTimePointerNow();
-        static void setExistingTimePointerNow(tm **toSet);
+        static tm *copyTimefromTimePointer(tm *toCopy);
     };
 }
 

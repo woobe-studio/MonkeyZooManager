@@ -11,11 +11,13 @@ namespace Monke
 		memcpy((toRet), dt, sizeof(tm));
 		return toRet;
 	}
-	static void setExistingTimePointerNow(tm **toSet)
+	tm *TimeDaemon::copyTimefromTimePointer(tm *toCopy)
 	{
 		std::cout << "IT IS EXISTING" << std::endl;
 		time_t now = time(0);
 		tm *dt = localtime(&now);
-		memcpy((*toSet), dt, sizeof(tm));
+		tm *toRet = new tm;
+		memcpy(toRet, dt, sizeof(tm));
+		return toRet;
 	}
 }

@@ -40,22 +40,17 @@ namespace Monke
 
 	int Note::setTimeNow()
 	{
-		time_t now = time(0);
-		tm *dt = localtime(&now);
-
-		if (!this->date)
-			this->date = new tm;
-
-		memcpy(this->date, dt, sizeof(tm));
-
+		if (this->date != nullptr)
+			delete this->date;
+		this->date = TimeDaemon::getNewTimePointerNow();
 		return 0;
 	}
 
 	int Note::setTime(tm *newLtm)
 	{
-		if (!this->date)
-			this->date = new tm;
-		memcpy(this->date, newLtm, sizeof(tm));
+		if (this->date != nullptr)
+			delete this->date;
+		this->date = TimeDaemon::copyTimefromTimePointer(newLtm);
 		return 0;
 	}
 }
