@@ -37,6 +37,7 @@ namespace Monke
     class User;
     class AuthDaemon;
     class LoggingDaemon;
+    class TimeDaemon;
 
     class Zoo
     {
@@ -285,6 +286,13 @@ namespace Monke
         void setEnabledAction(bool value);
         void setEnabledAuth(bool value);
         void setEnabledAdminAction(bool value);
+    };
+
+    class TimeDaemon
+    {
+    public:
+        static tm *getNewTimePointerNow();
+        static void setExistingTimePointerNow(tm **toSet);
     };
 }
 
