@@ -126,6 +126,28 @@ namespace Monke
 
     class Monkey : public Animal
     {
+    protected:
+        std::string monkeOrigin;
+        float monkeJumpHeight;
+        float toleratedTempMax;
+        float toleratedTempMin;
+        float foodPounds;
+
+    public:
+        Monkey();
+        ~Monkey();
+
+        std::string getMonkeOrigin();
+        float getMonkeJumpHeight();
+        float getToleratedTempMax();
+        float getToleratedTempMin();
+        float getFoodPounds();
+
+        void setMonkeOrigin(std::string newMonkeOrigin);
+        void setMonkeJumpHeight(float newMonkeJumpHeight);
+        void setToleratedTempMax(float newTemp);
+        void setToleratedTempMin(float newTemp);
+        void setFoodPounds(float newFoodPounds);
     };
 
     class Note
@@ -133,7 +155,7 @@ namespace Monke
     private:
         Animal *animal;
         tm *date;
-        std::string note;
+        std::string text;
 
     public:
         Note();
@@ -145,7 +167,6 @@ namespace Monke
         virtual int setNote(const std::string &note);
         virtual int setAnimal(Animal *connectedAnimal);
         virtual int setTime(tm *ltm);
-        // END OF WARNING
         virtual int setTimeNow();
     };
 

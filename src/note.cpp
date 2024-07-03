@@ -17,11 +17,11 @@ namespace Monke
 
 	Animal *Note::getAnimal() { return this->animal; }
 	tm *Note::getDate() { return this->date; }
-	std::string Note::getNote() { return this->note; }
+	std::string Note::getNote() { return this->text; }
 
 	int Note::setNote(const std::string &newNote)
 	{
-		this->note = newNote;
+		this->text = newNote;
 		return 0;
 	}
 
