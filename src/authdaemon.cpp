@@ -38,7 +38,7 @@ namespace Monke
 		std::vector<User *>::iterator iterUsers = users.begin();
 		while (iterUsers != users.end())
 		{
-			if (username == ((users)[iterUsers - users.begin()])->getUsername() and ((users)[iterUsers - users.begin()])->checkPassword(password))
+			if (username == ((users)[iterUsers - users.begin()])->getUsername() && ((users)[iterUsers - users.begin()])->checkPassword(password))
 			{
 				this->loggedInUser = ((users)[iterUsers - users.begin()]);
 				return 0;
