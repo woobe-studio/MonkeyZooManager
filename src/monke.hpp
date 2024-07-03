@@ -85,8 +85,34 @@ namespace Monke
     {
     };
 
+    struct hourMin
+    {
+        int hour;
+        int minute;
+    };
+
     class Enclosure : public Space
     {
+    private:
+        hourMin openTime;
+        hourMin closeTime;
+        int visitorSpots;
+        float temperature;
+
+    public:
+        Enclosure();
+
+        ~Enclosure();
+
+        hourMin getOpenTime();
+        hourMin getCloseTime();
+        int getVisitorSpots();
+        float getTemperature();
+
+        void setOpenTime(hourMin newOpenTime);
+        void setCloseTime(hourMin newCloseTime);
+        void setVisitorSpots(int newVisitorSpots);
+        void setTemperature(float newTemperature);
     };
 
     enum class Rarity
