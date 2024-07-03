@@ -1,5 +1,5 @@
-#ifndef MONKE_H
-#define MONKE_H
+#ifndef MONKEY_H
+#define MONKEY_H
 #ifdef __linux__
 #include <bits/types/struct_tm.h>
 #endif
@@ -15,7 +15,7 @@
 #include <cstring>
 #include "../libs/bcrypt.h"
 
-namespace Monke
+namespace Monkey
 {
     class Space;
     class Animal;

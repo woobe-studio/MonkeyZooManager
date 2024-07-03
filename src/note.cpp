@@ -1,7 +1,7 @@
-#include "monke.hpp"
+#include "monkey.hpp"
 #include <algorithm>
 
-namespace Monke
+namespace Monkey
 {
 	Note::Note()
 	{

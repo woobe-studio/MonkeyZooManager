@@ -1,5 +1,5 @@
-#include "monke.hpp"
-namespace Monke
+#include "monkey.hpp"
+namespace Monkey
 {
     Monkey::Monkey() {};
     Monkey::~Monkey() {};

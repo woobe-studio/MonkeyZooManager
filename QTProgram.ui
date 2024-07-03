@@ -29,7 +29,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Monke Zoo Manager</string>
+     <string>Monkey Zoo Manager</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>

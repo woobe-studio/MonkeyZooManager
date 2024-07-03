@@ -1,6 +1,6 @@
-#include "monke.hpp"
+#include "monkey.hpp"
 
-namespace Monke
+namespace Monkey
 {
         LoggingDaemon *LoggingDaemon::instance = nullptr;
         LoggingDaemon::LoggingDaemon()
