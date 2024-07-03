@@ -1,5 +1,8 @@
 #ifndef MONKE_H
 #define MONKE_H
+#ifdef __linux__
+#include <bits/types/struct_tm.h>
+#endif
 #include <time.h>
 #include <stdlib.h>
 #include <vector>
@@ -9,7 +12,6 @@
 #include <iostream>
 #include <cstdio>
 #include <functional>
-#include <ctime>
 #include <cstring>
 #include "../libs/bcrypt.h"
 

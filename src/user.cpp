@@ -40,7 +40,6 @@ namespace Monke
 		return bcrypt::validatePassword(providedPassword, this->hashOfPassword);
 	}
 
-	// sets
 	void User::setZoo(Zoo *newZoo)
 	{
 		this->accessToZoo = newZoo;
