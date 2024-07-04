@@ -79,10 +79,46 @@ namespace Monkey
 
     class Cage : public Space
     {
+    private:
+        int cageId;
+        std::string cageName;
+        int numberOfCameras;
+        std::string cageColor;
+
+    public:
+        Cage();
+        ~Cage();
+
+        int getCageId();
+        std::string getName();
+        int getNumberOfCams();
+        std::string getCageColor();
+
+        void setCageId(int newCageId);
+        void setName(std::string newName);
+        void setNumberOfCams(int newNumberOfCams);
+        void setCageColor(std::string newCageColor);
     };
 
     class Hospital : public Space
     {
+    private:
+        int medicineQuantity;
+        int bedsCount;
+        int volunteerAmount;
+
+    public:
+        Hospital();
+
+        ~Hospital();
+
+        int getMedicineQuantity();
+        int getBedsCount();
+        int getVolunteerAmount();
+
+        void setMedicineQuantity(int newMedicineQuantity);
+        void setBedsCount(int newBedCount);
+        void setVolunteerAmount(int newVolunteerAmount);
     };
 
     struct hourMin
@@ -254,20 +290,79 @@ namespace Monkey
         void setTopic(const std::string &newTopic);
     };
 
-    class ProboscisMonkey : public Monkey
+    class HeisenMonkey : public Monkey
     {
+    private:
+        float poundsOfCandyCooked;
+
+    public:
+        HeisenMonkey();
+
+        ~HeisenMonkey();
+
+        float getPoundsOfCandyCooked();
+
+        void setPoundsOfCandyCooked(float newPoundsOfCandyCooked);
     };
 
-    class GuineaBaboon : public Monkey
+    class StudentMonkey : public Monkey
     {
+    private:
+        int examsToRetake;
+
+    public:
+        StudentMonkey();
+
+        ~StudentMonkey();
+
+        int getExamsToRetake();
+
+        void setExamsToRetake(int newExamsToRetake);
     };
 
-    class NightMonkey : public Monkey
+    class GalacticMonkey : public Monkey
     {
+    private:
+        int blackHolesCreated;
+
+    public:
+        GalacticMonkey();
+
+        ~GalacticMonkey();
+
+        int getBlackHolesCreated();
+
+        void setBlackHolesCreated(int newBlackHolesCreated);
     };
 
-    class Lemur : public Monkey
+    class DartMonkey : public Monkey
     {
+    private:
+        int baloonsPopped;
+
+    public:
+        DartMonkey();
+
+        ~DartMonkey();
+
+        int getbaloonsPopped();
+
+        void setbaloonsPopped(int newbaloonsPopped);
+    };
+
+    class Maldrill : public Monkey
+    {
+    private:
+        float jumpHeight;
+
+    public:
+        Maldrill();
+
+        ~Maldrill();
+
+        float getJumpHeight();
+
+        void setJumpHeight(float newJump);
     };
 
     enum class userType
