@@ -26,10 +26,11 @@ namespace Monkey
     class MedicalNote;
     class BehavioralNote;
     class OtherNote;
-    class ProboscisMonkey;
-    class GuineaBaboon;
-    class NightMonkey;
-    class Lemur;
+    class HeisenMonkey;
+    class StudentMonkey;
+    class GalacticMonkey;
+    class DartMonkey;
+    class Maldrill;
     class Zoo;
     class Enclosure;
     class Cage;
