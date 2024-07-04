@@ -52,7 +52,7 @@ namespace Monkey
 
 	void User::setPassword(const std::string &newPassword)
 	{
-		this->hashOfPassword = bcrypt::generateHash(newPassword, 5);
+		this->hashOfPassword = bcrypt::generateHash(newPassword, 10);
 	}
 
 	void User::setPassword(const std::string &newPassword, int bcryptIterations)

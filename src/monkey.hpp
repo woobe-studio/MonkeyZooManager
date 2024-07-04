@@ -319,6 +319,8 @@ namespace Monkey
     public:
         static tm *getNewTimePointerNow();
         static tm *copyTimefromTimePointer(tm *toCopy);
+        static std::string getCurrentTimeString();
+        static std::string getTimeString(tm *toConvertToString);
     };
 }
 

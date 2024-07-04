@@ -13,3 +13,4 @@ _deps
 .idea/
 .info.txt
 .vscode/
+test.*
