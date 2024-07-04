@@ -199,14 +199,59 @@ namespace Monkey
 
     class MedicalNote : public Note
     {
+    private:
+        float costOfMedications;
+        float proceduresCost;
+
+    public:
+        MedicalNote();
+
+        ~MedicalNote();
+
+        float getCostOfMedications();
+        float getProceduresCost();
+
+        void setCostOfMedications(float newCost);
+        void setProceduresCost(float newCost);
     };
 
     class BehavioralNote : public Note
     {
+    private:
+        int mood;
+        float sleepTime;
+        float activeTime;
+        bool isSocializing;
+
+    public:
+        BehavioralNote();
+
+        ~BehavioralNote();
+
+        int getMood();
+        float getSleepTime();
+        float getActiveTime();
+        bool getIsSocializing();
+
+        void setMood(int newMood);
+        void setSleepTime(float newSleepTime);
+        void setActiveTime(float newActiveTime);
+        void setIsSocializing(bool newIsSocializing);
     };
 
     class OtherNote : public Note
     {
+    private:
+        std::string topic;
+
+    public:
+        OtherNote();
+
+        ~OtherNote();
+
+        std::string getTopic();
+
+        void setTopic(const std::string &newTopic);
     };
 
     class ProboscisMonkey : public Monkey
