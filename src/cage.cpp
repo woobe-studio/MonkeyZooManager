@@ -1,61 +1,53 @@
 #include "monkey.hpp"
-
-class Cage
+namespace Monkey
 {
-private:
-    int cageId;
-    std::string name;
-    int numberOfCams;
-    std::string cageColor;
-
-public:
-    Cage()
+    Cage::Cage()
     {
         cageId = 0;
-        name = "";
-        numberOfCams = 0;
+        this->cageName = "";
+        numberOfCameras = 0;
         cageColor = "";
     }
 
-    ~Cage() {}
+    Cage::~Cage() {}
 
-    int getCageId()
+    int Cage::getCageId()
     {
         return cageId;
     }
 
-    std::string getName()
+    std::string Cage::getName()
     {
-        return name;
+        return cageName;
     }
 
-    int getNumberOfCams()
+    int Cage::getNumberOfCams()
     {
-        return numberOfCams;
+        return numberOfCameras;
     }
 
-    std::string getCageColor()
+    std::string Cage::getCageColor()
     {
         return cageColor;
     }
 
-    void setCageId(int newCageId)
+    void Cage::setCageId(int newCageId)
     {
         cageId = newCageId;
     }
 
-    void setName(std::string newName)
+    void Cage::setName(std::string newName)
     {
-        name = newName;
+        cageName = newName;
     }
 
-    void setNumberOfCams(int newNumberOfCams)
+    void Cage::setNumberOfCams(int newNumberOfCams)
     {
-        numberOfCams = newNumberOfCams;
+        numberOfCameras = newNumberOfCams;
     }
 
-    void setCageColor(std::string newCageColor)
+    void Cage::setCageColor(std::string newCageColor)
     {
         cageColor = newCageColor;
     }
-};
+}
