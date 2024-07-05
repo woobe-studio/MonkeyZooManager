@@ -26,51 +26,34 @@ namespace Monkey
 	}
 	int Space::getCount() { return this->animals.size(); }
 
-	int Space::setCapacity(int newCapacity)
+	bool Space::setCapacity(int newCapacity)
 	{
 		if (newCapacity < this->getCount())
-			return 1;
+			return true;
 		else
 		{
 			this->capacity = newCapacity;
-			return 0;
+			return false;
 		}
 	}
 
-	int Space::addAnimal(Animal *animal)
+	void Space::addAnimal(Animal *animal)
 	{
-		try
-		{
-			animals.push_back(animal);
-		}
-		catch (...)
-		{
-			return -12;
-		}
-		return 0;
+		animals.push_back(animal);
 	}
 
-	int Space::removeAnimal(Animal *animalToRemove)
+	void Space::removeAnimal(Animal *animalToRemove)
 	{
 		std::vector<Animal *>::iterator iterVec = this->animals.begin();
 		while (iterVec != this->animals.end())
 		{
 			if (animalToRemove == (this->animals)[iterVec - this->animals.begin()])
 			{
-				try
-				{
-					iterVec = this->animals.erase(iterVec);
-				}
-				catch (...)
-				{
-					iterVec++;
-					return -20;
-				}
-				return 0;
+				iterVec = this->animals.erase(iterVec);
+				iterVec++;
 			}
 			iterVec++;
 		}
-		return -12;
 	}
 
 	bool Space::isFull()

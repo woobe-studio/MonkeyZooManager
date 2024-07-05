@@ -49,10 +49,10 @@ namespace Monkey
     public:
         Zoo();
         ~Zoo();
-        int setZooName(std::string newName);
+        void setZooName(std::string newName);
         std::string getZooName();
-        int addSpace(Space *spaceToAdd);
-        int removeSpace(Space *spaceToRemove);
+        void addSpace(Space *spaceToAdd);
+        void removeSpace(Space *spaceToRemove);
     };
 
     class Space
@@ -69,10 +69,10 @@ namespace Monkey
         virtual int getCount();
         virtual Animal *getAnimal(int countInVector);
 
-        virtual int setCapacity(int newCapacity);
+        virtual bool setCapacity(int newCapacity);
 
-        virtual int addAnimal(Animal *animal);
-        virtual int removeAnimal(Animal *animal);
+        virtual void addAnimal(Animal *animal);
+        virtual void removeAnimal(Animal *animal);
 
         virtual bool isFull();
         virtual bool isEmpty();
@@ -185,7 +185,7 @@ namespace Monkey
         virtual void setRarity(Rarity animalRarity);
 
         virtual void addNote(Note *newNote);
-        virtual int removeNote(Note *noteToRemove);
+        virtual void removeNote(Note *noteToRemove);
     };
 
     class Monkey : public Animal
@@ -393,7 +393,7 @@ namespace Monkey
         void setUsername(const std::string &username);
         void setPassword(const std::string &password);
         void setPassword(const std::string &password, int bcryptIterations);
-        int setAccType(int newType);
+        void setAccType(userType newType);
         void setZoo(Zoo *newZoo);
     };
 
@@ -413,16 +413,16 @@ namespace Monkey
         static AuthDaemon *getInstance();
         static void destroyDaemon();
 
-        int login(const std::string &username, const std::string &password);
+        bool login(const std::string &username, const std::string &password);
         void logout();
 
         bool isLoggedIn(User *user);
         bool isLoggedInUserAdmin();
 
         bool doesUsernameExist(std::string username);
-        int addUser(User *user);
-        int remUser(User *user);
-        int remUser(std::string user);
+        void addUser(User *user);
+        void remUser(User *user);
+        void remUser(std::string user);
 
         User *retPointerOfUsername(std::string username);
     };
@@ -435,7 +435,6 @@ namespace Monkey
         bool enabledAuth;
         bool enabledAdminActions;
         LoggingDaemon();
-        std::string timeStringNow();
 
     public:
         ~LoggingDaemon();

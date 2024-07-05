@@ -33,7 +33,7 @@ namespace Monkey
 		instance = nullptr;
 	}
 
-	int AuthDaemon::login(const std::string &username, const std::string &password)
+	bool AuthDaemon::login(const std::string &username, const std::string &password)
 	{
 		std::vector<User *>::iterator iterUsers = users.begin();
 		while (iterUsers != users.end())
@@ -41,11 +41,11 @@ namespace Monkey
 			if (username == ((users)[iterUsers - users.begin()])->getUsername() && ((users)[iterUsers - users.begin()])->checkPassword(password))
 			{
 				this->loggedInUser = ((users)[iterUsers - users.begin()]);
-				return 0;
+				return true;
 			}
 			iterUsers++;
 		}
-		return -5;
+		return false;
 	}
 
 	void AuthDaemon::logout() { this->loggedInUser = nullptr; };
@@ -79,43 +79,32 @@ namespace Monkey
 		return nullptr;
 	}
 
-	int AuthDaemon::addUser(User *user)
+	void AuthDaemon::addUser(User *user)
 	{
 		if (!this->doesUsernameExist(user->getUsername()))
 		{
-			try
-			{
-				this->users.push_back(user);
-			}
-			catch (...)
-			{
-				return -20;
-			}
-			return 0;
+			this->users.push_back(user);
 		}
-		return -12;
 	}
 
-	int AuthDaemon::remUser(User *user)
+	void AuthDaemon::remUser(User *user)
 	{
 		std::vector<User *>::iterator iterUsers = this->users.begin();
 		while (iterUsers != this->users.end())
 		{
 			if (user->getUsername() == ((users)[iterUsers - this->users.begin()])->getUsername())
 			{
-				try
-				{
-					iterUsers = this->users.erase(iterUsers);
-				}
-				catch (...)
-				{
-					iterUsers++;
-					return -20;
-				}
-				return 0;
+				iterUsers = this->users.erase(iterUsers);
+				iterUsers++;
 			}
 			iterUsers++;
 		}
-		return -5;
+	}
+
+	void AuthDaemon::remUser(std::string userToDel)
+	{
+		User *temp = this->retPointerOfUsername(userToDel);
+		if (temp)
+			this->remUser(temp);
 	}
 }

@@ -14,10 +14,9 @@ namespace Monkey
 		}
 	}
 
-	int Zoo::setZooName(std::string newName)
+	void Zoo::setZooName(std::string newName)
 	{
 		this->name = newName;
-		return 0;
 	}
 
 	std::string Zoo::getZooName()
@@ -25,39 +24,22 @@ namespace Monkey
 		return this->name;
 	}
 
-	int Zoo::addSpace(Space *spaceToAdd)
+	void Zoo::addSpace(Space *spaceToAdd)
 	{
-		try
-		{
-			spaces.push_back(spaceToAdd);
-		}
-		catch (...)
-		{
-			return -20;
-		}
-		return 0;
+		spaces.push_back(spaceToAdd);
 	}
 
-	int Zoo::removeSpace(Space *spaceToRemove)
+	void Zoo::removeSpace(Space *spaceToRemove)
 	{
 		std::vector<Space *>::iterator iterSpaces = spaces.begin();
 		while (iterSpaces != spaces.end())
 		{
 			if (spaceToRemove == (spaces)[iterSpaces - spaces.begin()])
 			{
-				try
-				{
-					(spaces).erase(iterSpaces);
-				}
-				catch (...)
-				{
-					return -20;
-				}
-				return 0;
+				spaces.erase(iterSpaces);
 			}
 			iterSpaces++;
 		}
-		return -6;
 	}
 
 }

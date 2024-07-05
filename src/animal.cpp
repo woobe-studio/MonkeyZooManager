@@ -41,7 +41,7 @@ namespace Monkey
 			}
 		}
 	}
-	int Animal::removeNote(Note *noteToRemove)
+	void Animal::removeNote(Note *noteToRemove)
 	{
 		std::vector<Note *>::iterator iterVec = this->notes.begin();
 		while (iterVec != this->notes.end())
@@ -55,12 +55,8 @@ namespace Monkey
 				catch (...)
 				{
 					iterVec++;
-					return -20;
 				}
-				return 0;
 			}
 			iterVec++;
 		}
-		return -12;
 	}
-}

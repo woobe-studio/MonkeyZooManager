@@ -16,3 +16,4 @@ _deps
 *.exe
 MonkeyZooManager/
 x64/
+.vscode/

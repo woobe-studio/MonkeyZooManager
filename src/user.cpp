@@ -4,6 +4,7 @@ namespace Monkey
 {
 	User::User()
 	{
+		this->username = "nullNewUser";
 		this->accType = userType::STANDARD;
 		this->accessToZoo = nullptr;
 	}

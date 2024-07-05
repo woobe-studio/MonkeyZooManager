@@ -1,5 +1,4 @@
 #include "monkey.hpp"
-
 namespace Monkey
 {
         LoggingDaemon *LoggingDaemon::instance = nullptr;
@@ -42,9 +41,4 @@ namespace Monkey
         void LoggingDaemon::setEnabledAuth(bool value) { this->enabledAuth = value; }
         void LoggingDaemon::setEnabledAdminAction(bool value) { this->enabledAdminActions = value; }
 
-        std::string timeStringNow()
-        {
-                time_t now = time(0);
-                tm *dt = localtime(&now);
-        }
 }
