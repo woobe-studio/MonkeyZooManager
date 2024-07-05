@@ -22,7 +22,7 @@ namespace Monkey
 	void Animal::setName(const std::string &animalName) { this->name.assign(animalName); }
 	void Animal::setRarity(Rarity animalRarity) { this->rarity = animalRarity; }
 
-	Space *Animal::getSpace() { return this->space; };
+	Space *Animal::getSpace() { return this->space; }
 	std::string Animal::getName() { return this->name; }
 	int Animal::getAge() { return this->age; }
 	Rarity Animal::getRarity() { return this->rarity; }
@@ -48,15 +48,9 @@ namespace Monkey
 		{
 			if (noteToRemove == (this->notes)[iterVec - this->notes.begin()])
 			{
-				try
-				{
-					iterVec = this->notes.erase(iterVec);
-				}
-				catch (...)
-				{
-					iterVec++;
-				}
+				iterVec = this->notes.erase(iterVec);
 			}
-			iterVec++;
+			else
+				iterVec++;
 		}
 	}

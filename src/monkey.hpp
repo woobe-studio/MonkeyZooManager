@@ -67,7 +67,7 @@ namespace Monkey
 
         virtual int getCapacity();
         virtual int getCount();
-        virtual Animal *getAnimal(int countInVector);
+        virtual Animal *getAnimal(long unsigned int countInVector);
 
         virtual bool setCapacity(int newCapacity);
 

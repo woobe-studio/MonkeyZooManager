@@ -1,8 +1,8 @@
 #include "monkey.hpp"
 namespace Monkey
 {
-    Monkey::Monkey() {};
-    Monkey::~Monkey() {};
+    Monkey::Monkey() {}
+    Monkey::~Monkey() {}
 
     std::string Monkey::getMonkeOrigin() { return this->monkeOrigin; }
     float Monkey::getMonkeJumpHeight() { return this->monkeJumpHeight; }

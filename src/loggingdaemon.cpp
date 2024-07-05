@@ -31,7 +31,7 @@ namespace Monkey
 
         void LoggingDaemon::logAction(const std::string &action) {}
         void LoggingDaemon::logAuth(User *user, const std::string &action) {}
-        void LoggingDaemon::logAdminAction(User *user, const std::string &action) {};
+        void LoggingDaemon::logAdminAction(User *user, const std::string &action) {}
 
         bool LoggingDaemon::getEnabledAction() { return this->enabledAction; }
         bool LoggingDaemon::getEnabledAuth() { return this->enabledAuth; }

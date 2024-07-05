@@ -4,7 +4,6 @@ namespace Monkey
 {
 	Space::Space()
 	{
-		std::vector<Animal *> animals;
 		this->capacity = 0;
 	}
 
@@ -17,9 +16,9 @@ namespace Monkey
 	}
 
 	int Space::getCapacity() { return this->capacity; }
-	Animal *Space::getAnimal(int countInVector)
+	Animal *Space::getAnimal(long unsigned int countInVector)
 	{
-		if (countInVector >= 0 && countInVector < this->animals.size())
+		if (countInVector < this->animals.size())
 			return (this->animals)[countInVector];
 		else
 			return nullptr;
@@ -50,9 +49,9 @@ namespace Monkey
 			if (animalToRemove == (this->animals)[iterVec - this->animals.begin()])
 			{
 				iterVec = this->animals.erase(iterVec);
-				iterVec++;
 			}
-			iterVec++;
+			else
+				iterVec++;
 		}
 	}
 

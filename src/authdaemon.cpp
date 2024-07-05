@@ -43,12 +43,13 @@ namespace Monkey
 				this->loggedInUser = ((users)[iterUsers - users.begin()]);
 				return true;
 			}
-			iterUsers++;
+			else
+				iterUsers++;
 		}
 		return false;
 	}
 
-	void AuthDaemon::logout() { this->loggedInUser = nullptr; };
+	void AuthDaemon::logout() { this->loggedInUser = nullptr; }
 	bool AuthDaemon::isLoggedIn(User *user) { return (this->loggedInUser) ? true : false; }
 	bool AuthDaemon::isLoggedInUserAdmin() { return (this->loggedInUser->getAccType() == userType::ADMIN) ? true : false; }
 	bool AuthDaemon::doesUsernameExist(std::string username)
@@ -60,7 +61,8 @@ namespace Monkey
 			{
 				return true;
 			}
-			iterUsers++;
+			else
+				iterUsers++;
 		}
 		return false;
 	}
@@ -95,9 +97,9 @@ namespace Monkey
 			if (user->getUsername() == ((users)[iterUsers - this->users.begin()])->getUsername())
 			{
 				iterUsers = this->users.erase(iterUsers);
-				iterUsers++;
 			}
-			iterUsers++;
+			else
+				iterUsers++;
 		}
 	}
 

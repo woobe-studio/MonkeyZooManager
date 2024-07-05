@@ -4,7 +4,6 @@ namespace Monkey
 {
 	Zoo::Zoo()
 	{
-		std::vector<Space *> spaces;
 	}
 	Zoo::~Zoo()
 	{
