@@ -12,5 +12,7 @@ _deps
 
 .idea/
 .info.txt
-.vscode/
-test.*
+.vs/
+*.exe
+MonkeyZooManager/
+x64/
