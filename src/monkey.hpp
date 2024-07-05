@@ -346,9 +346,9 @@ namespace Monkey
 
         ~DartMonkey();
 
-        int getbaloonsPopped();
+        int getBaloonsPopped();
 
-        void setbaloonsPopped(int newbaloonsPopped);
+        void setBaloonsPopped(int newbaloonsPopped);
     };
 
     class Maldrill : public Monkey
