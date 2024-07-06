@@ -81,6 +81,11 @@ namespace Monkey
 		return nullptr;
 	}
 
+	User *AuthDaemon::retPointerOfLoggedInUser()
+	{
+		return this->loggedInUser;
+	}
+
 	void AuthDaemon::addUser(User *user)
 	{
 		if (!this->doesUsernameExist(user->getUsername()))

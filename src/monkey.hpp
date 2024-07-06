@@ -487,6 +487,7 @@ namespace Monkey
         void remUser(std::string user);
 
         User *retPointerOfUsername(std::string username);
+        User *retPointerOfLoggedInUser();
 
         void to_json(json &j) const;
         void from_json(const json &j);
