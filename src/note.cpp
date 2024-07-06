@@ -53,4 +53,7 @@ namespace Monkey
 		this->date = TimeDaemon::copyTimefromTimePointer(newLtm);
 		return 0;
 	}
+
+	void Note::to_json(json &j) const {}
+	void Note::from_json(const json &j) {}
 }

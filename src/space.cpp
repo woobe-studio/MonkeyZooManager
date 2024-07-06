@@ -64,4 +64,7 @@ namespace Monkey
 	{
 		return (this->getCount()) ? false : true;
 	}
+
+	void Space::to_json(json &j) const {}
+	void Space::from_json(const json &j) {}
 }

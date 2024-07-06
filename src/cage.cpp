@@ -50,4 +50,6 @@ namespace Monkey
     {
         cageColor = newCageColor;
     }
+    void Cage::to_json(json &j) const {}
+    void Cage::from_json(const json &j) {}
 }

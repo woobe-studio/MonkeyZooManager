@@ -109,4 +109,27 @@ namespace Monkey
 		if (temp)
 			this->remUser(temp);
 	}
+
+	void AuthDaemon::to_json(json &j) const
+	{
+		json usersJson;
+		for (const auto &tempUser : this->users)
+		{
+			json oneUserJson;
+			tempUser->to_json(oneUserJson);
+			usersJson.push_back(oneUserJson);
+		}
+		j["users"] = usersJson;
+	}
+
+	void AuthDaemon::from_json(const json &j)
+	{
+		const auto &usersJson = j.at("animals");
+		for (const auto &oneUserJson : usersJson)
+		{
+			User *tempUser = new User();
+			tempUser->from_json(oneUserJson);
+			users.push_back(tempUser);
+		}
+	}
 }

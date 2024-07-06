@@ -4,6 +4,8 @@
 #include <bits/types/struct_tm.h>
 #endif
 #include <time.h>
+#include <ctime>
+#include <sstream>
 #include <stdlib.h>
 #include <vector>
 #include <stdio.h>
@@ -41,6 +43,8 @@ namespace Monkey
     class LoggingDaemon;
     class TimeDaemon;
 
+    using json = nlohmann::json;
+
     class Zoo
     {
     private:
@@ -54,6 +58,8 @@ namespace Monkey
         std::string getZooName();
         void addSpace(Space *spaceToAdd);
         void removeSpace(Space *spaceToRemove);
+        void to_json(json &j) const;
+        void from_json(const json &j);
     };
 
     class Space
@@ -77,6 +83,9 @@ namespace Monkey
 
         virtual bool isFull();
         virtual bool isEmpty();
+
+        virtual void to_json(json &j) const;
+        virtual void from_json(const json &j);
     };
 
     class Cage : public Space
@@ -100,6 +109,9 @@ namespace Monkey
         void setName(std::string newName);
         void setNumberOfCams(int newNumberOfCams);
         void setCageColor(std::string newCageColor);
+
+        void to_json(json &j) const override;
+        void from_json(const json &j) override;
     };
 
     class Hospital : public Space
@@ -121,6 +133,9 @@ namespace Monkey
         void setMedicineQuantity(int newMedicineQuantity);
         void setBedsCount(int newBedCount);
         void setVolunteerAmount(int newVolunteerAmount);
+
+        void to_json(json &j) const override;
+        void from_json(const json &j) override;
     };
 
     struct hourMin
@@ -151,6 +166,9 @@ namespace Monkey
         void setCloseTime(hourMin newCloseTime);
         void setVisitorSpots(int newVisitorSpots);
         void setTemperature(float newTemperature);
+
+        void to_json(json &j) const override;
+        void from_json(const json &j) override;
     };
 
     enum class Rarity
@@ -187,6 +205,10 @@ namespace Monkey
 
         virtual void addNote(Note *newNote);
         virtual void removeNote(Note *noteToRemove);
+
+        virtual void to_json(json &j) const;
+        virtual void from_json(const json &j);
+        virtual void from_json(const json &j, Space *ptrSpace);
     };
 
     class Monkey : public Animal
@@ -200,19 +222,22 @@ namespace Monkey
 
     public:
         Monkey();
-        ~Monkey();
+        virtual ~Monkey();
 
-        std::string getMonkeOrigin();
-        float getMonkeJumpHeight();
-        float getToleratedTempMax();
-        float getToleratedTempMin();
-        float getFoodPounds();
+        virtual std::string getMonkeOrigin();
+        virtual float getMonkeJumpHeight();
+        virtual float getToleratedTempMax();
+        virtual float getToleratedTempMin();
+        virtual float getFoodPounds();
 
-        void setMonkeOrigin(std::string newMonkeOrigin);
-        void setMonkeJumpHeight(float newMonkeJumpHeight);
-        void setToleratedTempMax(float newTemp);
-        void setToleratedTempMin(float newTemp);
-        void setFoodPounds(float newFoodPounds);
+        virtual void setMonkeOrigin(std::string newMonkeOrigin);
+        virtual void setMonkeJumpHeight(float newMonkeJumpHeight);
+        virtual void setToleratedTempMax(float newTemp);
+        virtual void setToleratedTempMin(float newTemp);
+        virtual void setFoodPounds(float newFoodPounds);
+
+        virtual void to_json(json &j) const override;
+        virtual void from_json(const json &j) override;
     };
 
     class Note
@@ -233,6 +258,9 @@ namespace Monkey
         virtual int setAnimal(Animal *connectedAnimal);
         virtual int setTime(tm *ltm);
         virtual int setTimeNow();
+
+        virtual void to_json(json &j) const;
+        virtual void from_json(const json &j);
     };
 
     class MedicalNote : public Note
@@ -251,6 +279,9 @@ namespace Monkey
 
         void setCostOfMedications(float newCost);
         void setProceduresCost(float newCost);
+
+        void to_json(json &j) const override;
+        void from_json(const json &j) override;
     };
 
     class BehavioralNote : public Note
@@ -275,6 +306,9 @@ namespace Monkey
         void setSleepTime(float newSleepTime);
         void setActiveTime(float newActiveTime);
         void setIsSocializing(bool newIsSocializing);
+
+        void to_json(json &j) const override;
+        void from_json(const json &j) override;
     };
 
     class OtherNote : public Note
@@ -290,6 +324,9 @@ namespace Monkey
         std::string getTopic();
 
         void setTopic(const std::string &newTopic);
+
+        void to_json(json &j) const override;
+        void from_json(const json &j) override;
     };
 
     class HeisenMonkey : public Monkey
@@ -305,6 +342,10 @@ namespace Monkey
         float getPoundsOfCandyCooked();
 
         void setPoundsOfCandyCooked(float newPoundsOfCandyCooked);
+
+        void to_json(json &j) const override;
+        void from_json(const json &j) override;
+        void from_json(const json &j, Space *ptrSpace) override;
     };
 
     class StudentMonkey : public Monkey
@@ -320,6 +361,10 @@ namespace Monkey
         int getExamsToRetake();
 
         void setExamsToRetake(int newExamsToRetake);
+
+        void to_json(json &j) const override;
+        void from_json(const json &j) override;
+        void from_json(const json &j, Space *ptrSpace) override;
     };
 
     class GalacticMonkey : public Monkey
@@ -335,6 +380,10 @@ namespace Monkey
         int getBlackHolesCreated();
 
         void setBlackHolesCreated(int newBlackHolesCreated);
+
+        void to_json(json &j) const override;
+        void from_json(const json &j) override;
+        void from_json(const json &j, Space *ptrSpace) override;
     };
 
     class DartMonkey : public Monkey
@@ -350,6 +399,10 @@ namespace Monkey
         int getBaloonsPopped();
 
         void setBaloonsPopped(int newbaloonsPopped);
+
+        void to_json(json &j) const override;
+        void from_json(const json &j) override;
+        void from_json(const json &j, Space *ptrSpace) override;
     };
 
     class Maldrill : public Monkey
@@ -365,6 +418,10 @@ namespace Monkey
         float getJumpHeight();
 
         void setJumpHeight(float newJump);
+
+        void to_json(json &j) const override;
+        void from_json(const json &j) override;
+        void from_json(const json &j, Space *ptrSpace) override;
     };
 
     enum class userType
@@ -383,7 +440,7 @@ namespace Monkey
 
     public:
         User();
-        User(std::string username, std::string password, userType accType, Zoo *zoo);
+        User(const std::string &username, const std::string &password, userType accType, Zoo *zoo);
         ~User();
 
         std::string getUsername();
@@ -396,6 +453,9 @@ namespace Monkey
         void setPassword(const std::string &password, int bcryptIterations);
         void setAccType(userType newType);
         void setZoo(Zoo *newZoo);
+
+        void to_json(json &j) const;
+        void from_json(const json &j);
     };
 
     class AuthDaemon
@@ -426,6 +486,9 @@ namespace Monkey
         void remUser(std::string user);
 
         User *retPointerOfUsername(std::string username);
+
+        void to_json(json &j) const;
+        void from_json(const json &j);
     };
 
     class LoggingDaemon

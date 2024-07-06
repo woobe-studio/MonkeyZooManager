@@ -9,7 +9,7 @@ namespace Monkey
 		this->accessToZoo = nullptr;
 	}
 
-	User::User(std::string iusername, std::string ipassword, userType iaccType, Zoo *izoo)
+	User::User(const std::string &iusername, const std::string &ipassword, userType iaccType, Zoo *izoo)
 	{
 		this->username = iusername;
 		this->setPassword(ipassword);
@@ -59,5 +59,20 @@ namespace Monkey
 	void User::setPassword(const std::string &newPassword, int bcryptIterations)
 	{
 		this->hashOfPassword = bcrypt::generateHash(newPassword, bcryptIterations);
+	}
+
+	void User::to_json(json &j) const
+	{
+
+		j = json{{"username", this->username}, {"password", this->hashOfPassword}};
+		json typeJson = static_cast<int>(this->accType);
+		j["accType"] = typeJson;
+	}
+
+	void User::from_json(const json &j)
+	{
+		this->username = j.at("username").get<std::string>();
+		this->hashOfPassword = j.at("password").get<std::string>();
+		this->accType = static_cast<userType>(j["accType"].get<int>());
 	}
 }

@@ -1,13 +1,10 @@
 #include "monkey.hpp"
-#include <ctime>
-#include <sstream>
 #include <iomanip>
 
 namespace Monkey
 {
 	tm *TimeDaemon::getNewTimePointerNow()
 	{
-		std::cout << "GETTING IT NOW" << std::endl;
 		time_t now = time(0);
 		tm *dt = localtime(&now);
 		tm *toRet = new tm;
@@ -17,7 +14,6 @@ namespace Monkey
 
 	tm *TimeDaemon::copyTimefromTimePointer(tm *toCopy)
 	{
-		std::cout << "IT IS EXISTING" << std::endl;
 		time_t now = time(0);
 		tm *dt = localtime(&now);
 		tm *toRet = new tm;

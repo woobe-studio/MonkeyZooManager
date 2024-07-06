@@ -18,4 +18,7 @@ namespace Monkey
     {
         blackHolesCreated = newBlackHolesCreated;
     }
+    void GalacticMonkey::to_json(json &j) const {}
+    void GalacticMonkey::from_json(const json &j) {}
+    void GalacticMonkey::from_json(const json &j, Space *ptrSpace) {}
 }

@@ -53,4 +53,6 @@ namespace Monkey
     {
         temperature = newTemperature;
     }
+    void Enclosure::to_json(json &j) const {}
+    void Enclosure::from_json(const json &j) {}
 }

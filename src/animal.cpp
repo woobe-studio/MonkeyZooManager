@@ -54,3 +54,23 @@ namespace Monkey
 				iterVec++;
 		}
 	}
+
+	void Animal::to_json(json &j) const
+	{
+		j = json{{"name", this->name}, {"age", this->age}};
+		json rarityJson = static_cast<int>(this->rarity);
+		j["rarity"] = rarityJson;
+	}
+
+	void Animal::from_json(const json &j, Space *ptrSpace)
+	{
+		this->from_json(j);
+		this->space = ptrSpace;
+	}
+	void Animal::from_json(const json &j)
+	{
+		this->name = j.at("name").get<std::string>();
+		this->age = j.at("age").get<int>();
+		this->rarity = static_cast<Rarity>(j["rarity"].get<int>());
+		this->space = nullptr;
+	}
