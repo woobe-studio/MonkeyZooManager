@@ -23,6 +23,14 @@ namespace Monkey
 		return this->name;
 	}
 
+	Space *Zoo::getSpace(long unsigned int countInVector)
+	{
+		if (countInVector < this->spaces.size())
+			return (this->spaces)[countInVector];
+		else
+			return nullptr;
+	}
+
 	void Zoo::addSpace(Space *spaceToAdd)
 	{
 		spaces.push_back(spaceToAdd);

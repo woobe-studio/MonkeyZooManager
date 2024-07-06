@@ -56,6 +56,7 @@ namespace Monkey
         ~Zoo();
         void setZooName(std::string newName);
         std::string getZooName();
+        Space *getSpace(long unsigned int countInVector);
         void addSpace(Space *spaceToAdd);
         void removeSpace(Space *spaceToRemove);
         void to_json(json &j) const;
