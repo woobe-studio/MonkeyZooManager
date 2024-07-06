@@ -27,4 +27,6 @@ namespace Monkey
     {
         proceduresCost = newCost;
     }
+    void MedicalNote::to_json(json &j) const {}
+    void MedicalNote::from_json(const json &j) {}
 }

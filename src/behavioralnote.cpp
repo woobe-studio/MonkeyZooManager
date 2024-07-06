@@ -47,4 +47,6 @@ namespace Monkey
     {
         isSocializing = newIsSocializing;
     }
+    void BehavioralNote::to_json(json &j) const {}
+    void BehavioralNote::from_json(const json &j) {}
 }

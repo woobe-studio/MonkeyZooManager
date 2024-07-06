@@ -19,4 +19,8 @@ namespace Monkey
     {
         examsToRetake = newExamsToRetake;
     }
+
+    void StudentMonkey::to_json(json &j) const {}
+    void StudentMonkey::from_json(const json &j) {}
+    void StudentMonkey::from_json(const json &j, Space *ptrSpace) {}
 }
