@@ -17,6 +17,8 @@
 #include <cstring>
 #include "../libs/bcrypt.h"
 #include "../libs/json.hpp"
+#include "../libs/uuid_v4.h"
+#include "../libs/endianness.h"
 
 namespace Monkey
 {
@@ -50,6 +52,7 @@ namespace Monkey
     private:
         std::string name;
         std::vector<Space *> spaces;
+        UUIDv4::UUID uniqueId;
 
     public:
         Zoo();
@@ -57,6 +60,9 @@ namespace Monkey
         void setZooName(std::string newName);
         std::string getZooName();
         Space *getSpace(long unsigned int countInVector);
+        UUIDv4::UUID getUniqueId();
+        void setUniqueId(UUIDv4::UUID newUuid);
+        int getSpaceCount();
         void addSpace(Space *spaceToAdd);
         void removeSpace(Space *spaceToRemove);
         void to_json(json &j) const;
@@ -465,6 +471,7 @@ namespace Monkey
         static AuthDaemon *instance;
         std::vector<User *> users;
         User *loggedInUser;
+        UUIDv4::UUIDGenerator<std::mt19937_64> uuidGenerator;
 
     private:
         AuthDaemon();
@@ -487,6 +494,9 @@ namespace Monkey
         void remUser(std::string user);
 
         User *retPointerOfUsername(std::string username);
+        User *retPointerOfLoggedInUser();
+
+        UUIDv4::UUID getRandomUUID();
 
         void to_json(json &j) const;
         void from_json(const json &j);

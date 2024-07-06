@@ -47,9 +47,6 @@ namespace Monkey
 			output << "0";
 		output << dt->tm_mon + 1 << "-" << dt->tm_year + 1900;
 
-		// Add the time zone information
-		output << " " << std::put_time(dt, "%z");
-
 		return output.str();
 	}
 }

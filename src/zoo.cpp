@@ -4,6 +4,8 @@ namespace Monkey
 {
 	Zoo::Zoo()
 	{
+		AuthDaemon *authenticationDaemon = AuthDaemon::getInstance();
+		this->setUniqueId(authenticationDaemon->getRandomUUID());
 	}
 	Zoo::~Zoo()
 	{
@@ -22,7 +24,10 @@ namespace Monkey
 	{
 		return this->name;
 	}
-
+	UUIDv4::UUID Zoo::getUniqueId()
+	{
+		return this->uniqueId;
+	}
 	Space *Zoo::getSpace(long unsigned int countInVector)
 	{
 		if (countInVector < this->spaces.size())
@@ -36,6 +41,14 @@ namespace Monkey
 		spaces.push_back(spaceToAdd);
 	}
 
+	int Zoo::getSpaceCount()
+	{
+		return spaces.size();
+	}
+	void Zoo::setUniqueId(UUIDv4::UUID newUuid)
+	{
+		this->uniqueId = newUuid;
+	}
 	void Zoo::removeSpace(Space *spaceToRemove)
 	{
 		std::vector<Space *>::iterator iterSpaces = spaces.begin();

@@ -81,6 +81,11 @@ namespace Monkey
 		return nullptr;
 	}
 
+	User *AuthDaemon::retPointerOfLoggedInUser()
+	{
+		return this->loggedInUser;
+	}
+
 	void AuthDaemon::addUser(User *user)
 	{
 		if (!this->doesUsernameExist(user->getUsername()))
@@ -108,6 +113,11 @@ namespace Monkey
 		User *temp = this->retPointerOfUsername(userToDel);
 		if (temp)
 			this->remUser(temp);
+	}
+
+	UUIDv4::UUID AuthDaemon::getRandomUUID()
+	{
+		return uuidGenerator.getUUID();
 	}
 
 	void AuthDaemon::to_json(json &j) const
