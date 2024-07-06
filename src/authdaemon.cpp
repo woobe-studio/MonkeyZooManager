@@ -115,6 +115,11 @@ namespace Monkey
 			this->remUser(temp);
 	}
 
+	UUIDv4::UUID AuthDaemon::getRandomUUID()
+	{
+		return uuidGenerator.getUUID();
+	}
+
 	void AuthDaemon::to_json(json &j) const
 	{
 		json usersJson;
