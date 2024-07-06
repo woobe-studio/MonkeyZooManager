@@ -14,6 +14,7 @@
 #include <functional>
 #include <cstring>
 #include "../libs/bcrypt.h"
+#include "../libs/json.hpp"
 
 namespace Monkey
 {
