@@ -36,6 +36,11 @@ namespace Monkey
 		spaces.push_back(spaceToAdd);
 	}
 
+	int Zoo::getSpaceCount()
+	{
+		return spaces.size();
+	}
+
 	void Zoo::removeSpace(Space *spaceToRemove)
 	{
 		std::vector<Space *>::iterator iterSpaces = spaces.begin();
