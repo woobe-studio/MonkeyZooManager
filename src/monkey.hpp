@@ -76,6 +76,7 @@ namespace Monkey
         std::vector<Space *> spaces;
 
     public:
+        int currentSpace();
         Zoo();
         ~Zoo();
         void setZooName(std::string newName);
