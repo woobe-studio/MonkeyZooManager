@@ -40,6 +40,13 @@ namespace Monkey
     {
         volunteerAmount = newVolunteerAmount;
     }
-    void Hospital::to_json(json &j) const {}
+    void Hospital::to_json(json &j) const
+    {
+        Space::to_json(j);
+        j["spaceType"] = "Hospital";
+        j["medicineQuantity"] = this->medicineQuantity;
+        j["bedsCount"] = this->bedsCount;
+        j["volunteerAmount"] = this->volunteerAmount;
+    }
     void Hospital::from_json(const json &j) {}
 }

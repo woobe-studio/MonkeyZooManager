@@ -19,7 +19,12 @@ namespace Monkey
     {
         poundsOfCandyCooked = newPoundsOfCandyCooked;
     }
-    void HeisenMonkey::to_json(json &j) const {}
+    void HeisenMonkey::to_json(json &j) const
+    {
+        Monkey::to_json(j);
+        j["poundsOfCandyCooked"] = this->poundsOfCandyCooked;
+        j["MonkeyType"] = "HeisenMonkey";
+    }
     void HeisenMonkey::from_json(const json &j) {}
     void HeisenMonkey::from_json(const json &j, Space *ptrSpace) {}
 }

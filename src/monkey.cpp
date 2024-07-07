@@ -16,6 +16,15 @@ namespace Monkey
     void Monkey::setToleratedTempMin(float newTemp) { this->toleratedTempMin = newTemp; }
     void Monkey::setFoodPounds(float newFoodPounds) { this->foodPounds = newFoodPounds; }
 
-    void Monkey::to_json(json &j) const {}
+    void Monkey::to_json(json &j) const
+    {
+        Animal::to_json(j);
+        j["monkeOrigin"] = this->monkeOrigin;
+        j["monkeJumpHeight"] = this->monkeJumpHeight;
+        j["toleratedTempMax"] = this->toleratedTempMax;
+        j["toleratedTempMin"] = this->toleratedTempMin;
+        j["foodPounds"] = this->foodPounds;
+        j["animalType"] = "Monkey";
+    }
     void Monkey::from_json(const json &j) {}
 }

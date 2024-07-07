@@ -67,9 +67,15 @@ namespace Monkey
 
 	void Space::to_json(json &j) const
 	{
-		for (auto iterAnimals : animals)
+		j = json{{"capacity", capacity}};
+		json animalsJson;
+		for (const auto &animal : animals)
 		{
+			json animalJson;
+			animal->to_json(animalJson);
+			animalsJson.push_back(animalJson);
 		}
+		j["animals"] = animalsJson;
 	}
 	void Space::from_json(const json &j) {}
 }

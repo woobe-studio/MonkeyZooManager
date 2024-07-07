@@ -67,6 +67,14 @@ namespace Monkey
 		j = json{{"username", this->username}, {"password", this->hashOfPassword}};
 		json typeJson = static_cast<int>(this->accType);
 		j["accType"] = typeJson;
+		if (accessToZoo)
+		{
+			j["accessToZoo"] = accessToZoo->getZooName();
+		}
+		else
+		{
+			j["accessToZoo"] = "";
+		}
 	}
 
 	void User::from_json(const json &j)

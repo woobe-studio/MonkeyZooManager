@@ -56,17 +56,30 @@ namespace Monkey
 
 	void Zoo::to_json(json &j) const
 	{
-		j = json{{"zooName", this->name}};
-
-		json spacesJson;
+		j = json{{"zooName", this->name}, {"spaces", json::array()}};
+		json &spacesJson = j["spaces"];
 		for (const auto &space : spaces)
 		{
 			json spaceJson;
-			space->to_json(spaceJson);
+			if (space != nullptr)
+			{
+				if (dynamic_cast<Cage *>(space) != nullptr)
+				{
+					spaceJson["spaceType"] = "Cage";
+				}
+				else if (dynamic_cast<Hospital *>(space) != nullptr)
+				{
+					spaceJson["spaceType"] = "Hospital";
+				}
+				else if (dynamic_cast<Enclosure *>(space) != nullptr)
+				{
+					spaceJson["spaceType"] = "Enclosure";
+				}
+
+				space->to_json(spaceJson);
+			}
 			spacesJson.push_back(spaceJson);
 		}
-		j["spaces"] = spacesJson;
 	}
 	void Zoo::from_json(const json &j) {}
-
 }

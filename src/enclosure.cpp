@@ -53,6 +53,11 @@ namespace Monkey
     {
         temperature = newTemperature;
     }
-    void Enclosure::to_json(json &j) const {}
+    void Enclosure::to_json(json &j) const
+    {
+        Space::to_json(j);
+        j["visitorsSpots"] = this->visitorSpots;
+        j["spaceType"] = "Enclosure";
+    }
     void Enclosure::from_json(const json &j) {}
 }
