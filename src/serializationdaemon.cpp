@@ -1,4 +1,5 @@
 #include "monkey.hpp"
+#include <fstream>
 
 namespace Monkey
 {
@@ -69,6 +70,53 @@ namespace Monkey
 		}
 	}
 
-	void save();
-	void load();
+	void SerializationDaemon::save()
+	{
+		json j;
+
+		for (const auto &zoo : zoos)
+		{
+			json zooJson;
+			zoo->to_json(zooJson);
+			j["zoos"].push_back(zooJson);
+		}
+
+		AuthDaemon *authDaemon = AuthDaemon::getInstance();
+		json authJson;
+		authDaemon->to_json(authJson);
+		j["authDaemon"] = authJson;
+
+		std::ofstream file("serialization.json");
+		file << j.dump(4);
+		file.close();
+	}
+
+	void SerializationDaemon::load()
+	{
+		std::ifstream file("serialization.json");
+		if (!file.is_open())
+		{
+			return;
+		}
+
+		json j;
+		file >> j;
+		file.close();
+
+		if (j.contains("zoos") && j["zoos"].is_array())
+		{
+			for (const auto &zooJson : j["zoos"])
+			{
+				Zoo *zoo = new Zoo();
+				zoo->from_json(zooJson);
+				zoos.push_back(zoo);
+			}
+		}
+
+		AuthDaemon *authDaemon = AuthDaemon::getInstance();
+		if (j.contains("authDaemon"))
+		{
+			authDaemon->from_json(j["authDaemon"]);
+		}
+	}
 }

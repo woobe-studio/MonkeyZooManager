@@ -54,4 +54,19 @@ namespace Monkey
 		}
 	}
 
+	void Zoo::to_json(json &j) const
+	{
+		j = json{{"zooName", this->name}};
+
+		json spacesJson;
+		for (const auto &space : spaces)
+		{
+			json spaceJson;
+			space->to_json(spaceJson);
+			spacesJson.push_back(spaceJson);
+		}
+		j["spaces"] = spacesJson;
+	}
+	void Zoo::from_json(const json &j) {}
+
 }
