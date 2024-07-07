@@ -47,9 +47,10 @@ namespace Monkey
 		{
 			if (spaceToRemove == (spaces)[iterSpaces - spaces.begin()])
 			{
-				spaces.erase(iterSpaces);
+				iterSpaces = this->spaces.erase(iterSpaces);
 			}
-			iterSpaces++;
+			else
+				iterSpaces++;
 		}
 	}
 
