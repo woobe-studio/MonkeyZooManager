@@ -17,11 +17,10 @@
 #include <cstring>
 #include "../libs/bcrypt.h"
 #include "../libs/json.hpp"
-#include "../libs/uuid_v4.h"
-#include "../libs/endianness.h"
 
 namespace Monkey
 {
+    class SerializationDaemon;
     class Space;
     class Animal;
     enum class Rarity;
@@ -47,12 +46,34 @@ namespace Monkey
 
     using json = nlohmann::json;
 
+    class SerializationDaemon
+    {
+    private:
+        static SerializationDaemon *instance;
+        std::vector<Zoo *> zoos;
+        SerializationDaemon();
+
+    public:
+        ~SerializationDaemon();
+        static SerializationDaemon *getInstance();
+        static void destroyDaemon();
+
+        int size();
+        Zoo *zooByIndex(long unsigned int countInVector);
+        Zoo *zooByName(const std::string &uuidStr);
+
+        void addZoo(Zoo *newZoo);
+        void removeZoo(Zoo *toDelZoo);
+
+        void save();
+        void load();
+    };
+
     class Zoo
     {
     private:
         std::string name;
         std::vector<Space *> spaces;
-        UUIDv4::UUID uniqueId;
 
     public:
         Zoo();
@@ -60,8 +81,6 @@ namespace Monkey
         void setZooName(std::string newName);
         std::string getZooName();
         Space *getSpace(long unsigned int countInVector);
-        UUIDv4::UUID getUniqueId();
-        void setUniqueId(UUIDv4::UUID newUuid);
         int getSpaceCount();
         void addSpace(Space *spaceToAdd);
         void removeSpace(Space *spaceToRemove);
@@ -471,7 +490,6 @@ namespace Monkey
         static AuthDaemon *instance;
         std::vector<User *> users;
         User *loggedInUser;
-        UUIDv4::UUIDGenerator<std::mt19937_64> uuidGenerator;
 
     private:
         AuthDaemon();
@@ -495,8 +513,6 @@ namespace Monkey
 
         User *retPointerOfUsername(std::string username);
         User *retPointerOfLoggedInUser();
-
-        UUIDv4::UUID getRandomUUID();
 
         void to_json(json &j) const;
         void from_json(const json &j);
