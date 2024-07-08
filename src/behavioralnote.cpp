@@ -56,5 +56,6 @@ namespace Monkey
         j["sleepTime"] = sleepTime;
         j["activeTime"] = activeTime;
         j["isSocializing"] = isSocializing;
+        j["noteType"] = "";
     }
 }
