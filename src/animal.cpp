@@ -5,7 +5,10 @@ namespace Monkey
 
 	Animal::Animal()
 	{
-		space = nullptr;
+		this->space = nullptr;
+		this->rarity = Rarity::COMMON;
+		this->age = 1;
+		this->name = "noName";
 	}
 
 	Animal::~Animal()
