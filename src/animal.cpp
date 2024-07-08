@@ -57,9 +57,53 @@ namespace Monkey
 
 	void Animal::to_json(json &j) const
 	{
-		j = json{{"name", this->name}, {"age", this->age}};
+		j = json{{"name", this->name}, {"age", this->age}, {"notes", json::array()}};
 		json rarityJson = static_cast<int>(this->rarity);
 		j["rarity"] = rarityJson;
+		json &notesJson = j["notes"];
+		for (const auto &note : notes)
+		{
+			json noteJson;
+			note->to_json(noteJson);
+			notesJson.push_back(noteJson);
+		}
+	}
+
+	void Animal::from_json(const json &j)
+	{
+		this->name = j.at("name").get<std::string>();
+		this->age = j.at("age").get<int>();
+		this->rarity = static_cast<Rarity>(j.at("rarity").get<int>());
+
+		const auto &notesJson = j.at("notes");
+		for (const auto &noteJson : notesJson)
+		{
+			std::string noteType = noteJson.at("noteType").get<std::string>();
+			Note *note = nullptr;
+
+			if (noteType == "MedicalNote")
+			{
+				note = new MedicalNote();
+			}
+			else if (noteType == "OtherNote")
+			{
+				note = new OtherNote();
+			}
+			else if (noteType == "BehavioralNote")
+			{
+				note = new BehavioralNote();
+			}
+			else
+			{
+				note = new Note();
+			}
+
+			if (note != nullptr)
+			{
+				note->from_json(noteJson);
+				notes.push_back(note);
+			}
+		}
 	}
 
 	void Animal::from_json(const json &j, Space *ptrSpace)
@@ -67,10 +111,4 @@ namespace Monkey
 		this->from_json(j);
 		this->space = ptrSpace;
 	}
-	void Animal::from_json(const json &j)
-	{
-		this->name = j.at("name").get<std::string>();
-		this->age = j.at("age").get<int>();
-		this->rarity = static_cast<Rarity>(j["rarity"].get<int>());
-		this->space = nullptr;
-	}
+}
