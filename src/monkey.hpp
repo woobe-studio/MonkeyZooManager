@@ -207,6 +207,8 @@ namespace Monkey
         LEGENDARY
     };
 
+    static std::string rarityToString(Rarity r);
+
     class Animal
     {
     protected:

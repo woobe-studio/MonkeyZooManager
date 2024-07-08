@@ -4,9 +4,9 @@ namespace Monkey
 {
     BehavioralNote::BehavioralNote()
     {
-        mood = 0;
-        sleepTime = 0.0;
-        activeTime = 0.0;
+        mood = 3;
+        sleepTime = 12.0;
+        activeTime = 5.0;
         isSocializing = false;
     }
 

@@ -3,6 +3,7 @@ namespace Monkey
 {
     GalacticMonkey::GalacticMonkey()
     {
+        this->blackHolesCreated = 0;
     }
 
     GalacticMonkey::~GalacticMonkey()

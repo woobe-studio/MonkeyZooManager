@@ -4,12 +4,12 @@ namespace Monkey
 {
     Enclosure::Enclosure()
     {
-        openTime.hour = 0;
-        openTime.minute = 0;
-        closeTime.hour = 0;
-        closeTime.minute = 0;
-        visitorSpots = 0;
-        temperature = 0.0f;
+        openTime.hour = 8;
+        openTime.minute = 30;
+        closeTime.hour = 19;
+        closeTime.minute = 45;
+        visitorSpots = 150;
+        temperature = 21.4f;
     }
 
     Enclosure::~Enclosure() {}

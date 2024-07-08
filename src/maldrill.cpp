@@ -3,6 +3,7 @@ namespace Monkey
 {
     Maldrill::Maldrill()
     {
+        this->jumpHeight = 1;
     }
 
     Maldrill::~Maldrill()

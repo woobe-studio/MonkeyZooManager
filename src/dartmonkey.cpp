@@ -3,6 +3,7 @@ namespace Monkey
 {
     DartMonkey::DartMonkey()
     {
+        this->baloonsPopped = 162;
     }
 
     DartMonkey::~DartMonkey()

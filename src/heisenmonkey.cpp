@@ -4,6 +4,7 @@ namespace Monkey
 {
     HeisenMonkey::HeisenMonkey()
     {
+        this->poundsOfCandyCooked = 450;
     }
 
     HeisenMonkey::~HeisenMonkey()

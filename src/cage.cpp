@@ -3,10 +3,10 @@ namespace Monkey
 {
     Cage::Cage()
     {
-        cageId = 0;
-        this->cageName = "";
-        numberOfCameras = 0;
-        cageColor = "";
+        cageId = 1;
+        this->cageName = "Outdoor Marmoset";
+        numberOfCameras = 2;
+        cageColor = "Black";
     }
 
     Cage::~Cage() {}

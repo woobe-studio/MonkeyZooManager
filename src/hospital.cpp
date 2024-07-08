@@ -4,9 +4,9 @@ namespace Monkey
 {
     Hospital::Hospital()
     {
-        medicineQuantity = 0;
-        bedsCount = 0;
-        volunteerAmount = 0;
+        medicineQuantity = 50;
+        bedsCount = 5;
+        volunteerAmount = 1;
     }
 
     Hospital::~Hospital() {}

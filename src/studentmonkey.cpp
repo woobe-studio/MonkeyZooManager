@@ -4,6 +4,7 @@ namespace Monkey
 {
     StudentMonkey::StudentMonkey()
     {
+        this->examsToRetake = 5;
     }
 
     StudentMonkey::~StudentMonkey()
