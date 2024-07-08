@@ -1,5 +1,8 @@
 #include "monkey.hpp"
 #include <algorithm>
+#ifdef __linux__
+#include <bits/types/struct_tm.h>
+#endif
 
 namespace Monkey
 {
