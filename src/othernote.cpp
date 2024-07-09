@@ -24,8 +24,7 @@ namespace Monkey
         Note::to_json(j);
 
         j["topic"] = topic;
-
-        j["noteType"] = "behavioralNote";
+        j["noteType"] = "otherNote";
     }
     void OtherNote::from_json(const json &j)
     {

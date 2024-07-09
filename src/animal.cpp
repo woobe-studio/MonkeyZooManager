@@ -86,15 +86,15 @@ namespace Monkey
 			std::string noteType = noteJson.at("noteType").get<std::string>();
 			Note *note = nullptr;
 
-			if (noteType == "MedicalNote")
+			if (noteType == "medicalNote")
 			{
 				note = new MedicalNote();
 			}
-			else if (noteType == "OtherNote")
+			else if (noteType == "otherNote")
 			{
 				note = new OtherNote();
 			}
-			else if (noteType == "BehavioralNote")
+			else if (noteType == "behavioralNote")
 			{
 				note = new BehavioralNote();
 			}

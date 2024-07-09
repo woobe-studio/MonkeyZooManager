@@ -34,7 +34,7 @@ namespace Monkey
 
         j["costOfMedications"] = costOfMedications;
         j["proceduresCost"] = proceduresCost;
-        j["noteType"] = "behavioralNote";
+        j["noteType"] = "medicalNote";
     }
     void MedicalNote::from_json(const json &j)
     {
