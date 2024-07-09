@@ -88,50 +88,42 @@ namespace Monkey
 
 	void Zoo::from_json(const json &j)
 	{
-		try
+		if (j.contains("zooName") && j["zooName"].is_string())
 		{
-			this->name = j.at("zooName").get<std::string>();
+			this->name = j["zooName"].get<std::string>();
+		}
 
-			const auto &spacesJson = j.at("spaces");
+		if (j.contains("spaces") && j["spaces"].is_array())
+		{
+			const json &spacesJson = j["spaces"];
 			for (const auto &spaceJson : spacesJson)
 			{
-				std::string spaceType = spaceJson.at("spaceType").get<std::string>();
+				if (spaceJson.contains("spaceType") && spaceJson["spaceType"].is_string())
+				{
+					std::string spaceType = spaceJson["spaceType"].get<std::string>();
 
-				Space *space = nullptr;
-				if (spaceType == "Cage")
-				{
-					space = new Cage();
-				}
-				else if (spaceType == "Hospital")
-				{
-					space = new Hospital();
-				}
-				else if (spaceType == "Enclosure")
-				{
-					space = new Enclosure();
-				}
-				else
-				{
-					throw std::invalid_argument("Received invalid space inside JSON DESERIALIZATION. Type: " + spaceType);
-				}
-
-				if (space != nullptr)
-				{
-					space->from_json(spaceJson);
-					this->spaces.push_back(space);
-				}
-				else
-				{
-					for (const auto &space : this->spaces)
+					Space *space = nullptr;
+					if (spaceType == "Cage")
 					{
-						delete space;
+						space = new Cage();
 					}
-					throw std::invalid_argument("");
+					else if (spaceType == "Hospital")
+					{
+						space = new Hospital();
+					}
+					else if (spaceType == "Enclosure")
+					{
+						space = new Enclosure();
+					}
+
+					if (space != nullptr)
+					{
+						space->from_json(spaceJson);
+						this->spaces.push_back(space);
+					}
 				}
 			}
 		}
-		catch (const json::exception &e)
-		{
-		}
 	}
+
 }
