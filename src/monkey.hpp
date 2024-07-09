@@ -1,5 +1,6 @@
 #ifndef MONKEY_H
 #define MONKEY_H
+#include <fstream>
 #ifdef __linux__
 #include <bits/types/struct_tm.h>
 #endif
@@ -16,6 +17,7 @@
 #include <cstdio>
 #include <functional>
 #include <cstring>
+#include <ios>
 #include "../libs/bcrypt.h"
 #include "../libs/json.hpp"
 
@@ -524,6 +526,7 @@ namespace Monkey
         bool enabledAuth;
         bool enabledAdminActions;
         LoggingDaemon();
+        std::fstream logFile;
 
     public:
         ~LoggingDaemon();

@@ -32,16 +32,23 @@ namespace Monkey
 
 	void Animal::addNote(Note *newNote)
 	{
-		this->notes.push_back(newNote);
-		if (newNote)
+		if (newNote != nullptr)
 		{
-			try
+			this->notes.push_back(newNote);
+			if (newNote)
 			{
-				newNote->setAnimal(this);
+				try
+				{
+					newNote->setAnimal(this);
+				}
+				catch (...)
+				{
+				}
 			}
-			catch (...)
-			{
-			}
+		}
+		else
+		{
+			throw std::invalid_argument("Animal class: tried adding nullptr note.");
 		}
 	}
 	void Animal::removeNote(Note *noteToRemove)

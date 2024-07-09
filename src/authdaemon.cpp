@@ -1,4 +1,5 @@
 #include "monkey.hpp"
+#include <stdexcept>
 
 namespace Monkey
 {
@@ -88,6 +89,8 @@ namespace Monkey
 
 	void AuthDaemon::addUser(User *user)
 	{
+		if (user == nullptr)
+			throw std::invalid_argument("AuthDaemon got nullptr as user.");
 		if (!this->doesUsernameExist(user->getUsername()))
 		{
 			this->users.push_back(user);
