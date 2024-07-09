@@ -26,5 +26,13 @@ namespace Monkey
         j["foodPounds"] = this->foodPounds;
         j["animalType"] = "Monkey";
     }
-    void Monkey::from_json(const json &j) {}
+    void Monkey::from_json(const json &j)
+    {
+        Animal::from_json(j);
+        this->monkeOrigin = j.at("monkeOrigin").get<std::string>();
+        this->monkeJumpHeight = j.at("monkeJumpHeight").get<float>();
+        this->toleratedTempMax = j.at("toleratedTempMax").get<float>();
+        this->toleratedTempMin = j.at("toleratedTempMin").get<float>();
+        this->foodPounds = j.at("foodPounds").get<float>();
+    }
 }

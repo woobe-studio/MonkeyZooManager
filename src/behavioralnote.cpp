@@ -56,6 +56,14 @@ namespace Monkey
         j["sleepTime"] = sleepTime;
         j["activeTime"] = activeTime;
         j["isSocializing"] = isSocializing;
-        j["noteType"] = "";
+        j["noteType"] = "behavioralNote";
+    }
+    void BehavioralNote::from_json(const json &j)
+    {
+        Note::from_json(j);
+        this->mood = j.at("mood").get<int>();
+        this->sleepTime = j.at("sleepTime").get<float>();
+        this->activeTime = j.at("activeTime").get<float>();
+        this->isSocializing = j.at("isSocializing").get<bool>();
     }
 }

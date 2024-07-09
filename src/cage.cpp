@@ -59,5 +59,12 @@ namespace Monkey
         j["numberOfCameras"] = this->numberOfCameras;
         j["cageColor"] = this->cageColor;
     }
-    void Cage::from_json(const json &j) {}
+    void Cage::from_json(const json &j)
+    {
+        Space::from_json(j);
+        cageId = j.at("cageId").get<int>();
+        cageName = j.at("cageName").get<std::string>();
+        numberOfCameras = j.at("numberOfCameras").get<int>();
+        cageColor = j.at("cageColor").get<std::string>();
+    }
 }

@@ -23,6 +23,7 @@ namespace Monkey
 	{
 		return this->name;
 	}
+
 	Space *Zoo::getSpace(long unsigned int countInVector)
 	{
 		if (countInVector < this->spaces.size())
@@ -40,6 +41,7 @@ namespace Monkey
 	{
 		return spaces.size();
 	}
+
 	void Zoo::removeSpace(Space *spaceToRemove)
 	{
 		std::vector<Space *>::iterator iterSpaces = spaces.begin();
@@ -57,29 +59,69 @@ namespace Monkey
 	void Zoo::to_json(json &j) const
 	{
 		j = json{{"zooName", this->name}, {"spaces", json::array()}};
+
 		json &spacesJson = j["spaces"];
 		for (const auto &space : spaces)
 		{
-			json spaceJson;
 			if (space != nullptr)
 			{
-				if (dynamic_cast<Cage *>(space) != nullptr)
+				json spaceJson;
+				if (typeid(*space) == typeid(Cage))
 				{
 					spaceJson["spaceType"] = "Cage";
 				}
-				else if (dynamic_cast<Hospital *>(space) != nullptr)
+				else if (typeid(*space) == typeid(Hospital))
 				{
 					spaceJson["spaceType"] = "Hospital";
 				}
-				else if (dynamic_cast<Enclosure *>(space) != nullptr)
+				else if (typeid(*space) == typeid(Enclosure))
 				{
 					spaceJson["spaceType"] = "Enclosure";
 				}
 
 				space->to_json(spaceJson);
+				spacesJson.push_back(spaceJson);
 			}
-			spacesJson.push_back(spaceJson);
 		}
 	}
-	void Zoo::from_json(const json &j) {}
+
+	void Zoo::from_json(const json &j)
+	{
+		try
+		{
+			this->name = j.at("zooName").get<std::string>();
+
+			const auto &spacesJson = j.at("spaces");
+			for (const auto &spaceJson : spacesJson)
+			{
+				std::string spaceType = spaceJson.at("spaceType").get<std::string>();
+
+				Space *space = nullptr;
+				if (spaceType == "Cage")
+				{
+					space = new Cage();
+				}
+				else if (spaceType == "Hospital")
+				{
+					space = new Hospital();
+				}
+				else if (spaceType == "Enclosure")
+				{
+					space = new Enclosure();
+				}
+				else
+				{
+				}
+
+				if (space != nullptr)
+				{
+					space->from_json(spaceJson);
+					spaces.push_back(space);
+				}
+			}
+		}
+		catch (const json::exception &e)
+		{
+		}
+	}
 }

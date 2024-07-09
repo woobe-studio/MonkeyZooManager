@@ -48,5 +48,11 @@ namespace Monkey
         j["bedsCount"] = this->bedsCount;
         j["volunteerAmount"] = this->volunteerAmount;
     }
-    void Hospital::from_json(const json &j) {}
+    void Hospital::from_json(const json &j)
+    {
+        Space::from_json(j);
+        this->medicineQuantity = j.at("medicineQuantity").get<int>();
+        this->bedsCount = j.at("bedsCount").get<int>();
+        this->volunteerAmount = j.at("volunteerAmount").get<int>();
+    }
 }

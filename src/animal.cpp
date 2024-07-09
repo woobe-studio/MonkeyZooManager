@@ -103,15 +103,10 @@ namespace Monkey
 
 			if (note != nullptr)
 			{
+				note->setAnimal(this);
 				note->from_json(noteJson);
 				notes.push_back(note);
 			}
 		}
-	}
-
-	void Animal::from_json(const json &j, Space *ptrSpace)
-	{
-		this->from_json(j);
-		this->space = ptrSpace;
 	}
 }

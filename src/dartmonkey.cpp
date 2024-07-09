@@ -26,5 +26,9 @@ namespace Monkey
         j["MonkeyType"] = "DartMonkey";
     }
     void DartMonkey::from_json(const json &j) {}
-    void DartMonkey::from_json(const json &j, Space *ptrSpace) {}
+    void DartMonkey::from_json(const json &j)
+    {
+        Monkey::from_json(j);
+        this->baloonsPopped = j.at("baloonsPopped").get<int>();
+    }
 }

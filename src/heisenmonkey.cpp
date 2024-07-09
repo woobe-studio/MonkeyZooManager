@@ -26,6 +26,9 @@ namespace Monkey
         j["poundsOfCandyCooked"] = this->poundsOfCandyCooked;
         j["MonkeyType"] = "HeisenMonkey";
     }
-    void HeisenMonkey::from_json(const json &j) {}
-    void HeisenMonkey::from_json(const json &j, Space *ptrSpace) {}
+    void HeisenMonkey::from_json(const json &j)
+    {
+        Monkey::from_json(j);
+        this->poundsOfCandyCooked = j.at("poundsOfCandyCooked").get<float>();
+    }
 }

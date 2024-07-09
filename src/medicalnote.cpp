@@ -34,5 +34,12 @@ namespace Monkey
 
         j["costOfMedications"] = costOfMedications;
         j["proceduresCost"] = proceduresCost;
+        j["noteType"] = "behavioralNote";
+    }
+    void MedicalNote::from_json(const json &j)
+    {
+        Note::from_json(j);
+        this->costOfMedications = j.at("costOfMedications").get<float>();
+        this->proceduresCost = j.at("procedureCost").get<float>();
     }
 }

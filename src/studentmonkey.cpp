@@ -27,6 +27,9 @@ namespace Monkey
         j["examsToRetake"] = this->examsToRetake;
         j["MonkeyType"] = "StudentMonkey";
     }
-    void StudentMonkey::from_json(const json &j) {}
-    void StudentMonkey::from_json(const json &j, Space *ptrSpace) {}
+    void StudentMonkey::from_json(const json &j)
+    {
+        Monkey::from_json(j);
+        this->examsToRetake = j.at("examsToRetake").get<int>();
+    }
 }

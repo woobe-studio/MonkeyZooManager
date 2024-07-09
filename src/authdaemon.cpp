@@ -129,7 +129,7 @@ namespace Monkey
 
 	void AuthDaemon::from_json(const json &j)
 	{
-		const auto &usersJson = j.at("animals");
+		const auto &usersJson = j.at("users");
 		for (const auto &oneUserJson : usersJson)
 		{
 			User *tempUser = new User();

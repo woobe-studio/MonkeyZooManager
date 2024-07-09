@@ -4,6 +4,7 @@
 #include <bits/types/struct_tm.h>
 #endif
 #include <time.h>
+#include <stdexcept>
 #include <ctime>
 #include <sstream>
 #include <stdlib.h>

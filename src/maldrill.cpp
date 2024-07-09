@@ -25,6 +25,9 @@ namespace Monkey
         j["jumpHeight"] = this->jumpHeight;
         j["MonkeyType"] = "Maldrill";
     }
-    void Maldrill::from_json(const json &j) {}
-    void Maldrill::from_json(const json &j, Space *ptrSpace) {}
+    void Maldrill::from_json(const json &j)
+    {
+        Monkey::from_json(j);
+        this->jumpHeight = j.at("jumpHeight").get<float>();
+    }
 }

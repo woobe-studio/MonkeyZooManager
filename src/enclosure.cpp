@@ -59,5 +59,9 @@ namespace Monkey
         j["visitorsSpots"] = this->visitorSpots;
         j["spaceType"] = "Enclosure";
     }
-    void Enclosure::from_json(const json &j) {}
+    void Enclosure::from_json(const json &j)
+    {
+        Space::from_json(j);
+        visitorSpots = j.at("visitorsSpots").get<int>();
+    }
 }

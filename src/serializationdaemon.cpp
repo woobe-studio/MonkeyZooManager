@@ -9,6 +9,10 @@ namespace Monkey
 	}
 	SerializationDaemon::~SerializationDaemon()
 	{
+		for (auto i : this->zoos)
+			delete i;
+		AuthDaemon *authDaemon = AuthDaemon::getInstance();
+		authDaemon->destroyDaemon();
 	}
 	SerializationDaemon *SerializationDaemon::getInstance()
 	{
