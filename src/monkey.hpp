@@ -238,7 +238,6 @@ namespace Monkey
 
         virtual void to_json(json &j) const;
         virtual void from_json(const json &j);
-        virtual void from_json(const json &j, Space *ptrSpace);
     };
 
     class Monkey : public Animal
@@ -375,7 +374,6 @@ namespace Monkey
 
         void to_json(json &j) const override;
         void from_json(const json &j) override;
-        void from_json(const json &j, Space *ptrSpace) override;
     };
 
     class StudentMonkey : public Monkey
@@ -394,7 +392,6 @@ namespace Monkey
 
         void to_json(json &j) const override;
         void from_json(const json &j) override;
-        void from_json(const json &j, Space *ptrSpace) override;
     };
 
     class GalacticMonkey : public Monkey
@@ -413,7 +410,6 @@ namespace Monkey
 
         void to_json(json &j) const override;
         void from_json(const json &j) override;
-        void from_json(const json &j, Space *ptrSpace) override;
     };
 
     class DartMonkey : public Monkey
@@ -432,7 +428,6 @@ namespace Monkey
 
         void to_json(json &j) const override;
         void from_json(const json &j) override;
-        void from_json(const json &j, Space *ptrSpace) override;
     };
 
     class Maldrill : public Monkey
@@ -451,7 +446,6 @@ namespace Monkey
 
         void to_json(json &j) const override;
         void from_json(const json &j) override;
-        void from_json(const json &j, Space *ptrSpace) override;
     };
 
     enum class userType
