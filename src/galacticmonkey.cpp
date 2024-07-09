@@ -27,6 +27,7 @@ namespace Monkey
     }
     void GalacticMonkey::from_json(const json &j)
     {
+        Monkey::from_json(j);
+        this->blackHolesCreated = j.at("blackHolesCreated").get<int>();
     }
-    void GalacticMonkey::from_json(const json &j, Space *ptrSpace) {}
 }

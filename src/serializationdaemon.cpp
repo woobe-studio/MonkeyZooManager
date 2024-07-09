@@ -57,8 +57,7 @@ namespace Monkey
 
 	void SerializationDaemon::addZoo(Zoo *newZoo)
 	{
-		if (!this->zooByName(newZoo->getZooName()))
-			this->zoos.push_back(newZoo);
+		this->zoos.push_back(newZoo);
 	}
 	void SerializationDaemon::removeZoo(Zoo *toDelZoo)
 	{

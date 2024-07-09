@@ -78,6 +78,7 @@ namespace Monkey
 		}
 		j["animals"] = animalsJson;
 	}
+
 	void Space::from_json(const json &j)
 	{
 		capacity = j.at("capacity").get<int>();
@@ -86,13 +87,15 @@ namespace Monkey
 		for (const auto &animalJson : animalsJson)
 		{
 			Animal *animal = nullptr;
-			std::string mainType = animalJson.at("MonkeyType").get<std::string>();
+			std::string mainType = animalJson.at("animalType").get<std::string>();
 			if (mainType == "Monkey")
 			{
 				std::string animalType = animalJson.at("MonkeyType").get<std::string>();
 
 				if (animalType == "DartMonkey")
+				{
 					animal = new DartMonkey();
+				}
 				else if (animalType == "StudentMonkey")
 				{
 					animal = new StudentMonkey();
@@ -116,6 +119,7 @@ namespace Monkey
 			}
 			else
 			{
+
 				throw std::invalid_argument("Received invalid animal inside JSON DESERIALIZATION. Type: " + mainType);
 			}
 
@@ -123,12 +127,18 @@ namespace Monkey
 			{
 				animal->setSpace(this);
 				animal->from_json(animalJson);
-				animals.push_back(animal);
+				this->animals.push_back(animal);
 			}
 			else
 			{
-				throw std::runtime_error("allocation error - got nullpointer at JSON DESERIALIZATION");
+
+				for (const auto &animal : this->animals)
+				{
+					delete animal;
+				}
+				throw std::runtime_error("Allocation error - got nullptr at JSON DESERIALIZATION");
 			}
 		}
 	}
+
 }

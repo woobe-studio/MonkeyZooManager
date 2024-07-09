@@ -60,7 +60,9 @@ namespace Monkey
 
 	void Animal::to_json(json &j) const
 	{
-		j = json{{"name", this->name}, {"age", this->age}, {"notes", json::array()}};
+		j["name"] = this->name;
+		j["age"] = this->age;
+		j["notes"] = json::array();
 		json rarityJson = static_cast<int>(this->rarity);
 		j["rarity"] = rarityJson;
 		json &notesJson = j["notes"];

@@ -1,4 +1,5 @@
 #include "monkey.hpp"
+#include <stdexcept>
 
 namespace Monkey
 {
@@ -111,12 +112,21 @@ namespace Monkey
 				}
 				else
 				{
+					throw std::invalid_argument("Received invalid space inside JSON DESERIALIZATION. Type: " + spaceType);
 				}
 
 				if (space != nullptr)
 				{
 					space->from_json(spaceJson);
-					spaces.push_back(space);
+					this->spaces.push_back(space);
+				}
+				else
+				{
+					for (const auto &space : this->spaces)
+					{
+						delete space;
+					}
+					throw std::invalid_argument("");
 				}
 			}
 		}
