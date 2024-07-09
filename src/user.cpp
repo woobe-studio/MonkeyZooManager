@@ -67,7 +67,7 @@ namespace Monkey
 		j = json{{"username", this->username}, {"password", this->hashOfPassword}};
 		json typeJson = static_cast<int>(this->accType);
 		j["accType"] = typeJson;
-		if (accessToZoo)
+		if (accessToZoo != nullptr)
 		{
 			j["accessToZoo"] = accessToZoo->getZooName();
 		}
@@ -82,5 +82,10 @@ namespace Monkey
 		this->username = j.at("username").get<std::string>();
 		this->hashOfPassword = j.at("password").get<std::string>();
 		this->accType = static_cast<userType>(j["accType"].get<int>());
+		std::string zooName = j["accessToZoo"].get<std::string>();
+		Monkey::SerializationDaemon *serial = Monkey::SerializationDaemon::getInstance();
+		Zoo *tmpZooAddr = serial->zooByName(zooName);
+		if (tmpZooAddr != nullptr)
+			this->accessToZoo = tmpZooAddr;
 	}
 }

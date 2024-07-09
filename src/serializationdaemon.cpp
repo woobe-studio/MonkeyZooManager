@@ -45,7 +45,7 @@ namespace Monkey
 		std::vector<Zoo *>::iterator iter = this->zoos.begin();
 		while (iter != this->zoos.end())
 		{
-			if (!(((zoos)[iter - this->zoos.begin()])->getZooName() == uuid))
+			if ((((zoos)[iter - this->zoos.begin()])->getZooName() == uuid))
 			{
 				return (zoos)[iter - this->zoos.begin()];
 			}
