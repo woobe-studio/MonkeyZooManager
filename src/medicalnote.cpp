@@ -40,6 +40,6 @@ namespace Monkey
     {
         Note::from_json(j);
         this->costOfMedications = j.at("costOfMedications").get<float>();
-        this->proceduresCost = j.at("procedureCost").get<float>();
+        this->proceduresCost = j.at("proceduresCost").get<float>();
     }
 }
