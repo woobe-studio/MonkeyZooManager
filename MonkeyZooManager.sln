@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.10.35013.160
+VisualStudioVersion = 17.10.35027.167
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MonkeyZooManager", "MonkeyZooManager.vcxproj", "{FABB06A6-6ADF-41BF-972E-8562EC70703D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MonkeyZooManager", "MonkeyZooManager.vcxproj", "{2D852DCE-BE24-45DB-AB32-58F734F48E62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FABB06A6-6ADF-41BF-972E-8562EC70703D}.Debug|x64.ActiveCfg = Debug|x64
-		{FABB06A6-6ADF-41BF-972E-8562EC70703D}.Debug|x64.Build.0 = Debug|x64
-		{FABB06A6-6ADF-41BF-972E-8562EC70703D}.Release|x64.ActiveCfg = Release|x64
-		{FABB06A6-6ADF-41BF-972E-8562EC70703D}.Release|x64.Build.0 = Release|x64
+		{2D852DCE-BE24-45DB-AB32-58F734F48E62}.Debug|x64.ActiveCfg = Debug|x64
+		{2D852DCE-BE24-45DB-AB32-58F734F48E62}.Debug|x64.Build.0 = Debug|x64
+		{2D852DCE-BE24-45DB-AB32-58F734F48E62}.Release|x64.ActiveCfg = Release|x64
+		{2D852DCE-BE24-45DB-AB32-58F734F48E62}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {74252318-4D74-4245-9A1B-3BB4ADBA3632}
+		SolutionGuid = {6E109676-5A7F-4E45-A725-189F94388FD0}
 	EndGlobalSection
 EndGlobal
