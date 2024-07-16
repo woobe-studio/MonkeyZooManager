@@ -1,11 +1,16 @@
 #include "login.h"
 #include <QMessageBox>
+#include <QPixmap> // Include QPixmap for loading the icon image
 
 LoginForm::LoginForm(QWidget* parent) :
     QWidget(parent),
     ui(new Ui::LoginForm)
 {
     ui->setupUi(this);
+
+    // Set application icon
+    QPixmap pixmap(":/images/app_icon.png"); // Replace with your actual icon path
+    this->setWindowIcon(QIcon(pixmap));
 
     // Connect the login button click signal to the slot
     connect(ui->pushButtonLogin, &QPushButton::clicked, this, &LoginForm::on_pushButtonLogin_clicked);

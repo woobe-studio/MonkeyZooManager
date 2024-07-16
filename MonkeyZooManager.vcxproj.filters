@@ -46,12 +46,12 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="qt\scripts\login\login.cpp">
+    <ClCompile Include="qt\templates\login\login.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="qt\scripts\login\login.h">
+    <QtMoc Include="qt\templates\login\login.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
