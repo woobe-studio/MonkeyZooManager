@@ -35,19 +35,24 @@
     <ClCompile Include="MonkeyZooManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ResourceCompile Include="$pro_name$.rc">
-    </ResourceCompile>
-    <None Include="$pro_name$.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <None Include="$pro_name$.def">
-      <Filter>Resource Files</Filter>
-    </None>
     <None Include="MonkeyZooManager.ico">
       <Filter>Resource Files</Filter>
     </None>
     <ResourceCompile Include="MonkeyZooManager.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qt\scripts\login\login.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="qt\scripts\login\login.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
   </ItemGroup>
 </Project>

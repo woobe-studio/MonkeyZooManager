@@ -1,10 +1,10 @@
-#include "MonkeyZooManager.h"
-#include <QtWidgets/QApplication>
+#include <QApplication>
+#include "login.h"
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
     QApplication a(argc, argv);
-    MonkeyZooManager w;
+    LoginForm w;
     w.show();
     return a.exec();
 }
