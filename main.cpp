@@ -1,5 +1,5 @@
 #include <QApplication>
-#include "qt/templates/login/login.h"
+#include "login.h"
 
 int main(int argc, char* argv[])
 {

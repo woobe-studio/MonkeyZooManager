@@ -92,8 +92,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="qt\templates\login\login.cpp" />
+    <ClCompile Include="login.cpp" />
+    <QtRcc Include="login.qrc" />
     <QtRcc Include="MonkeyZooManager.qrc" />
+    <QtUic Include="login.ui" />
     <QtUic Include="MonkeyZooManager.ui" />
     <QtMoc Include="MonkeyZooManager.h" />
     <ClCompile Include="MonkeyZooManager.cpp" />
@@ -102,10 +104,10 @@
     <ResourceCompile Include="MonkeyZooManager.rc" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="qt\templates\login\login.h" />
+    <QtMoc Include="login.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MonkeyZooManager\x64\Debug\uic\ui_loginform.h" />
+    <Image Include="login.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

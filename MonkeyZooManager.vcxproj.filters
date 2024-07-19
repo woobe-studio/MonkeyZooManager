@@ -41,18 +41,31 @@
     <ResourceCompile Include="MonkeyZooManager.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+    <QtRcc Include="..\..\..\Downloads\qt\templates\login\login.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="qt\templates\login\login.cpp">
+    <ClCompile Include="..\..\..\Downloads\qt\templates\login\login.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="qt\templates\login\login.h">
+    <QtUic Include="..\..\..\Downloads\qt\templates\login\login.ui">
+      <Filter>Form Files</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="..\..\..\Downloads\qt\templates\login\login.h">
       <Filter>Header Files</Filter>
     </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\..\..\Downloads\qt\templates\login\login.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

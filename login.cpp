@@ -1,5 +1,5 @@
 #include "login.h"
-#include "ui_loginform.h" // This is the generated header file
+#include "ui_login.h" // This is the generated header file
 
 #include <QMessageBox>
 
