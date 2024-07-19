@@ -16,8 +16,8 @@ int main(int argc, char* argv[])
 }
 
 void custom_init() {
-    //Monkey::AuthDaemon* authorizationDaemon = Monkey::AuthDaemon::getInstance();
-  /*  Monkey::User* usr = new Monkey::User;
+    Monkey::AuthDaemon* authorizationDaemon = Monkey::AuthDaemon::getInstance();
+    Monkey::User* usr = new Monkey::User;
     usr->setUsername("boss");
     usr->setPassword("strong");
     Monkey::Zoo* zoo = new Monkey::Zoo;
@@ -63,5 +63,5 @@ void custom_init() {
         }
         testspace->addAnimal(itAnimal);
         i++;
-    }*/
+    }
 }

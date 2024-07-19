@@ -66,6 +66,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <AdditionalIncludeDirectories>C:\Users\woobe\Documents\GitHub\MonkeyZooManager;C:\Users\woobe\Documents\GitHub\MonkeyZooManager\MonkeyZooManager\libs;C:\Users\woobe\Documents\GitHub\MonkeyZooManager\MonkeyZooManager\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>C:\Users\woobe\Documents\GitHub\MonkeyZooManager\MonkeyZooManager\libs;C:\Users\woobe\Documents\GitHub\MonkeyZooManager\MonkeyZooManager\src;C:\Users\woobe\Documents\GitHub\MonkeyZooManager;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>

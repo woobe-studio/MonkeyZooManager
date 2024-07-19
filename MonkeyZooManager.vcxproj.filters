@@ -115,13 +115,10 @@
     <ClCompile Include="MonkeyZooManager\src\user.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\node_blf.h">
-      <Filter>Header Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\bcrypt.cpp">
+    <ClCompile Include="MonkeyZooManager\libs\bcrypt.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\blowfish.cpp">
+    <ClCompile Include="MonkeyZooManager\libs\blowfish.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -151,6 +148,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MonkeyZooManager\libs\bcrypt.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MonkeyZooManager\libs\node_blf.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

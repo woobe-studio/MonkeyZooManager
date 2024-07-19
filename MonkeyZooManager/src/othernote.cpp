@@ -18,7 +18,6 @@ namespace Monkey
         topic = newTopic;
     }
 
-    void OtherNote::to_json(json &j) const {}
     void OtherNote::to_json(json &j) const
     {
         Note::to_json(j);

@@ -25,7 +25,6 @@ namespace Monkey
         j["baloonsPopped"] = this->baloonsPopped;
         j["MonkeyType"] = "DartMonkey";
     }
-    void DartMonkey::from_json(const json &j) {}
     void DartMonkey::from_json(const json &j)
     {
         Monkey::from_json(j);

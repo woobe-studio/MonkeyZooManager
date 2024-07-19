@@ -43,6 +43,7 @@
 #include "openbsd.h"
 
 #ifdef _WIN32
+
 #define snprintf _snprintf
 #endif
 
