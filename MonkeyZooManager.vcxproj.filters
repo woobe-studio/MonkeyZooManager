@@ -121,6 +121,9 @@
     <ClCompile Include="MonkeyZooManager\libs\blowfish.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="scripts.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="login.ui">
@@ -151,6 +154,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MonkeyZooManager\libs\node_blf.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scripts.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -21,6 +21,7 @@ signals:
 private slots:
     void on_pushButtonLogin_clicked();
     void handleLoginSuccessful();
+    bool CheckTakenData(const std::string& login, const std::string& password);
 
 private:
     Ui::LoginForm* ui;
