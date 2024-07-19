@@ -1,5 +1,5 @@
 #include "login.h"
-#include "ui_login.h" // This is the generated header file
+#include "ui_login.h"
 
 #include <QMessageBox>
 
@@ -8,8 +8,6 @@ LoginForm::LoginForm(QWidget* parent)
 {
     ui->setupUi(this);
 
-    // Connect the login button's clicked signal to the appropriate slot
-    connect(ui->pushButtonLogin, &QPushButton::clicked, this, &LoginForm::on_pushButtonLogin_clicked);
 }
 
 LoginForm::~LoginForm()
