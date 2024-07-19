@@ -1,5 +1,6 @@
 #include <QApplication>
 #include "login.h"
+#include "src/monkey.hpp"
 
 int main(int argc, char* argv[])
 {
