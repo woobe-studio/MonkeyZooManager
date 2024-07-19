@@ -104,6 +104,9 @@
   <ItemGroup>
     <QtMoc Include="qt\templates\login\login.h" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MonkeyZooManager\x64\Debug\uic\ui_loginform.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
     <Import Project="$(QtMsBuild)\qt.targets" />

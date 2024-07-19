@@ -1,44 +1,26 @@
 #include "login.h"
-#include <QVBoxLayout>
+#include "ui_loginform.h" // This is the generated header file
+
 #include <QMessageBox>
 
 LoginForm::LoginForm(QWidget* parent)
-    : QWidget(parent), ui(nullptr)
+    : QWidget(parent), ui(new Ui::LoginForm)
 {
-    // Initialize widgets
-    labelTitle = new QLabel("Login", this);
-    labelLogo = new QLabel(this);
-    lineEditUsername = new QLineEdit(this);
-    lineEditPassword = new QLineEdit(this);
-    pushButtonLogin = new QPushButton("Login", this);
-
-    // Set up the layout (basic example, adjust as needed)
-    QVBoxLayout* layout = new QVBoxLayout(this);
-    layout->addWidget(labelLogo);
-    layout->addWidget(labelTitle);
-    layout->addWidget(lineEditUsername);
-    layout->addWidget(lineEditPassword);
-    layout->addWidget(pushButtonLogin);
-    setLayout(layout);
-
-    // Set properties for widgets
-    lineEditUsername->setPlaceholderText("Username");
-    lineEditPassword->setPlaceholderText("Password");
-    lineEditPassword->setEchoMode(QLineEdit::Password);
+    ui->setupUi(this);
 
     // Connect the login button's clicked signal to the appropriate slot
-    connect(pushButtonLogin, &QPushButton::clicked, this, &LoginForm::on_pushButtonLogin_clicked);
+    connect(ui->pushButtonLogin, &QPushButton::clicked, this, &LoginForm::on_pushButtonLogin_clicked);
 }
 
 LoginForm::~LoginForm()
 {
-    // No need to delete UI elements, as Qt handles it
+    delete ui;
 }
 
 void LoginForm::on_pushButtonLogin_clicked()
 {
-    QString username = lineEditUsername->text();
-    QString password = lineEditPassword->text();
+    QString username = ui->lineEditUsername->text();
+    QString password = ui->lineEditPassword->text();
 
     // Perform login logic here
     if (username == "admin" && password == "password") {
