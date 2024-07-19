@@ -1,37 +1,50 @@
 #include "login.h"
+#include <QVBoxLayout>
 #include <QMessageBox>
-#include <QPixmap> // Include QPixmap for loading the icon image
 
-LoginForm::LoginForm(QWidget* parent) :
-    QWidget(parent),
-    ui(new Ui::LoginForm)
+LoginForm::LoginForm(QWidget* parent)
+    : QWidget(parent), ui(nullptr)
 {
-    ui->setupUi(this);
+    // Initialize widgets
+    labelTitle = new QLabel("Login", this);
+    labelLogo = new QLabel(this);
+    lineEditUsername = new QLineEdit(this);
+    lineEditPassword = new QLineEdit(this);
+    pushButtonLogin = new QPushButton("Login", this);
 
-    // Set application icon
-    QPixmap pixmap(":/images/app_icon.png"); // Replace with your actual icon path
-    this->setWindowIcon(QIcon(pixmap));
+    // Set up the layout (basic example, adjust as needed)
+    QVBoxLayout* layout = new QVBoxLayout(this);
+    layout->addWidget(labelLogo);
+    layout->addWidget(labelTitle);
+    layout->addWidget(lineEditUsername);
+    layout->addWidget(lineEditPassword);
+    layout->addWidget(pushButtonLogin);
+    setLayout(layout);
 
-    // Connect the login button click signal to the slot
-    connect(ui->pushButtonLogin, &QPushButton::clicked, this, &LoginForm::on_pushButtonLogin_clicked);
+    // Set properties for widgets
+    lineEditUsername->setPlaceholderText("Username");
+    lineEditPassword->setPlaceholderText("Password");
+    lineEditPassword->setEchoMode(QLineEdit::Password);
+
+    // Connect the login button's clicked signal to the appropriate slot
+    connect(pushButtonLogin, &QPushButton::clicked, this, &LoginForm::on_pushButtonLogin_clicked);
 }
 
 LoginForm::~LoginForm()
 {
-    delete ui;
+    // No need to delete UI elements, as Qt handles it
 }
 
 void LoginForm::on_pushButtonLogin_clicked()
 {
-    QString username = ui->lineEditUsername->text();
-    QString password = ui->lineEditPassword->text();
+    QString username = lineEditUsername->text();
+    QString password = lineEditPassword->text();
 
-    // For demonstration purposes, let's assume valid credentials are:
-    // Username: admin, Password: password
+    // Perform login logic here
     if (username == "admin" && password == "password") {
         QMessageBox::information(this, "Login", "Login successful!");
     }
     else {
-        QMessageBox::warning(this, "Login", "Invalid username or password!");
+        QMessageBox::warning(this, "Login", "Invalid username or password.");
     }
 }
