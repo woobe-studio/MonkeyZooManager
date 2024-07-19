@@ -39,7 +39,7 @@
       <set>Qt::AlignCenter</set>
      </property>
      <property name="pixmap">
-      <pixmap>login.png</pixmap>
+      <pixmap>MonkeyZooManager\qt\login.png</pixmap>
      </property>
      <property name="scaledContents">
       <bool>true</bool>

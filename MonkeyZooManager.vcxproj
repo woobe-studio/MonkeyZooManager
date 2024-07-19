@@ -65,11 +65,11 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\woobe\Documents\GitHub\MonkeyZooManager;C:\Users\woobe\Documents\GitHub\MonkeyZooManager\MonkeyZooManager\libs;C:\Users\woobe\Documents\GitHub\MonkeyZooManager\MonkeyZooManager\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\woobe\Documents\GitHub\MonkeyZooManager\MonkeyZooManager\qt;C:\Users\woobe\Documents\GitHub\MonkeyZooManager;C:\Users\woobe\Documents\GitHub\MonkeyZooManager\MonkeyZooManager\libs;C:\Users\woobe\Documents\GitHub\MonkeyZooManager\MonkeyZooManager\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>C:\Users\woobe\Documents\GitHub\MonkeyZooManager\MonkeyZooManager\libs;C:\Users\woobe\Documents\GitHub\MonkeyZooManager\MonkeyZooManager\src;C:\Users\woobe\Documents\GitHub\MonkeyZooManager;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\woobe\Documents\GitHub\MonkeyZooManager\MonkeyZooManager\qt;C:\Users\woobe\Documents\GitHub\MonkeyZooManager\MonkeyZooManager\libs;C:\Users\woobe\Documents\GitHub\MonkeyZooManager\MonkeyZooManager\src;C:\Users\woobe\Documents\GitHub\MonkeyZooManager;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
@@ -111,7 +111,6 @@
     <ClCompile Include="MonkeyZooManager\src\heisenmonkey.cpp" />
     <ClCompile Include="MonkeyZooManager\src\hospital.cpp" />
     <ClCompile Include="MonkeyZooManager\src\loggingdaemon.cpp" />
-    <ClCompile Include="login.cpp" />
     <ClCompile Include="MonkeyZooManager\src\maldrill.cpp" />
     <ClCompile Include="MonkeyZooManager\src\medicalnote.cpp" />
     <ClCompile Include="MonkeyZooManager\src\monkey.cpp" />
@@ -123,22 +122,19 @@
     <ClCompile Include="MonkeyZooManager\src\studentmonkey.cpp" />
     <ClCompile Include="MonkeyZooManager\src\timedaemon.cpp" />
     <ClCompile Include="MonkeyZooManager\src\user.cpp" />
-    <ClCompile Include="scripts.cpp" />
-    <QtRcc Include="login.qrc" />
-    <QtRcc Include="MonkeyZooManager.qrc" />
-    <QtUic Include="login.ui" />
-    <QtUic Include="MonkeyZooManager.ui" />
-    <QtMoc Include="MonkeyZooManager.h" />
-    <ClCompile Include="MonkeyZooManager.cpp" />
+    <ClCompile Include="MonkeyZooManager\qt\login.cpp" />
+    <ClCompile Include="MonkeyZooManager\qt\scripts.cpp" />
+    <QtRcc Include="MonkeyZooManager\qt\login.qrc" />
+    <QtUic Include="MonkeyZooManager\qt\login.ui" />
     <ClCompile Include="main.cpp" />
     <None Include="MonkeyZooManager.ico" />
     <ResourceCompile Include="MonkeyZooManager.rc" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="login.h" />
+    <QtMoc Include="MonkeyZooManager\qt\login.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="login.png" />
+    <Image Include="MonkeyZooManager\qt\login.png" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MonkeyZooManager\libs\bcrypt.h" />
@@ -148,7 +144,7 @@
     <ClInclude Include="MonkeyZooManager\libs\node_blf.h" />
     <ClCompile Include="MonkeyZooManager\libs\bcrypt.cpp" />
     <ClCompile Include="MonkeyZooManager\libs\blowfish.cpp" />
-    <ClInclude Include="scripts.h" />
+    <ClInclude Include="MonkeyZooManager\qt\scripts.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
