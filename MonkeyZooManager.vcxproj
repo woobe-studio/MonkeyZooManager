@@ -63,6 +63,14 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
   </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\Users\woobe\Documents\GitHub\MonkeyZooManager;C:\Users\woobe\Documents\GitHub\MonkeyZooManager\MonkeyZooManager\libs;C:\Users\woobe\Documents\GitHub\MonkeyZooManager\MonkeyZooManager\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>C:\Users\woobe\Documents\GitHub\MonkeyZooManager\MonkeyZooManager\libs;C:\Users\woobe\Documents\GitHub\MonkeyZooManager\MonkeyZooManager\src;C:\Users\woobe\Documents\GitHub\MonkeyZooManager;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'" Label="Configuration">
     <ClCompile>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
@@ -92,7 +100,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="MonkeyZooManager\src\animal.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\authdaemon.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\behavioralnote.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\cage.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\dartmonkey.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\enclosure.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\galacticmonkey.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\heisenmonkey.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\hospital.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\loggingdaemon.cpp" />
     <ClCompile Include="login.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\maldrill.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\medicalnote.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\monkey.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\zoo.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\note.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\othernote.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\serializationdaemon.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\space.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\studentmonkey.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\timedaemon.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\user.cpp" />
     <QtRcc Include="login.qrc" />
     <QtRcc Include="MonkeyZooManager.qrc" />
     <QtUic Include="login.ui" />
@@ -108,6 +137,15 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MonkeyZooManager\libs\bcrypt.h" />
+    <ClInclude Include="MonkeyZooManager\libs\json.hpp" />
+    <ClInclude Include="MonkeyZooManager\src\monkey.hpp" />
+    <ClInclude Include="MonkeyZooManager\libs\openbsd.h" />
+    <ClInclude Include="MonkeyZooManager\libs\node_blf.h" />
+    <ClCompile Include="MonkeyZooManager\libs\bcrypt.cpp" />
+    <ClCompile Include="MonkeyZooManager\libs\blowfish.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">

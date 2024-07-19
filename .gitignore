@@ -14,6 +14,6 @@ _deps
 .info.txt
 .vs/
 *.exe
-MonkeyZooManager/
+MonkeyZooManager/x64/
 x64/
 .vscode/
