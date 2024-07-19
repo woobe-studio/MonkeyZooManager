@@ -22,7 +22,7 @@ namespace Monkey
 
 	void Animal::setSpace(Space *newSpace) { this->space = newSpace; }
 	void Animal::setAge(int animalAge) { this->age = animalAge; }
-	void Animal::setName(const std::string &animalName) { this->name.animalName; }
+	void Animal::setName(const std::string &animalName){this->name=animalName;}
 	void Animal::setRarity(Rarity animalRarity) { this->rarity = animalRarity; }
 
 	Space *Animal::getSpace() { return this->space; }

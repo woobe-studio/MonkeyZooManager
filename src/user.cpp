@@ -83,7 +83,7 @@ namespace Monkey
 		this->hashOfPassword = j.at("password").get<std::string>();
 		this->accType = static_cast<userType>(j["accType"].get<int>());
 		std::string zooName = j["accessToZoo"].get<std::string>();
-		Monkey::SerializationDaemon *serial = Monkey::SerializationDaemon::getInstance();
+		SerializationDaemon *serial = SerializationDaemon::getInstance();
 		Zoo *tmpZooAddr = serial->zooByName(zooName);
 		if (tmpZooAddr != nullptr)
 			this->accessToZoo = tmpZooAddr;
