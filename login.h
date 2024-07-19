@@ -2,13 +2,10 @@
 #define LOGIN_H
 
 #include <QWidget>
-#include <QLineEdit>
-#include <QPushButton>
-#include <QLabel>
 
-namespace Ui {
-    class LoginForm;
-}
+QT_BEGIN_NAMESPACE
+namespace Ui { class LoginForm; }
+QT_END_NAMESPACE
 
 class LoginForm : public QWidget
 {
@@ -18,16 +15,15 @@ public:
     explicit LoginForm(QWidget* parent = nullptr);
     ~LoginForm();
 
+signals:
+    void loginSuccessful();
+
 private slots:
     void on_pushButtonLogin_clicked();
+    void handleLoginSuccessful();
 
 private:
     Ui::LoginForm* ui;
-    QLabel* labelTitle;
-    QLabel* labelLogo;
-    QLineEdit* lineEditUsername;
-    QLineEdit* lineEditPassword;
-    QPushButton* pushButtonLogin;
 };
 
 #endif // LOGIN_H
