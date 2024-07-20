@@ -1,158 +1,61 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>qml;cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>qrc;rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="Form Files">
-      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
-      <Extensions>ui</Extensions>
-    </Filter>
-    <Filter Include="Translation Files">
-      <UniqueIdentifier>{639EADAA-A684-42e4-A9AD-28FC9BCB8F7C}</UniqueIdentifier>
-      <Extensions>ts</Extensions>
-    </Filter>
+    <ClCompile Include="MonkeyZooManager\src\animal.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\authdaemon.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\behavioralnote.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\cage.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\dartmonkey.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\enclosure.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\galacticmonkey.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\heisenmonkey.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\hospital.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\loggingdaemon.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\maldrill.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\medicalnote.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\monkey.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\zoo.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\note.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\othernote.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\serializationdaemon.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\space.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\studentmonkey.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\timedaemon.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\user.cpp" />
+    <ClCompile Include="MonkeyZooManager\qt\login.cpp" />
+    <ClCompile Include="MonkeyZooManager\qt\scripts.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MonkeyZooManager\libs\bcrypt.cpp" />
+    <ClCompile Include="MonkeyZooManager\libs\blowfish.cpp" />
+    <ClCompile Include="MonkeyZooManager\qt\zoo_areas.cpp" />
   </ItemGroup>
   <ItemGroup>
-    </ClCompile>
-    <None Include="MonkeyZooManager.ico">
-      <Filter>Resource Files</Filter>
-    </None>
-    <ResourceCompile Include="MonkeyZooManager.rc">
-      <Filter>Resource Files</Filter>
-    </ResourceCompile>
-    <QtRcc Include="MonkeyZooManager\qt\login.qrc">
-      <Filter>Resource Files</Filter>
-    </QtRcc>
-    <QtRcc Include="MonkeyZooManager\qt\zoo_areas.qrc">
-      <Filter>Resource Files</Filter>
-    </QtRcc>
+    <ClInclude Include="MonkeyZooManager\libs\bcrypt.h" />
+    <ClInclude Include="MonkeyZooManager\libs\json.hpp" />
+    <ClInclude Include="MonkeyZooManager\src\monkey.hpp" />
+    <ClInclude Include="MonkeyZooManager\libs\openbsd.h" />
+    <ClInclude Include="MonkeyZooManager\libs\node_blf.h" />
+    <ClInclude Include="MonkeyZooManager\qt\scripts.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\qt\login.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\zoo.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\animal.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\authdaemon.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\behavioralnote.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\cage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\dartmonkey.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\enclosure.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\galacticmonkey.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\heisenmonkey.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\hospital.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\loggingdaemon.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\maldrill.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\medicalnote.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\monkey.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\note.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\othernote.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\serializationdaemon.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\space.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\studentmonkey.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\timedaemon.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\src\user.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\libs\bcrypt.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\libs\blowfish.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="MonkeyZooManager\qt\scripts.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+    <ResourceCompile Include="MonkeyZooManager.rc" />
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="MonkeyZooManager\qt\login.ui">
-      <Filter>Form Files</Filter>
-    </QtUic>
-	  <QtUic Include="MonkeyZooManager\qt\zoo_areas.ui">
-		  <Filter>Form Files</Filter>
-	  </QtUic>
+    <Image Include="MonkeyZooManager\qt\login.png" />
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="MonkeyZooManager\qt\login.h">
-      <Filter>Header Files</Filter>
-    </QtMoc>
+    <QtMoc Include="MonkeyZooManager\qt\login.h" />
+    <QtMoc Include="MonkeyZooManager\qt\zoo_areas.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="MonkeyZooManager\qt\login.png">
-      <Filter>Resource Files</Filter>
-    </Image>
+    <QtRcc Include="MonkeyZooManager\qt\login.qrc" />
+    <QtRcc Include="MonkeyZooManager\qt\zoo_areas.qrc" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MonkeyZooManager\src\monkey.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MonkeyZooManager\libs\json.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MonkeyZooManager\libs\openbsd.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MonkeyZooManager\libs\bcrypt.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="MonkeyZooManager\libs\node_blf.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="scripts.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <QtUic Include="MonkeyZooManager\qt\login.ui" />
+    <QtUic Include="MonkeyZooManager\qt\zoo_areas.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MonkeyZooManager.ico" />
   </ItemGroup>
 </Project>

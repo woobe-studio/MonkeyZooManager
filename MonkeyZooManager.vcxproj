@@ -101,6 +101,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="MonkeyZooManager\qt\zoo_areas.cpp" />
     <ClCompile Include="MonkeyZooManager\src\animal.cpp" />
     <ClCompile Include="MonkeyZooManager\src\authdaemon.cpp" />
     <ClCompile Include="MonkeyZooManager\src\behavioralnote.cpp" />
@@ -141,6 +142,7 @@
   <ItemGroup>
     <ClInclude Include="MonkeyZooManager\libs\bcrypt.h" />
     <ClInclude Include="MonkeyZooManager\libs\json.hpp" />
+    <QtMoc Include="MonkeyZooManager\qt\zoo_areas.h" />
     <ClInclude Include="MonkeyZooManager\src\monkey.hpp" />
     <ClInclude Include="MonkeyZooManager\libs\openbsd.h" />
     <ClInclude Include="MonkeyZooManager\libs\node_blf.h" />
