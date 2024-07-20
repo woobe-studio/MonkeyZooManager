@@ -29,6 +29,8 @@ private slots:
 
 private:
     Ui::ZooAreas* ui;
+    int currentIndex;
+    void move_through_spaces(bool reverse);
 };
 
 #endif // ZOO_AREAS_H
