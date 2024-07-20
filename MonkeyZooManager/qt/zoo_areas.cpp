@@ -1,6 +1,5 @@
 #include "zoo_areas.h"
 #include "ui_zoo_areas.h"
-#include "../src/monkey.hpp"
 
 ZooAreas::ZooAreas(QWidget* parent) :
     QMainWindow(parent), ui(new Ui::ZooAreas)
@@ -50,15 +49,31 @@ void ZooAreas::move_through_spaces(bool reverse)
         if (reverse) {
             if (currentIndex > 0) {
                 currentIndex -= 1;
-                qDebug() << "The number is:" << currentIndex;
+                settingValues(zoo->getSpace(currentIndex));
             }
         }
         else
         {
             if (currentIndex + 1 != zoo->getSpaceCount()) {
                 currentIndex += 1;
-                qDebug() << "The number is:" << currentIndex;
+                settingValues(zoo->getSpace(currentIndex));
             }
         }
     }
+}
+
+void ZooAreas::settingValues(Monkey::Space* space)
+{
+    std::string space_name;
+    if (Monkey::Enclosure* enclosurePtr = dynamic_cast<Monkey::Enclosure*>(space)) {
+        space_name = "Enclosure";
+    }
+    else if (Monkey::Hospital* hospitalPtr = dynamic_cast<Monkey::Hospital*>(space)) {
+        space_name = "Hospital";
+    }
+    else if (Monkey::Cage* cagePtr = dynamic_cast<Monkey::Cage*>(space)) {
+        space_name = "Cage";
+    }
+    ui->Name->setText(QString::fromStdString(space_name));
+    //MonkeyCount->setText(QString::number(space->getCount()));
 }

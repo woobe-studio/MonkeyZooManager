@@ -6,6 +6,8 @@
 #include <QPushButton>
 #include <QGraphicsView>
 
+#include "../src/monkey.hpp"
+
 namespace Ui {
     class ZooAreas;
 }
@@ -31,6 +33,7 @@ private:
     Ui::ZooAreas* ui;
     int currentIndex;
     void move_through_spaces(bool reverse);
+    void settingValues(Monkey::Space* space);
 };
 
 #endif // ZOO_AREAS_H
