@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="MonkeyZooManager\qt\login.png" />
+    <Image Include="MonkeyZooManager\qt\cage.png" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MonkeyZooManager\qt\login.h" />
