@@ -33,6 +33,9 @@
     <QtRcc Include="MonkeyZooManager\qt\login.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
+    <QtRcc Include="MonkeyZooManager\qt\zoo_areas.qrc">
+      <Filter>Resource Files</Filter>
+    </QtRcc>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -118,6 +121,9 @@
     <QtUic Include="MonkeyZooManager\qt\login.ui">
       <Filter>Form Files</Filter>
     </QtUic>
+	  <QtUic Include="MonkeyZooManager\qt\zoo_areas.ui">
+		  <Filter>Form Files</Filter>
+	  </QtUic>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MonkeyZooManager\qt\login.h">

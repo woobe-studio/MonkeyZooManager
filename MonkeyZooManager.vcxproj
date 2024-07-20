@@ -125,7 +125,9 @@
     <ClCompile Include="MonkeyZooManager\qt\login.cpp" />
     <ClCompile Include="MonkeyZooManager\qt\scripts.cpp" />
     <QtRcc Include="MonkeyZooManager\qt\login.qrc" />
+    <QtRcc Include="MonkeyZooManager\qt\zoo_areas.qrc" />
     <QtUic Include="MonkeyZooManager\qt\login.ui" />
+    <QtUic Include="MonkeyZooManager\qt\zoo_areas.ui" />
     <ClCompile Include="main.cpp" />
     <None Include="MonkeyZooManager.ico" />
     <ResourceCompile Include="MonkeyZooManager.rc" />
