@@ -182,7 +182,7 @@ padding: 5px;
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="GOTO">
+     <widget class="QPushButton" name="GoTo">
       <property name="font">
        <font>
         <pointsize>18</pointsize>
