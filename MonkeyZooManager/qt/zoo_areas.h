@@ -18,6 +18,9 @@ public:
     explicit ZooAreas(QWidget* parent = nullptr);
     ~ZooAreas();
 
+signals:
+    void goBack();
+
 private slots:
     void on_Previous_clicked();
     void on_Next_clicked();

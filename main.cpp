@@ -7,22 +7,26 @@ int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
 
-    LoginForm loginForm;
-    ZooAreas* zooAreas = nullptr;
-
     custom_init();
 
+    LoginForm loginForm;
+    ZooAreas* zooAreas = nullptr;
+    loginForm.show();
+
     QObject::connect(&loginForm, &LoginForm::loginSuccessful, [&]() {
-        loginForm.hide();
+        loginForm.close();
 
         if (!zooAreas) {
             zooAreas = new ZooAreas;
+            QObject::connect(zooAreas, &ZooAreas::goBack, [&]() {
+                zooAreas->close();
+                loginForm.show();
+                });
         }
 
         zooAreas->show();
         });
 
-    loginForm.show();
 
     return app.exec();
 }

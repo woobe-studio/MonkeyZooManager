@@ -35,5 +35,6 @@ void ZooAreas::on_GoTo_clicked()
 
 void ZooAreas::on_GoBack_clicked()
 {
+    emit goBack();
     // Handle Go Back button click
 }
