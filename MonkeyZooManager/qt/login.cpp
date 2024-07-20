@@ -26,6 +26,8 @@ void LoginForm::on_pushButtonLogin_clicked()
         QMessageBox* msgBox = new QMessageBox(QMessageBox::Information, "Login", "Login successful!", QMessageBox::Ok, this);
 
         connect(msgBox, &QMessageBox::buttonClicked, [this, msgBox](QAbstractButton*) {
+            ui->lineEditUsername->setText("");
+            ui->lineEditPassword->setText("");
             emit loginSuccessful();
             msgBox->deleteLater();
             });
