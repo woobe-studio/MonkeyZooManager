@@ -10,8 +10,6 @@ LoginForm::LoginForm(QWidget* parent)
     : QWidget(parent), ui(new Ui::LoginForm)
 {
     ui->setupUi(this);
-
-    connect(this, &LoginForm::loginSuccessful, this, &LoginForm::handleLoginSuccessful);
 }
 
 LoginForm::~LoginForm()
@@ -37,11 +35,6 @@ void LoginForm::on_pushButtonLogin_clicked()
     else {
         QMessageBox::warning(this, "Login", "Invalid username or password.");
     }
-}
-
-void LoginForm::handleLoginSuccessful()
-{
-    this->close();
 }
 
 bool LoginForm::CheckTakenData(const std::string& login, const std::string& password)
