@@ -12,6 +12,8 @@ ZooAreas::ZooAreas(QWidget* parent) :
     Monkey::Zoo* zoo = authorizationDaemon->retPointerOfLoggedInUser()->getZoo();
     QString new_zoo_name = QString::fromStdString(zoo->getZooName());
     ui->EnterTitle->setText(new_zoo_name);
+    if (zoo->getSpaceCount() != 0)
+        settingValues(zoo->getSpace(currentIndex));
 }
 
 ZooAreas::~ZooAreas()
@@ -75,5 +77,5 @@ void ZooAreas::settingValues(Monkey::Space* space)
         space_name = "Cage";
     }
     ui->Name->setText(QString::fromStdString(space_name));
-    //MonkeyCount->setText(QString::number(space->getCount()));
+    ui->Space->setText(QString::number(space->getCount()));
 }

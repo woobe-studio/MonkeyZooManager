@@ -158,14 +158,20 @@ border: 1px solid #666;</string>
      </widget>
     </item>
     <item>
-     <widget class="QLineEdit" name="Name">
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
+     <layout class="QHBoxLayout" name="nameSpaceLayout">
+      <property name="spacing">
+       <number>10</number>
       </property>
-      <property name="styleSheet">
-       <string notr="true">QLineEdit {
+      <item>
+       <widget class="QLineEdit" name="Name">
+        <property name="font">
+         <font>
+          <pointsize>14</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
 background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                             stop: 0 rgba(45, 45, 45, 255),
                             stop: 1 rgba(30, 30, 30, 255));
@@ -175,11 +181,50 @@ border: 1px solid #666;
 padding: 5px;
 }
 </string>
-      </property>
-      <property name="readOnly">
-       <bool>true</bool>
-      </property>
-     </widget>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="Space">
+        <property name="font">
+         <font>
+          <pointsize>14</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                            stop: 0 rgba(45, 45, 45, 255),
+                            stop: 1 rgba(30, 30, 30, 255));
+color: white;
+border-radius: 10px;
+border: 1px solid #666;
+padding: 5px;
+}
+</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignmentFlag::AlignCenter</set>
+        </property>
+        <property name="readOnly">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
     <item>
      <widget class="QPushButton" name="GoTo">
