@@ -38,6 +38,7 @@ int main(int argc, char* argv[])
                         });
                 }
                 zooAreas->close();
+                zooSpace->resetValues();
                 zooSpace->currentAreaIndex = zooAreas->currentAreaIndex;
                 zooSpace->show();
                 });

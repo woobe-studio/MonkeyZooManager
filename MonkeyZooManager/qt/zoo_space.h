@@ -21,6 +21,7 @@ public:
     ~ZooSpace();
     int currentAreaIndex;
     int currentMonkeyIndex;
+    void resetValues();
 
 signals:
     void goBack();

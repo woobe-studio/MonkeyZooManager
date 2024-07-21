@@ -52,7 +52,8 @@ void ZooSpace::move_through_spaces(bool reverse)
 {
     Monkey::AuthDaemon* authorizationDaemon = Monkey::AuthDaemon::getInstance();
     Monkey::Zoo* zoo = authorizationDaemon->retPointerOfLoggedInUser()->getZoo();
-    if (zoo->getSpace(currentAreaIndex)->getCapacity() != 0)
+    qWarning() << zoo->getSpace(currentAreaIndex)->getCount();
+    if (zoo->getSpace(currentAreaIndex)->getCount() != 0)
     {
         if (reverse) {
             if (currentMonkeyIndex > 0) {
@@ -62,7 +63,7 @@ void ZooSpace::move_through_spaces(bool reverse)
         }
         else
         {
-            if (currentMonkeyIndex + 1 != zoo->getSpace(currentAreaIndex)->getCapacity()) {
+            if (currentMonkeyIndex + 1 != zoo->getSpace(currentAreaIndex)->getCount()) {
                 currentMonkeyIndex += 1;
                 settingValues(zoo->getSpace(currentAreaIndex));
             }
@@ -90,4 +91,12 @@ void ZooSpace::setAreaImage(const std::string& icon_name) {
     ui->Icon->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
     ui->Icon->resize(pixmap.size());
     ui->Icon->setAlignment(Qt::AlignCenter);
+}
+
+void ZooSpace::resetValues()
+{
+    ui->Name->setText("");
+    ui->Space->setText("");
+    ui->EnterTitle->setText("");
+    currentMonkeyIndex = 0;
 }
