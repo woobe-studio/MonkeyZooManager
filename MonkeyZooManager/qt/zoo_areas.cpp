@@ -91,10 +91,6 @@ void ZooAreas::setAreaImage(const std::string& icon_name) {
     QString iconNameQString = QString::fromStdString(icon_name);
     QString filePath = QString("MonkeyZooManager/qt/") + iconNameQString;
     QPixmap pixmap(filePath);
-    if (pixmap.isNull()) {
-        qWarning() << "Failed to load image:" << filePath;
-        pixmap = QPixmap("MonkeyZooManager/qt/default.png");
-    }
 
     ui->Icon->setPixmap(pixmap);
     ui->Icon->setScaledContents(true);

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>ZooAreas</class>
- <widget class="QMainWindow" name="ZooAreas">
+ <class>ZooSpace</class>
+ <widget class="QMainWindow" name="ZooSpace">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -17,10 +17,10 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Zoo Areas</string>
+   <string>Zoo Space</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#ZooAreas {
+   <string notr="true">#ZooSpace {
 background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(30, 30, 30, 255), stop:1 rgba(20, 20, 20, 255));
 }
 </string>
@@ -48,7 +48,7 @@ padding: 10px;
 </string>
       </property>
       <property name="text">
-       <string>Welcome to Zoo</string>
+       <string>Welcome to Space</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -81,25 +81,25 @@ padding: 10px;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: #009688;  /* Teal */
+background-color: #F44336;  /* Red */
 color: #ffffff;
-border-radius: 12px;
-border: 1px solid #444;
-padding: 10px;
+border-radius: 15px;
+border: 2px solid #d32f2f;
+padding: 12px;
 font-weight: bold;
 transition: background-color 0.3s, transform 0.3s, border 0.3s;
 }
 
 QPushButton:hover {
-background-color: #00796B;  /* Darker teal on hover */
+background-color: #D32F2F;  /* Darker red on hover */
 transform: scale(1.05);
-border: 1px solid #333;
+border: 2px solid #b71c1c;
 }
 
 QPushButton:pressed {
-background-color: #004D40;  /* Darker teal on press */
+background-color: #C62828;  /* Even darker red on press */
 transform: scale(0.95);
-border: 1px solid #222;
+border: 2px solid #b71c1c;
 }
 </string>
           </property>
@@ -118,25 +118,25 @@ border: 1px solid #222;
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: #2196F3;  /* Blue */
+background-color: #4CAF50;  /* Green */
 color: #ffffff;
-border-radius: 12px;
-border: 1px solid #444;
-padding: 10px;
+border-radius: 15px;
+border: 2px solid #388E3C;
+padding: 12px;
 font-weight: bold;
 transition: background-color 0.3s, transform 0.3s, border 0.3s;
 }
 
 QPushButton:hover {
-background-color: #1976D2;  /* Darker blue on hover */
+background-color: #388E3C;  /* Darker green on hover */
 transform: scale(1.05);
-border: 1px solid #333;
+border: 2px solid #2C6B2F;
 }
 
 QPushButton:pressed {
-background-color: #1565C0;  /* Darker blue on press */
+background-color: #2C6B2F;  /* Even darker green on press */
 transform: scale(0.95);
-border: 1px solid #222;
+border: 2px solid #2C6B2F;
 }
 </string>
           </property>
@@ -235,30 +235,30 @@ padding: 5px;
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-background-color: #00BCD4;  /* Cyan */
+background-color: #FFC107;  /* Amber */
 color: #ffffff;
-border-radius: 12px;
-border: 1px solid #444;
-padding: 10px;
+border-radius: 15px;
+border: 2px solid #FFA000;
+padding: 12px;
 font-weight: bold;
 transition: background-color 0.3s, transform 0.3s, border 0.3s;
 }
 
 QPushButton:hover {
-background-color: #0097A7;  /* Darker cyan on hover */
+background-color: #FFA000;  /* Darker amber on hover */
 transform: scale(1.05);
-border: 1px solid #333;
+border: 2px solid #FF8F00;
 }
 
 QPushButton:pressed {
-background-color: #00838F;  /* Darker cyan on press */
+background-color: #FF8F00;  /* Even darker amber on press */
 transform: scale(0.95);
-border: 1px solid #222;
+border: 2px solid #FF8F00;
 }
 </string>
       </property>
       <property name="text">
-       <string>Go to</string>
+       <string>GoTo</string>
       </property>
      </widget>
     </item>
@@ -272,38 +272,45 @@ border: 1px solid #222;
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {
-background-color: #E91E63;  /* Deep pink */
+background-color: #2196F3;  /* Blue */
 color: #ffffff;
-border-radius: 12px;
-border: 1px solid #444;
-padding: 10px;
+border-radius: 15px;
+border: 2px solid #1976D2;
+padding: 12px;
 font-weight: bold;
 transition: background-color 0.3s, transform 0.3s, border 0.3s;
 }
 
 QPushButton:hover {
-background-color: #C2185B;  /* Darker pink on hover */
+background-color: #1976D2;  /* Darker blue on hover */
 transform: scale(1.05);
-border: 1px solid #333;
+border: 2px solid #1565C0;
 }
 
 QPushButton:pressed {
-background-color: #AD1457;  /* Darker pink on press */
+background-color: #1565C0;  /* Even darker blue on press */
 transform: scale(0.95);
-border: 1px solid #222;
+border: 2px solid #1565C0;
 }
 </string>
       </property>
       <property name="text">
-       <string>Go Back</string>
+       <string>GoBack</string>
       </property>
      </widget>
     </item>
    </layout>
   </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources>
-  <include location="zoo_areas.qrc"/>
- </resources>
- <connections/>
 </ui>
