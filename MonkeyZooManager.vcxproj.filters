@@ -41,8 +41,10 @@
     <ResourceCompile Include="MonkeyZooManager.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="MonkeyZooManager\qt\login.png" />
-    <Image Include="MonkeyZooManager\qt\cage.png" />
+    <Image Include="MonkeyZooManager\qt\Login.png" />
+    <Image Include="MonkeyZooManager\qt\Cage.png" />
+    <Image Include="MonkeyZooManager\qt\Hospital.png" />
+    <Image Include="MonkeyZooManager\qt\Enclosure.png" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MonkeyZooManager\qt\login.h" />

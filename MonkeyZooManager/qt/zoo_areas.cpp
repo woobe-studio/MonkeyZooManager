@@ -8,6 +8,7 @@ ZooAreas::ZooAreas(QWidget* parent) :
 {
     ui->setupUi(this);
     setMinimumSize(360, 640);
+    resize(360, 640);
 
     currentIndex = 0;
     
@@ -17,20 +18,6 @@ ZooAreas::ZooAreas(QWidget* parent) :
     ui->EnterTitle->setText(new_zoo_name);
     if (zoo->getSpaceCount() != 0)
         settingValues(zoo->getSpace(currentIndex));
-
-    // Load the pixmap
-    QPixmap pixmap("MonkeyZooManager/qt/cage.png"); // Replace with the path to your image
-
-    // Set the pixmap to the QLabel
-    ui->Icon->setPixmap(pixmap);
-
-    // Resize the QLabel to fit the pixmap while keeping the aspect ratio
-    ui->Icon->setScaledContents(true);
-    ui->Icon->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
-
-    // Adjust the QLabel size to fit the pixmap if necessary
-    ui->Icon->resize(pixmap.size());
-    ui->Icon->setAlignment(Qt::AlignCenter);
 
 
 }
@@ -95,6 +82,23 @@ void ZooAreas::settingValues(Monkey::Space* space)
     else if (Monkey::Cage* cagePtr = dynamic_cast<Monkey::Cage*>(space)) {
         space_name = "Cage";
     }
+    setAreaImage(space_name);
     ui->Name->setText(QString::fromStdString(space_name));
     ui->Space->setText(QString::number(space->getCount()));
+}
+
+void ZooAreas::setAreaImage(const std::string& icon_name) {
+    QString iconNameQString = QString::fromStdString(icon_name);
+    QString filePath = QString("MonkeyZooManager/qt/") + iconNameQString;
+    QPixmap pixmap(filePath);
+    if (pixmap.isNull()) {
+        qWarning() << "Failed to load image:" << filePath;
+        pixmap = QPixmap("MonkeyZooManager/qt/default.png");
+    }
+
+    ui->Icon->setPixmap(pixmap);
+    ui->Icon->setScaledContents(true);
+    ui->Icon->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+    ui->Icon->resize(pixmap.size());
+    ui->Icon->setAlignment(Qt::AlignCenter);
 }

@@ -11,6 +11,7 @@ LoginForm::LoginForm(QWidget* parent)
 {
     ui->setupUi(this);
     setMinimumSize(360, 640);
+    resize(360, 640);
 }
 
 LoginForm::~LoginForm()

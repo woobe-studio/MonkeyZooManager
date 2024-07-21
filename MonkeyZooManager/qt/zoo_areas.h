@@ -34,6 +34,7 @@ private:
     int currentIndex;
     void move_through_spaces(bool reverse);
     void settingValues(Monkey::Space* space);
+    void setAreaImage(const std::string& icon_name);
 };
 
 #endif // ZOO_AREAS_H
