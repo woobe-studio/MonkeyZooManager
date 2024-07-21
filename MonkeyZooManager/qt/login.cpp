@@ -7,7 +7,7 @@
 #include "../src/monkey.hpp"
 
 LoginForm::LoginForm(QWidget* parent)
-    : QWidget(parent), ui(new Ui::LoginForm)
+    : QMainWindow(parent), ui(new Ui::LoginForm)
 {
     ui->setupUi(this);
     setMinimumSize(360, 640);

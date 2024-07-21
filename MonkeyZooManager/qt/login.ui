@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>LoginForm</class>
- <widget class="QWidget" name="LoginForm">
+ <widget class="QMainWindow" name="LoginForm">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -10,109 +10,163 @@
     <height>500</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>400</width>
+    <height>500</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Login</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
-    <widget class="QLabel" name="labelTitle">
-     <property name="text">
-      <string>Monkey Zoo Manager</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font-size: 28px; font-weight: bold; color: white;</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLabel" name="labelLogo">
-     <property name="minimumSize">
-      <size>
-       <width>200</width>
-       <height>200</height>
-      </size>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignCenter</set>
-     </property>
-     <property name="pixmap">
-      <pixmap>MonkeyZooManager\qt\login.png</pixmap>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLineEdit" name="lineEditUsername">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>40</height>
-      </size>
-     </property>
-     <property name="placeholderText">
-      <string>Username</string>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font-size: 18px; padding: 10px; border: 1px solid #ccc; border-radius: 5px;</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QLineEdit" name="lineEditPassword">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>40</height>
-      </size>
-     </property>
-     <property name="placeholderText">
-      <string>Password</string>
-     </property>
-     <property name="echoMode">
-      <enum>QLineEdit::Password</enum>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">font-size: 18px; padding: 10px; border: 1px solid #ccc; border-radius: 5px;</string>
-     </property>
-    </widget>
-   </item>
-   <item>
-    <widget class="QPushButton" name="pushButtonLogin">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>40</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>Login</string>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">
-      QPushButton {
-        padding: 10px; 
-        background-color: #5cb85c; 
-        color: white; 
-        border: none; 
-        border-radius: 5px;
-      }
-      QPushButton:hover {
-        background-color: #4cae4c;
-      }
-      QPushButton:pressed {
-        background-color: #3d8b3d;
-      }
-      </string>
-     </property>
-    </widget>
-   </item>
-  </layout>
+  <property name="styleSheet">
+   <string notr="true">#Login {
+background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(40, 40, 40, 255), stop:1 rgba(20, 20, 20, 255));
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <item>
+     <widget class="QLineEdit" name="EnterTitle">
+      <property name="font">
+       <font>
+        <family>Roboto</family>
+        <pointsize>24</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                            stop: 0 rgba(50, 50, 50, 255),
+                            stop: 1 rgba(30, 30, 30, 255));
+color: #E0E0E0;
+border-radius: 12px;
+border: 1px solid rgba(100, 100, 100, 200);
+padding: 14px;
+font-weight: bold;
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Monkey Zoo Manager</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+      <property name="dragEnabled">
+       <bool>false</bool>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="labelLogo">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEditUsername">
+      <property name="font">
+       <font>
+        <family>Roboto</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                            stop: 0 rgba(50, 50, 50, 255),
+                            stop: 1 rgba(30, 30, 30, 255));
+color: #E0E0E0;
+border-radius: 12px;
+border: 1px solid rgba(100, 100, 100, 200);
+padding: 10px;
+}
+</string>
+      </property>
+      <property name="placeholderText">
+       <string>Username</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="lineEditPassword">
+      <property name="font">
+       <font>
+        <family>Roboto</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit {
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                            stop: 0 rgba(50, 50, 50, 255),
+                            stop: 1 rgba(30, 30, 30, 255));
+color: #E0E0E0;
+border-radius: 12px;
+border: 1px solid rgba(100, 100, 100, 200);
+padding: 10px;
+}
+</string>
+      </property>
+      <property name="echoMode">
+       <enum>QLineEdit::EchoMode::Password</enum>
+      </property>
+      <property name="placeholderText">
+       <string>Password</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QPushButton" name="pushButtonLogin">
+      <property name="font">
+       <font>
+        <family>Roboto</family>
+        <pointsize>20</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+background-color: #8BC34A;  /* Light Green */
+color: #ffffff;
+border-radius: 12px;
+border: 2px solid #8BC34A;
+padding: 14px;
+font-weight: bold;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 255, 255, 0.2); /* Shadow with border glow */
+transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+QPushButton:hover {
+background-color: #7CB342;  /* Darker light green on hover */
+transform: scale(1.05);
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 0 7px rgba(255, 255, 255, 0.3); /* Enhanced shadow and glow on hover */
+}
+
+QPushButton:pressed {
+background-color: #689F38;  /* Even darker light green on press */
+transform: scale(0.95);
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 3px rgba(255, 255, 255, 0.2); /* Reduced shadow on press */
+}
+</string>
+      </property>
+      <property name="text">
+       <string>Login</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="login.qrc"/>
+ </resources>
  <connections/>
 </ui>

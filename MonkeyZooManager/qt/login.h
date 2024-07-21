@@ -1,13 +1,13 @@
 #ifndef LOGIN_H
 #define LOGIN_H
 
-#include <QWidget>
+#include <QMainWindow>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class LoginForm; }
 QT_END_NAMESPACE
 
-class LoginForm : public QWidget
+class LoginForm : public QMainWindow
 {
     Q_OBJECT
 
