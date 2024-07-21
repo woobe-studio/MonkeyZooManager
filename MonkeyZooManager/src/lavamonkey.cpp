@@ -1,31 +1,31 @@
 #include "monkey.hpp"
 namespace Monkey
 {
-    Maldrill::Maldrill()
+    LavaMonkey::LavaMonkey()
     {
         this->jumpHeight = 1;
     }
 
-    Maldrill::~Maldrill()
+    LavaMonkey::~LavaMonkey()
     {
     }
 
-    float Maldrill::getJumpHeight()
+    float LavaMonkey::getJumpHeight()
     {
         return jumpHeight;
     }
 
-    void Maldrill::setJumpHeight(float newJump)
+    void LavaMonkey::setJumpHeight(float newJump)
     {
         jumpHeight = newJump;
     }
-    void Maldrill::to_json(json &j) const
+    void LavaMonkey::to_json(json &j) const
     {
         Monkey::to_json(j);
         j["jumpHeight"] = this->jumpHeight;
-        j["MonkeyType"] = "Maldrill";
+        j["MonkeyType"] = "LavaMonkey";
     }
-    void Maldrill::from_json(const json &j)
+    void LavaMonkey::from_json(const json &j)
     {
         Monkey::from_json(j);
         this->jumpHeight = j.at("jumpHeight").get<float>();

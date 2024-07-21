@@ -19,6 +19,7 @@ class ZooAreas : public QMainWindow
 public:
     explicit ZooAreas(QWidget* parent = nullptr);
     ~ZooAreas();
+    int currentAreaIndex;
 
 signals:
     void goBack();
@@ -32,7 +33,6 @@ private slots:
 
 private:
     Ui::ZooAreas* ui;
-    int currentIndex;
     void move_through_spaces(bool reverse);
     void settingValues(Monkey::Space* space);
     void setAreaImage(const std::string& icon_name);

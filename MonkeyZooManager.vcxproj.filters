@@ -11,7 +11,7 @@
     <ClCompile Include="MonkeyZooManager\src\heisenmonkey.cpp" />
     <ClCompile Include="MonkeyZooManager\src\hospital.cpp" />
     <ClCompile Include="MonkeyZooManager\src\loggingdaemon.cpp" />
-    <ClCompile Include="MonkeyZooManager\src\maldrill.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\lavamonkey.cpp" />
     <ClCompile Include="MonkeyZooManager\src\medicalnote.cpp" />
     <ClCompile Include="MonkeyZooManager\src\monkey.cpp" />
     <ClCompile Include="MonkeyZooManager\src\zoo.cpp" />

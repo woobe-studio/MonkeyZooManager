@@ -1,5 +1,4 @@
 #include "scripts.h"
-#include "../src/monkey.hpp"
 
 void custom_init() {
     Monkey::AuthDaemon* authorizationDaemon = Monkey::AuthDaemon::getInstance();
@@ -49,5 +48,54 @@ void custom_init() {
         }
         testspace->addAnimal(itAnimal);
         i++;
+    }
+}
+
+std::string getSpaceName(Monkey::Space* space)
+{
+    std::string space_name;
+    if (Monkey::Enclosure* enclosurePtr = dynamic_cast<Monkey::Enclosure*>(space)) {
+        space_name = "Enclosure";
+    }
+    else if (Monkey::Hospital* hospitalPtr = dynamic_cast<Monkey::Hospital*>(space)) {
+        space_name = "Hospital";
+    }
+    else if (Monkey::Cage* cagePtr = dynamic_cast<Monkey::Cage*>(space)) {
+        space_name = "Cage";
+    }
+    return space_name;
+}
+
+std::string getMonkeyName(Monkey::Animal*monkey)
+{
+    std::string monkey_name;
+    if (Monkey::StudentMonkey* studentPtr = dynamic_cast<Monkey::StudentMonkey*>(monkey)) {
+        monkey_name = "Student Monkey";
+    }
+    else if (Monkey::GalacticMonkey* galacticPtr = dynamic_cast<Monkey::GalacticMonkey*>(monkey)) {
+        monkey_name = "Galactic Monkey";
+    }
+    else if (Monkey::DartMonkey* dartPtr = dynamic_cast<Monkey::DartMonkey*>(monkey)) {
+        monkey_name = "Dart Monkey";
+    }
+    else if (Monkey::HeisenMonkey* heisenPtr = dynamic_cast<Monkey::HeisenMonkey*>(monkey)) {
+        monkey_name = "Heisen Monkey";
+    }
+    else if (Monkey::LavaMonkey* lavaPtr = dynamic_cast<Monkey::LavaMonkey*>(monkey)) {
+        monkey_name = "Lava Monkey";
+    }
+    return monkey_name;
+}
+
+std::string rarityToString(Monkey::Rarity r)
+{
+    switch (r)
+    {
+    case Monkey::Rarity::COMMON:    return "COMMON";
+    case Monkey::Rarity::UNCOMMON:  return "UNCOMMON";
+    case Monkey::Rarity::RARE:      return "RARE";
+    case Monkey::Rarity::EPIC:      return "EPIC";
+    case Monkey::Rarity::LEGENDARY: return "LEGENDARY";
+    default:                return "UNKNOWN";
     }
 }

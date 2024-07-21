@@ -37,7 +37,7 @@ namespace Monkey
     class StudentMonkey;
     class GalacticMonkey;
     class DartMonkey;
-    class Maldrill;
+    class LavaMonkey;
     class Zoo;
     class Enclosure;
     class Cage;
@@ -209,8 +209,6 @@ namespace Monkey
         EPIC,
         LEGENDARY
     };
-
-    std::string rarityToString(Rarity r);
 
     class Animal
     {
@@ -432,15 +430,15 @@ namespace Monkey
         void from_json(const json &j) override;
     };
 
-    class Maldrill : public Monkey
+    class LavaMonkey : public Monkey
     {
     private:
         float jumpHeight;
 
     public:
-        Maldrill();
+        LavaMonkey();
 
-        ~Maldrill();
+        ~LavaMonkey();
 
         float getJumpHeight();
 
