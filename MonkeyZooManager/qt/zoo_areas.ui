@@ -21,7 +21,7 @@
   </property>
   <property name="styleSheet">
    <string notr="true">#ZooAreas {
-background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(30, 30, 30, 255), stop:1 rgba(20, 20, 20, 255));
+background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(40, 40, 40, 255), stop:1 rgba(20, 20, 20, 255));
 }
 </string>
   </property>
@@ -31,19 +31,21 @@ background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(30, 
      <widget class="QLineEdit" name="EnterTitle">
       <property name="font">
        <font>
-        <pointsize>18</pointsize>
+        <pointsize>24</pointsize>
         <bold>true</bold>
+        <family>Roboto</family>
        </font>
       </property>
       <property name="styleSheet">
        <string notr="true">QLineEdit {
 background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                            stop: 0 rgba(45, 45, 45, 255),
+                            stop: 0 rgba(50, 50, 50, 255),
                             stop: 1 rgba(30, 30, 30, 255));
 color: #E0E0E0;
-border-radius: 10px;
-border: 1px solid #666;
-padding: 10px;
+border-radius: 12px;
+border: 1px solid rgba(100, 100, 100, 200);
+padding: 14px;
+font-weight: bold;
 }
 </string>
       </property>
@@ -64,42 +66,44 @@ padding: 10px;
     <item>
      <layout class="QVBoxLayout" name="backButtonLayout">
       <property name="spacing">
-       <number>10</number>
+       <number>15</number>
       </property>
       <item>
        <layout class="QHBoxLayout" name="buttonLayout">
         <property name="spacing">
-         <number>10</number>
+         <number>15</number>
         </property>
         <item>
          <widget class="QPushButton" name="Previous">
           <property name="font">
            <font>
-            <pointsize>18</pointsize>
+            <pointsize>20</pointsize>
             <bold>true</bold>
+            <family>Roboto</family>
            </font>
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: #009688;  /* Teal */
+background-color: #FF5722;  /* Deep orange */
 color: #ffffff;
 border-radius: 12px;
-border: 1px solid #444;
-padding: 10px;
+border: 2px solid #FF5722;
+padding: 14px;
 font-weight: bold;
-transition: background-color 0.3s, transform 0.3s, border 0.3s;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 255, 255, 0.2); /* Shadow with border glow */
+transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 QPushButton:hover {
-background-color: #00796B;  /* Darker teal on hover */
+background-color: #E64A19;  /* Darker orange on hover */
 transform: scale(1.05);
-border: 1px solid #333;
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 0 7px rgba(255, 255, 255, 0.3); /* Enhanced shadow and glow on hover */
 }
 
 QPushButton:pressed {
-background-color: #004D40;  /* Darker teal on press */
+background-color: #D84315;  /* Even darker orange on press */
 transform: scale(0.95);
-border: 1px solid #222;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 3px rgba(255, 255, 255, 0.2); /* Reduced shadow on press */
 }
 </string>
           </property>
@@ -112,31 +116,33 @@ border: 1px solid #222;
          <widget class="QPushButton" name="Next">
           <property name="font">
            <font>
-            <pointsize>18</pointsize>
+            <pointsize>20</pointsize>
             <bold>true</bold>
+            <family>Roboto</family>
            </font>
           </property>
           <property name="styleSheet">
            <string notr="true">QPushButton {
-background-color: #2196F3;  /* Blue */
+background-color: #03A9F4;  /* Light blue */
 color: #ffffff;
 border-radius: 12px;
-border: 1px solid #444;
-padding: 10px;
+border: 2px solid #03A9F4;
+padding: 14px;
 font-weight: bold;
-transition: background-color 0.3s, transform 0.3s, border 0.3s;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 255, 255, 0.2); /* Shadow with border glow */
+transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 QPushButton:hover {
-background-color: #1976D2;  /* Darker blue on hover */
+background-color: #0288D1;  /* Darker blue on hover */
 transform: scale(1.05);
-border: 1px solid #333;
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 0 7px rgba(255, 255, 255, 0.3); /* Enhanced shadow and glow on hover */
 }
 
 QPushButton:pressed {
-background-color: #1565C0;  /* Darker blue on press */
+background-color: #0277BD;  /* Even darker blue on press */
 transform: scale(0.95);
-border: 1px solid #222;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 3px rgba(255, 255, 255, 0.2); /* Reduced shadow on press */
 }
 </string>
           </property>
@@ -159,25 +165,27 @@ border: 1px solid #222;
     <item>
      <layout class="QHBoxLayout" name="nameSpaceLayout">
       <property name="spacing">
-       <number>10</number>
+       <number>15</number>
       </property>
       <item>
        <widget class="QLineEdit" name="Name">
         <property name="font">
          <font>
-          <pointsize>14</pointsize>
+          <pointsize>16</pointsize>
           <bold>true</bold>
+          <family>Roboto</family>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">QLineEdit {
 background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                            stop: 0 rgba(45, 45, 45, 255),
-                            stop: 1 rgba(30, 30, 30, 255));
+                            stop: 0 rgba(60, 60, 60, 255),
+                            stop: 1 rgba(40, 40, 40, 255));
 color: white;
-border-radius: 10px;
-border: 1px solid #666;
-padding: 5px;
+border-radius: 8px;
+border: 1px solid rgba(100, 100, 100, 200);
+padding: 10px;
+font-weight: bold;
 }
 </string>
         </property>
@@ -196,19 +204,21 @@ padding: 5px;
        <widget class="QLineEdit" name="Space">
         <property name="font">
          <font>
-          <pointsize>14</pointsize>
+          <pointsize>16</pointsize>
           <bold>true</bold>
+          <family>Roboto</family>
          </font>
         </property>
         <property name="styleSheet">
          <string notr="true">QLineEdit {
 background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                            stop: 0 rgba(45, 45, 45, 255),
-                            stop: 1 rgba(30, 30, 30, 255));
+                            stop: 0 rgba(60, 60, 60, 255),
+                            stop: 1 rgba(40, 40, 40, 255));
 color: white;
-border-radius: 10px;
-border: 1px solid #666;
-padding: 5px;
+border-radius: 8px;
+border: 1px solid rgba(100, 100, 100, 200);
+padding: 10px;
+font-weight: bold;
 }
 </string>
         </property>
@@ -229,8 +239,9 @@ padding: 5px;
      <widget class="QPushButton" name="GoTo">
       <property name="font">
        <font>
-        <pointsize>18</pointsize>
+        <pointsize>20</pointsize>
         <bold>true</bold>
+        <family>Roboto</family>
        </font>
       </property>
       <property name="styleSheet">
@@ -238,22 +249,23 @@ padding: 5px;
 background-color: #00BCD4;  /* Cyan */
 color: #ffffff;
 border-radius: 12px;
-border: 1px solid #444;
-padding: 10px;
+border: 2px solid #00BCD4;
+padding: 14px;
 font-weight: bold;
-transition: background-color 0.3s, transform 0.3s, border 0.3s;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 255, 255, 0.2); /* Shadow with border glow */
+transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 QPushButton:hover {
-background-color: #0097A7;  /* Darker cyan on hover */
+background-color: #00ACC1;  /* Darker cyan on hover */
 transform: scale(1.05);
-border: 1px solid #333;
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 0 7px rgba(255, 255, 255, 0.3); /* Enhanced shadow and glow on hover */
 }
 
 QPushButton:pressed {
 background-color: #00838F;  /* Darker cyan on press */
 transform: scale(0.95);
-border: 1px solid #222;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 3px rgba(255, 255, 255, 0.2); /* Reduced shadow on press */
 }
 </string>
       </property>
@@ -266,8 +278,9 @@ border: 1px solid #222;
      <widget class="QPushButton" name="GoBack">
       <property name="font">
        <font>
-        <pointsize>18</pointsize>
+        <pointsize>20</pointsize>
         <bold>true</bold>
+        <family>Roboto</family>
        </font>
       </property>
       <property name="styleSheet">
@@ -275,22 +288,23 @@ border: 1px solid #222;
 background-color: #E91E63;  /* Deep pink */
 color: #ffffff;
 border-radius: 12px;
-border: 1px solid #444;
-padding: 10px;
+border: 2px solid #E91E63;
+padding: 14px;
 font-weight: bold;
-transition: background-color 0.3s, transform 0.3s, border 0.3s;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 255, 255, 0.2); /* Shadow with border glow */
+transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 QPushButton:hover {
 background-color: #C2185B;  /* Darker pink on hover */
 transform: scale(1.05);
-border: 1px solid #333;
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 0 7px rgba(255, 255, 255, 0.3); /* Enhanced shadow and glow on hover */
 }
 
 QPushButton:pressed {
-background-color: #AD1457;  /* Darker pink on press */
+background-color: #AD1457;  /* Even darker pink on press */
 transform: scale(0.95);
-border: 1px solid #222;
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 3px rgba(255, 255, 255, 0.2); /* Reduced shadow on press */
 }
 </string>
       </property>
