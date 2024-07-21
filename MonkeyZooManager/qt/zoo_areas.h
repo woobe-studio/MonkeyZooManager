@@ -22,6 +22,7 @@ public:
 
 signals:
     void goBack();
+    void goSpace();
 
 private slots:
     void on_Previous_clicked();

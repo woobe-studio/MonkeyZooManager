@@ -5,6 +5,7 @@
 #include "scripts.h"
 #include "login.h"
 #include "zoo_areas.h"
+#include "zoo_space.h"
 
 int main(int argc, char* argv[])
 {
@@ -16,6 +17,7 @@ int main(int argc, char* argv[])
     LoginForm loginForm;
 
     ZooAreas* zooAreas = nullptr;
+    ZooSpace* zooSpace = nullptr;
     loginForm.show();
 
     QObject::connect(&loginForm, &LoginForm::loginSuccessful, [&]() {
@@ -26,6 +28,17 @@ int main(int argc, char* argv[])
             QObject::connect(zooAreas, &ZooAreas::goBack, [&]() {
                 zooAreas->close();
                 loginForm.show();
+                });
+            QObject::connect(zooAreas, &ZooAreas::goSpace, [&]() {
+                if (!zooSpace) {
+                    zooSpace = new ZooSpace;
+                    QObject::connect(zooSpace, &ZooSpace::goBack, [&]() {
+                        zooSpace->close();
+                        zooAreas->show();
+                        });
+                }
+                zooAreas->close();
+                zooSpace->show();
                 });
         }
 

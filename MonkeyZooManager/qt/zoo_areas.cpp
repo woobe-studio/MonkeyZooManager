@@ -39,7 +39,7 @@ void ZooAreas::on_Next_clicked()
 
 void ZooAreas::on_GoTo_clicked()
 {
-    // Handle Go to button click
+    emit goSpace();
 }
 
 void ZooAreas::on_GoBack_clicked()

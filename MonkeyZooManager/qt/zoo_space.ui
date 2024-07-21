@@ -268,7 +268,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 3px rgba(255, 255, 255, 0.2); /* R
 </string>
       </property>
       <property name="text">
-       <string>Go To</string>
+       <string>Go to Space</string>
       </property>
      </widget>
     </item>
