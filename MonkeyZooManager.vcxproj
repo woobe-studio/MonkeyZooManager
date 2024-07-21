@@ -102,6 +102,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="MonkeyZooManager\qt\zoo_areas.cpp" />
+    <ClCompile Include="MonkeyZooManager\qt\zoo_space.cpp" />
     <ClCompile Include="MonkeyZooManager\src\animal.cpp" />
     <ClCompile Include="MonkeyZooManager\src\authdaemon.cpp" />
     <ClCompile Include="MonkeyZooManager\src\behavioralnote.cpp" />
@@ -129,6 +130,8 @@
     <QtRcc Include="MonkeyZooManager\qt\zoo_areas.qrc" />
     <QtUic Include="MonkeyZooManager\qt\login.ui" />
     <QtUic Include="MonkeyZooManager\qt\zoo_areas.ui" />
+    <QtUic Include="MonkeyZooManager\qt\zoo_space.ui" />
+    <QtRcc Include="MonkeyZooManager\qt\zoo_space.qrc" />
     <ClCompile Include="main.cpp" />
     <None Include="MonkeyZooManager.ico" />
     <ResourceCompile Include="MonkeyZooManager.rc" />
@@ -146,6 +149,7 @@
     <ClInclude Include="MonkeyZooManager\libs\bcrypt.h" />
     <ClInclude Include="MonkeyZooManager\libs\json.hpp" />
     <QtMoc Include="MonkeyZooManager\qt\zoo_areas.h" />
+    <QtMoc Include="MonkeyZooManager\qt\zoo_space.h" />
     <ClInclude Include="MonkeyZooManager\src\monkey.hpp" />
     <ClInclude Include="MonkeyZooManager\libs\openbsd.h" />
     <ClInclude Include="MonkeyZooManager\libs\node_blf.h" />
