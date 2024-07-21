@@ -84,7 +84,7 @@ void ZooAreas::settingValues(Monkey::Space* space)
     }
     setAreaImage(space_name);
     ui->Name->setText(QString::fromStdString(space_name));
-    ui->Space->setText(QString::number(space->getCount()));
+    ui->Space->setText("Monkeys: " + QString::number(space->getCount()));
 }
 
 void ZooAreas::setAreaImage(const std::string& icon_name) {
