@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>360</width>
+    <height>640</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>700</width>
-    <height>600</height>
+    <width>360</width>
+    <height>640</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -31,9 +31,9 @@ background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(40, 
      <widget class="QLineEdit" name="EnterTitle">
       <property name="font">
        <font>
+        <family>Roboto</family>
         <pointsize>24</pointsize>
         <bold>true</bold>
-        <family>Roboto</family>
        </font>
       </property>
       <property name="styleSheet">
@@ -44,7 +44,7 @@ background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
 color: #E0E0E0;
 border-radius: 12px;
 border: 1px solid rgba(100, 100, 100, 200);
-padding: 14px;
+padding: 12px;
 font-weight: bold;
 }
 </string>
@@ -77,9 +77,9 @@ font-weight: bold;
          <widget class="QPushButton" name="Previous">
           <property name="font">
            <font>
+            <family>Roboto</family>
             <pointsize>20</pointsize>
             <bold>true</bold>
-            <family>Roboto</family>
            </font>
           </property>
           <property name="styleSheet">
@@ -88,7 +88,7 @@ background-color: #FF5722;  /* Deep orange */
 color: #ffffff;
 border-radius: 12px;
 border: 2px solid #FF5722;
-padding: 14px;
+padding: 12px;
 font-weight: bold;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 255, 255, 0.2); /* Shadow with border glow */
 transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
@@ -116,9 +116,9 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 3px rgba(255, 255, 255, 0.2); /* R
          <widget class="QPushButton" name="Next">
           <property name="font">
            <font>
+            <family>Roboto</family>
             <pointsize>20</pointsize>
             <bold>true</bold>
-            <family>Roboto</family>
            </font>
           </property>
           <property name="styleSheet">
@@ -127,7 +127,7 @@ background-color: #03A9F4;  /* Light blue */
 color: #ffffff;
 border-radius: 12px;
 border: 2px solid #03A9F4;
-padding: 14px;
+padding: 12px;
 font-weight: bold;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 255, 255, 0.2); /* Shadow with border glow */
 transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
@@ -171,9 +171,9 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 3px rgba(255, 255, 255, 0.2); /* R
        <widget class="QLineEdit" name="Name">
         <property name="font">
          <font>
+          <family>Roboto</family>
           <pointsize>16</pointsize>
           <bold>true</bold>
-          <family>Roboto</family>
          </font>
         </property>
         <property name="styleSheet">
@@ -204,9 +204,9 @@ font-weight: bold;
        <widget class="QLineEdit" name="Space">
         <property name="font">
          <font>
+          <family>Roboto</family>
           <pointsize>16</pointsize>
           <bold>true</bold>
-          <family>Roboto</family>
          </font>
         </property>
         <property name="styleSheet">
@@ -239,9 +239,9 @@ font-weight: bold;
      <widget class="QPushButton" name="GoTo">
       <property name="font">
        <font>
+        <family>Roboto</family>
         <pointsize>20</pointsize>
         <bold>true</bold>
-        <family>Roboto</family>
        </font>
       </property>
       <property name="styleSheet">
@@ -250,7 +250,7 @@ background-color: #00BCD4;  /* Cyan */
 color: #ffffff;
 border-radius: 12px;
 border: 2px solid #00BCD4;
-padding: 14px;
+padding: 12px;
 font-weight: bold;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 255, 255, 0.2); /* Shadow with border glow */
 transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
@@ -278,9 +278,9 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 3px rgba(255, 255, 255, 0.2); /* R
      <widget class="QPushButton" name="GoBack">
       <property name="font">
        <font>
+        <family>Roboto</family>
         <pointsize>20</pointsize>
         <bold>true</bold>
-        <family>Roboto</family>
        </font>
       </property>
       <property name="styleSheet">
@@ -289,7 +289,7 @@ background-color: #E91E63;  /* Deep pink */
 color: #ffffff;
 border-radius: 12px;
 border: 2px solid #E91E63;
-padding: 14px;
+padding: 12px;
 font-weight: bold;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 255, 255, 0.2); /* Shadow with border glow */
 transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;

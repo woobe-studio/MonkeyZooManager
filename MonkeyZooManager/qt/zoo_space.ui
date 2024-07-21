@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>360</width>
+    <height>640</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>700</width>
-    <height>600</height>
+    <width>360</width>
+    <height>640</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -31,9 +31,9 @@ background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(25, 
      <widget class="QLineEdit" name="EnterTitle">
       <property name="font">
        <font>
+        <family>Roboto</family>
         <pointsize>20</pointsize>
         <bold>true</bold>
-        <family>Roboto</family>
        </font>
       </property>
       <property name="styleSheet">
@@ -77,9 +77,9 @@ font-weight: bold;
          <widget class="QPushButton" name="Previous">
           <property name="font">
            <font>
+            <family>Roboto</family>
             <pointsize>18</pointsize>
             <bold>true</bold>
-            <family>Roboto</family>
            </font>
           </property>
           <property name="styleSheet">
@@ -88,7 +88,7 @@ background-color: #FF5252;  /* Light red */
 color: #ffffff;
 border-radius: 15px;
 border: 2px solid #FF5252;
-padding: 14px;
+padding: 12px;
 font-weight: bold;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 255, 255, 0.2); /* Shadow with border glow */
 transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
@@ -116,9 +116,9 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 3px rgba(255, 255, 255, 0.2); /* R
          <widget class="QPushButton" name="Next">
           <property name="font">
            <font>
+            <family>Roboto</family>
             <pointsize>18</pointsize>
             <bold>true</bold>
-            <family>Roboto</family>
            </font>
           </property>
           <property name="styleSheet">
@@ -127,7 +127,7 @@ background-color: #4CAF50;  /* Green */
 color: #ffffff;
 border-radius: 15px;
 border: 2px solid #4CAF50;
-padding: 14px;
+padding: 12px;
 font-weight: bold;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 255, 255, 0.2); /* Shadow with border glow */
 transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
@@ -171,9 +171,9 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 3px rgba(255, 255, 255, 0.2); /* R
        <widget class="QLineEdit" name="Name">
         <property name="font">
          <font>
+          <family>Roboto</family>
           <pointsize>16</pointsize>
           <bold>true</bold>
-          <family>Roboto</family>
          </font>
         </property>
         <property name="styleSheet">
@@ -203,9 +203,9 @@ padding: 10px;
        <widget class="QLineEdit" name="Space">
         <property name="font">
          <font>
+          <family>Roboto</family>
           <pointsize>16</pointsize>
           <bold>true</bold>
-          <family>Roboto</family>
          </font>
         </property>
         <property name="styleSheet">
@@ -237,9 +237,9 @@ padding: 10px;
      <widget class="QPushButton" name="GoTo">
       <property name="font">
        <font>
+        <family>Roboto</family>
         <pointsize>18</pointsize>
         <bold>true</bold>
-        <family>Roboto</family>
        </font>
       </property>
       <property name="styleSheet">
@@ -248,7 +248,7 @@ background-color: #FFC107;  /* Amber */
 color: #ffffff;
 border-radius: 15px;
 border: 2px solid #FFC107;
-padding: 14px;
+padding: 12px;
 font-weight: bold;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 255, 255, 0.2); /* Shadow with border glow */
 transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
@@ -276,9 +276,9 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 3px rgba(255, 255, 255, 0.2); /* R
      <widget class="QPushButton" name="GoBack">
       <property name="font">
        <font>
+        <family>Roboto</family>
         <pointsize>18</pointsize>
         <bold>true</bold>
-        <family>Roboto</family>
        </font>
       </property>
       <property name="styleSheet">
@@ -287,7 +287,7 @@ background-color: #2196F3;  /* Blue */
 color: #ffffff;
 border-radius: 15px;
 border: 2px solid #2196F3;
-padding: 14px;
+padding: 12px;
 font-weight: bold;
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 255, 255, 0.2); /* Shadow with border glow */
 transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
@@ -318,8 +318,8 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 3px rgba(255, 255, 255, 0.2); /* R
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>30</height>
+     <width>360</width>
+     <height>37</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -341,4 +341,6 @@ background: #444;
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <resources/>
+ <connections/>
 </ui>
