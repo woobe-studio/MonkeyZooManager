@@ -1,5 +1,8 @@
 #include <QApplication>
-#include "scripts.h"  // Include the header file for custom_init
+#include <QWidget>
+#include <QVBoxLayout>
+#include <QPushButton>
+#include "scripts.h"
 #include "login.h"
 #include "zoo_areas.h"
 
@@ -9,7 +12,9 @@ int main(int argc, char* argv[])
 
     custom_init();
 
+    // Create and configure LoginForm
     LoginForm loginForm;
+
     ZooAreas* zooAreas = nullptr;
     loginForm.show();
 
@@ -26,7 +31,6 @@ int main(int argc, char* argv[])
 
         zooAreas->show();
         });
-
 
     return app.exec();
 }

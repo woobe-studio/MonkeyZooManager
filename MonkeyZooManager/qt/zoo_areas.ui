@@ -66,23 +66,21 @@ padding: 10px;
       <property name="spacing">
        <number>10</number>
       </property>
-     </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="buttonLayout">
-      <property name="spacing">
-       <number>10</number>
-      </property>
       <item>
-       <widget class="QPushButton" name="Previous">
-        <property name="font">
-         <font>
-          <pointsize>18</pointsize>
-          <bold>true</bold>
-         </font>
+       <layout class="QHBoxLayout" name="buttonLayout">
+        <property name="spacing">
+         <number>10</number>
         </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
+        <item>
+         <widget class="QPushButton" name="Previous">
+          <property name="font">
+           <font>
+            <pointsize>18</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
 background-color: #009688;  /* Teal */
 color: #ffffff;
 border-radius: 12px;
@@ -102,22 +100,22 @@ background-color: #004D40;  /* Darker teal on press */
 transform: scale(0.95);
 }
 </string>
-        </property>
-        <property name="text">
-         <string>Previous</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="Next">
-        <property name="font">
-         <font>
-          <pointsize>18</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QPushButton {
+          </property>
+          <property name="text">
+           <string>Previous</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="Next">
+          <property name="font">
+           <font>
+            <pointsize>18</pointsize>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QPushButton {
 background-color: #2196F3;  /* Blue */
 color: #ffffff;
 border-radius: 12px;
@@ -137,23 +135,20 @@ background-color: #1565C0;  /* Darker blue on press */
 transform: scale(0.95);
 }
 </string>
-        </property>
-        <property name="text">
-         <string>Next</string>
-        </property>
-       </widget>
+          </property>
+          <property name="text">
+           <string>Next</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </item>
     <item>
-     <widget class="QGraphicsView" name="Icon">
-      <property name="styleSheet">
-       <string notr="true">background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                            stop: 0 #424242,
-                            stop: 1 #303030);
-color: white;
-border-radius: 10px;
-border: 1px solid #666;</string>
+     <widget class="QLabel" name="Icon">
+      <property name="text">
+       <string/>
       </property>
      </widget>
     </item>
