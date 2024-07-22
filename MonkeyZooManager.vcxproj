@@ -142,6 +142,11 @@
   <ItemGroup>
     <Image Include="MonkeyZooManager\qt\Cage.png" />
     <Image Include="MonkeyZooManager\qt\Login.png" />
+    <Image Include="MonkeyZooManager\qt\Heisen Monkey.png" />
+  	<Image Include="MonkeyZooManager\qt\Student Monkey.png" />
+	  <Image Include="MonkeyZooManager\qt\Dart Monkey.png" />
+	  <Image Include="MonkeyZooManager\qt\Lava Monkey.png" />
+  	<Image Include="MonkeyZooManager\qt\Galactic Monkey.png" />
     <Image Include="MonkeyZooManager\qt\Hospital.png" />
     <Image Include="MonkeyZooManager\qt\Enclosure.png" />
   </ItemGroup>
