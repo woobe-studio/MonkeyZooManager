@@ -101,6 +101,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="MonkeyZooManager\qt\register.cpp" />
     <ClCompile Include="MonkeyZooManager\qt\zoo_areas.cpp" />
     <ClCompile Include="MonkeyZooManager\qt\zoo_space.cpp" />
     <ClCompile Include="MonkeyZooManager\src\animal.cpp" />
@@ -129,6 +130,7 @@
     <QtRcc Include="MonkeyZooManager\qt\login.qrc" />
     <QtRcc Include="MonkeyZooManager\qt\zoo_areas.qrc" />
     <QtUic Include="MonkeyZooManager\qt\login.ui" />
+    <QtUic Include="MonkeyZooManager\qt\register.ui" />
     <QtUic Include="MonkeyZooManager\qt\zoo_areas.ui" />
     <QtUic Include="MonkeyZooManager\qt\zoo_space.ui" />
     <QtRcc Include="MonkeyZooManager\qt\zoo_space.qrc" />
@@ -142,6 +144,7 @@
   <ItemGroup>
     <Image Include="MonkeyZooManager\qt\Cage.png" />
     <Image Include="MonkeyZooManager\qt\Login.png" />
+    <Image Include="MonkeyZooManager\qt\register.png" />
     <Image Include="MonkeyZooManager\qt\Heisen Monkey.png" />
     <Image Include="MonkeyZooManager\qt\Student Monkey.png" />
     <Image Include="MonkeyZooManager\qt\Dart Monkey.png" />
@@ -155,6 +158,7 @@
     <ClInclude Include="MonkeyZooManager\libs\json.hpp" />
     <QtMoc Include="MonkeyZooManager\qt\zoo_areas.h" />
     <QtMoc Include="MonkeyZooManager\qt\zoo_space.h" />
+    <QtMoc Include="MonkeyZooManager\qt\register.h" />
     <ClInclude Include="MonkeyZooManager\src\monkey.hpp" />
     <ClInclude Include="MonkeyZooManager\libs\openbsd.h" />
     <ClInclude Include="MonkeyZooManager\libs\node_blf.h" />

@@ -71,14 +71,14 @@ font-weight: bold;
         <height>200</height>
        </size>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
       <property name="pixmap">
-       <pixmap>MonkeyZooManager\qt\login.png</pixmap>
+       <pixmap>MonkeyZooManager/qt/register.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
       </property>
      </widget>
     </item>
@@ -135,7 +135,6 @@ padding: 10px;
       </property>
      </widget>
     </item>
-    <!-- Additional field for confirming password -->
     <item>
      <widget class="QLineEdit" name="lineEditConfirmPassword">
       <property name="font">
@@ -165,16 +164,57 @@ padding: 10px;
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="pushButtonRegister">
-      <property name="font">
-       <font>
-        <family>Roboto</family>
-        <pointsize>20</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
+     <layout class="QHBoxLayout" name="buttonLayout">
+      <item>
+       <widget class="QPushButton" name="pushButtonGoBack">
+        <property name="font">
+         <font>
+          <family>Roboto</family>
+          <pointsize>20</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+background-color: #F44336;  /* Light Red */
+color: #ffffff;
+border-radius: 12px;
+border: 2px solid #F44336;
+padding: 14px;
+font-weight: bold;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 255, 255, 0.2); /* Shadow with border glow */
+transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+QPushButton:hover {
+background-color: #E53935;  /* Darker light red on hover */
+transform: scale(1.05);
+box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 0 7px rgba(255, 255, 255, 0.3); /* Enhanced shadow and glow on hover */
+}
+
+QPushButton:pressed {
+background-color: #C62828;  /* Even darker light red on press */
+transform: scale(0.95);
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 3px rgba(255, 255, 255, 0.2); /* Reduced shadow on press */
+}
+</string>
+        </property>
+        <property name="text">
+         <string>Go Back</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButtonRegister">
+        <property name="font">
+         <font>
+          <family>Roboto</family>
+          <pointsize>20</pointsize>
+          <bold>true</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
 background-color: #FF9800;  /* Orange */
 color: #ffffff;
 border-radius: 12px;
@@ -197,11 +237,13 @@ transform: scale(0.95);
 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 3px rgba(255, 255, 255, 0.2); /* Reduced shadow on press */
 }
 </string>
-      </property>
-      <property name="text">
-       <string>Register</string>
-      </property>
-     </widget>
+        </property>
+        <property name="text">
+         <string>Register</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>

@@ -29,6 +29,7 @@
     <ClCompile Include="MonkeyZooManager\libs\blowfish.cpp" />
     <ClCompile Include="MonkeyZooManager\qt\zoo_areas.cpp" />
     <ClCompile Include="MonkeyZooManager\qt\zoo_space.cpp" />
+    <ClCompile Include="MonkeyZooManager\qt\register.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MonkeyZooManager\libs\bcrypt.h" />
@@ -43,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="MonkeyZooManager\qt\Login.png" />
+    <Image Include="MonkeyZooManager\qt\Register.png" />
     <Image Include="MonkeyZooManager\qt\Cage.png" />
     <Image Include="MonkeyZooManager\qt\Heisen Monkey.png" />
     <Image Include="MonkeyZooManager\qt\Student Monkey.png" />
@@ -56,6 +58,7 @@
     <QtMoc Include="MonkeyZooManager\qt\login.h" />
     <QtMoc Include="MonkeyZooManager\qt\zoo_areas.h" />
     <QtMoc Include="MonkeyZooManager\qt\zoo_space.h" />
+    <QtMoc Include="MonkeyZooManager\qt\register.h" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="MonkeyZooManager\qt\login.qrc" />
@@ -64,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="MonkeyZooManager\qt\login.ui" />
+    <QtUic Include="MonkeyZooManager\qt\register.ui" />
     <QtUic Include="MonkeyZooManager\qt\zoo_areas.ui" />
     <QtUic Include="MonkeyZooManager\qt\zoo_space.ui" />
   </ItemGroup>
