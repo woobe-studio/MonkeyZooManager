@@ -27,6 +27,10 @@ int main(int argc, char* argv[])
         loginForm.close();
         if (!registerForm) {
             registerForm = new RegisterForm;
+            QObject::connect(registerForm, &RegisterForm::goBack, [&]() {
+                registerForm->close();
+                loginForm.show();
+                });
         }
         registerForm->show();
         });
