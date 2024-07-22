@@ -24,7 +24,7 @@ private slots:
     void on_pushButtonRegister_clicked();
     bool isValidUsername(const QString& username);
     bool isValidPassword(const QString& password);
-    bool CheckTakenData(const std::string& login, const std::string& password);
+
 
 private:
     Ui::RegisterForm* ui;

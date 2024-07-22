@@ -21,6 +21,8 @@ LoginForm::~LoginForm()
 
 void LoginForm::on_pushButtonRegister_clicked()
 {
+    ui->lineEditUsername->setText("");
+    ui->lineEditPassword->setText("");
     emit goRegister();
 }
 

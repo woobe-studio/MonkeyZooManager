@@ -27,8 +27,15 @@ void RegisterForm::on_pushButtonRegister_clicked()
 {
     QString username = ui->lineEditUsername->text();
     QString password = ui->lineEditPassword->text();
+    QString second_password = ui->lineEditConfirmPassword->text();
 
+    Monkey::AuthDaemon* authorizationDaemon = Monkey::AuthDaemon::getInstance();
     // Validate username and password
+    if (authorizationDaemon->doesUsernameExist(username.toStdString())) {
+        QMessageBox::warning(this, "Register", "This username already exists.");
+        return;
+    }
+
     if (!isValidUsername(username)) {
         QMessageBox::warning(this, "Register", "Username does not meet requirements.");
         return;
@@ -39,21 +46,22 @@ void RegisterForm::on_pushButtonRegister_clicked()
         return;
     }
 
-    if (CheckTakenData(username.toStdString(), password.toStdString())) {
-        QMessageBox* msgBox = new QMessageBox(QMessageBox::Information, "Register", "Register successful!", QMessageBox::Ok, this);
-
-        connect(msgBox, &QMessageBox::buttonClicked, [this, msgBox](QAbstractButton*) {
-            ui->lineEditUsername->setText("");
-            ui->lineEditPassword->setText("");
-            emit RegisterSuccessful();
-            msgBox->deleteLater();
-            });
-
-        msgBox->exec();
+    if (password != second_password) {
+        QMessageBox::warning(this, "Register", "Passwords do not match.");
+        return;
     }
-    else {
-        QMessageBox::warning(this, "Register", "Invalid username or password.");
-    }
+
+    Monkey::User* usr = new Monkey::User;
+    usr->setUsername(username.toStdString());
+    usr->setPassword(password.toStdString());
+    authorizationDaemon->addUser(usr);
+
+    QMessageBox* msgBox = new QMessageBox(QMessageBox::Information, "Register", "Register successful!", QMessageBox::Ok, this);
+    ui->lineEditUsername->setText("");
+    ui->lineEditPassword->setText("");
+    ui->lineEditConfirmPassword->setText("");
+
+    msgBox->exec();
 }
 
 bool RegisterForm::isValidUsername(const QString& username)
@@ -88,14 +96,4 @@ bool RegisterForm::isValidPassword(const QString& password)
     }
 
     return false;
-}
-
-bool RegisterForm::CheckTakenData(const std::string& login, const std::string& password)
-{
-    Monkey::AuthDaemon* authorizationDaemon = Monkey::AuthDaemon::getInstance();
-    Monkey::User* usr = new Monkey::User;
-    usr->setUsername(login);
-    usr->setPassword(password);
-    authorizationDaemon->addUser(usr);
-    return (bool)authorizationDaemon->login(login, password);
 }
