@@ -11,15 +11,7 @@ ZooSpace::ZooSpace(QWidget* parent) :
     resize(360, 640);
 
     currentMonkeyIndex = 0;
-
-    Monkey::AuthDaemon* authorizationDaemon = Monkey::AuthDaemon::getInstance();
-    Monkey::Zoo* zoo = authorizationDaemon->retPointerOfLoggedInUser()->getZoo();
-    QString new_space_name = QString::fromStdString(getSpaceName(zoo->getSpace(currentAreaIndex)));
-    ui->EnterTitle->setText(new_space_name);
-    if (zoo->getSpace(currentAreaIndex)->getCapacity() != 0)
-        settingValues(zoo->getSpace(currentAreaIndex));
-
-
+    custom_init();
 }
 
 ZooSpace::~ZooSpace()
@@ -93,10 +85,17 @@ void ZooSpace::setAreaImage(const std::string& icon_name) {
     ui->Icon->setAlignment(Qt::AlignCenter);
 }
 
-void ZooSpace::resetValues()
+void ZooSpace::custom_init()
 {
-    ui->Name->setText("");
-    ui->Space->setText("");
-    ui->EnterTitle->setText("");
-    currentMonkeyIndex = 0;
+    Monkey::AuthDaemon* authorizationDaemon = Monkey::AuthDaemon::getInstance();
+    Monkey::Zoo* zoo = authorizationDaemon->retPointerOfLoggedInUser()->getZoo();
+    QString new_space_name = QString::fromStdString(getSpaceName(zoo->getSpace(currentAreaIndex)));
+    ui->EnterTitle->setText(new_space_name);
+    if (zoo->getSpace(currentAreaIndex)->getCount() != 0)
+        settingValues(zoo->getSpace(currentAreaIndex));
+    else {
+        ui->Icon->setPixmap(QPixmap());
+        ui->Name->setText("");
+        ui->Space->setText("");
+    }
 }
