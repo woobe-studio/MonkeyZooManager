@@ -169,6 +169,12 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 3px rgba(255, 255, 255, 0.2); /* R
       </property>
       <item>
        <widget class="QLineEdit" name="Name">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="font">
          <font>
           <family>Roboto</family>
@@ -196,17 +202,17 @@ padding: 10px;
         </property>
         <property name="readOnly">
          <bool>true</bool>
-        </property>
-        <property name="minimumSize">
-         <size>
-          <width>200</width> <!-- Set the minimum width to be wider -->
-          <height>30</height>
-         </size>
         </property>
        </widget>
       </item>
       <item>
        <widget class="QLineEdit" name="Space">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>30</height>
+         </size>
+        </property>
         <property name="font">
          <font>
           <family>Roboto</family>
@@ -235,54 +241,9 @@ padding: 10px;
         <property name="readOnly">
          <bool>true</bool>
         </property>
-        <property name="minimumSize">
-         <size>
-          <width>100</width> <!-- Set a smaller width -->
-          <height>30</height>
-         </size>
-        </property>
        </widget>
       </item>
      </layout>
-    </item>
-    <item>
-     <widget class="QPushButton" name="GoTo">
-      <property name="font">
-       <font>
-        <family>Roboto</family>
-        <pointsize>18</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-background-color: #FFC107;  /* Amber */
-color: #ffffff;
-border-radius: 15px;
-border: 2px solid #FFC107;
-padding: 12px;
-font-weight: bold;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 5px rgba(255, 255, 255, 0.2); /* Shadow with border glow */
-transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
-}
-
-QPushButton:hover {
-background-color: #FFA000;  /* Darker amber on hover */
-transform: scale(1.05);
-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3), 0 0 7px rgba(255, 255, 255, 0.3); /* Enhanced shadow and glow on hover */
-}
-
-QPushButton:pressed {
-background-color: #FF8F00;  /* Even darker amber on press */
-transform: scale(0.95);
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 3px rgba(255, 255, 255, 0.2); /* Reduced shadow on press */
-}
-</string>
-      </property>
-      <property name="text">
-       <string>Go to Space</string>
-      </property>
-     </widget>
     </item>
     <item>
      <widget class="QPushButton" name="GoBack">

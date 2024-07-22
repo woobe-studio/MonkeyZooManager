@@ -29,7 +29,6 @@ signals:
 private slots:
     void on_Previous_clicked();
     void on_Next_clicked();
-    void on_GoTo_clicked();
     void on_GoBack_clicked();
 
 private:

@@ -29,11 +29,6 @@ void ZooSpace::on_Next_clicked()
     move_through_spaces(false);
 }
 
-void ZooSpace::on_GoTo_clicked()
-{
-    // Handle Go to button click
-}
-
 void ZooSpace::on_GoBack_clicked()
 {
     emit goBack();
