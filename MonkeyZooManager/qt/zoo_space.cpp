@@ -32,7 +32,6 @@ void ZooSpace::on_Next_clicked()
 void ZooSpace::on_GoBack_clicked()
 {
     emit goBack();
-    // Handle Go Back button click
 }
 
 void ZooSpace::move_through_spaces(bool reverse)

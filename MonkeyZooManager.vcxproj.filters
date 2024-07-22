@@ -8,7 +8,7 @@
     <ClCompile Include="MonkeyZooManager\src\dartmonkey.cpp" />
     <ClCompile Include="MonkeyZooManager\src\enclosure.cpp" />
     <ClCompile Include="MonkeyZooManager\src\galacticmonkey.cpp" />
-    <ClCompile Include="MonkeyZooManager\src\heisenmonkey.cpp" />
+    <ClCompile Include="MonkeyZooManager\src\richmonkey.cpp" />
     <ClCompile Include="MonkeyZooManager\src\hospital.cpp" />
     <ClCompile Include="MonkeyZooManager\src\loggingdaemon.cpp" />
     <ClCompile Include="MonkeyZooManager\src\lavamonkey.cpp" />
@@ -44,11 +44,11 @@
   <ItemGroup>
     <Image Include="MonkeyZooManager\qt\Login.png" />
     <Image Include="MonkeyZooManager\qt\Cage.png" />
-	<Image Include="MonkeyZooManager\qt\Heisen Monkey.png" />
-	<Image Include="MonkeyZooManager\qt\Student Monkey.png" />
-	<Image Include="MonkeyZooManager\qt\Dart Monkey.png" />
-	<Image Include="MonkeyZooManager\qt\Lava Monkey.png" />
-	<Image Include="MonkeyZooManager\qt\Galactic Monkey.png" />
+    <Image Include="MonkeyZooManager\qt\Heisen Monkey.png" />
+    <Image Include="MonkeyZooManager\qt\Student Monkey.png" />
+    <Image Include="MonkeyZooManager\qt\Dart Monkey.png" />
+    <Image Include="MonkeyZooManager\qt\Lava Monkey.png" />
+    <Image Include="MonkeyZooManager\qt\Galactic Monkey.png" />
     <Image Include="MonkeyZooManager\qt\Hospital.png" />
     <Image Include="MonkeyZooManager\qt\Enclosure.png" />
   </ItemGroup>

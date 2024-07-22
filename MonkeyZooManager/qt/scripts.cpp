@@ -23,7 +23,7 @@ void custom_init() {
     authorizationDaemon->addUser(usr);
     int i = 0;
     while (i < 2) {
-        Monkey::HeisenMonkey* itAnimal = new Monkey::HeisenMonkey;
+        Monkey::RichMonkey* itAnimal = new Monkey::RichMonkey;
         int j = 0;
         itAnimal->setName("medd" + i);
         itAnimal->setAge(i);
@@ -78,8 +78,8 @@ std::string getMonkeyName(Monkey::Animal*monkey)
     else if (Monkey::DartMonkey* dartPtr = dynamic_cast<Monkey::DartMonkey*>(monkey)) {
         monkey_name = "Dart Monkey";
     }
-    else if (Monkey::HeisenMonkey* heisenPtr = dynamic_cast<Monkey::HeisenMonkey*>(monkey)) {
-        monkey_name = "Heisen Monkey";
+    else if (Monkey::RichMonkey* heisenPtr = dynamic_cast<Monkey::RichMonkey*>(monkey)) {
+        monkey_name = "Rich Monkey";
     }
     else if (Monkey::LavaMonkey* lavaPtr = dynamic_cast<Monkey::LavaMonkey*>(monkey)) {
         monkey_name = "Lava Monkey";

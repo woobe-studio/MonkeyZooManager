@@ -33,7 +33,7 @@ namespace Monkey
     class MedicalNote;
     class BehavioralNote;
     class OtherNote;
-    class HeisenMonkey;
+    class RichMonkey;
     class StudentMonkey;
     class GalacticMonkey;
     class DartMonkey;
@@ -358,15 +358,15 @@ namespace Monkey
         void from_json(const json &j) override;
     };
 
-    class HeisenMonkey : public Monkey
+    class RichMonkey : public Monkey
     {
     private:
         float poundsOfCandyCooked;
 
     public:
-        HeisenMonkey();
+        RichMonkey();
 
-        ~HeisenMonkey();
+        ~RichMonkey();
 
         float getPoundsOfCandyCooked();
 

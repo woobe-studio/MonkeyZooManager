@@ -104,9 +104,9 @@ namespace Monkey
 				{
 					animal = new GalacticMonkey();
 				}
-				else if (animalType == "HeisenMonkey")
+				else if (animalType == "RichMonkey")
 				{
-					animal = new HeisenMonkey();
+					animal = new RichMonkey();
 				}
 				else if (animalType == "LavaMonkey")
 				{
