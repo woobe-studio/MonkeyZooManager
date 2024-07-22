@@ -17,8 +17,10 @@ public:
 
 signals:
     void RegisterSuccessful();
+    void goBack();
 
 private slots:
+    void on_pushButtonGoBack_clicked();
     void on_pushButtonRegister_clicked();
     bool CheckTakenData(const std::string& login, const std::string& password);
 

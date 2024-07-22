@@ -4,6 +4,7 @@
 #include <QPushButton>
 #include "scripts.h"
 #include "login.h"
+#include "register.h"
 #include "zoo_areas.h"
 #include "zoo_space.h"
 
@@ -16,9 +17,19 @@ int main(int argc, char* argv[])
     // Create and configure LoginForm
     LoginForm loginForm;
 
+    RegisterForm* registerForm = nullptr;
+
     ZooAreas* zooAreas = nullptr;
     ZooSpace* zooSpace = nullptr;
     loginForm.show();
+
+    QObject::connect(&loginForm, &LoginForm::goRegister, [&]() {
+        loginForm.close();
+        if (!registerForm) {
+            registerForm = new RegisterForm;
+        }
+        registerForm->show();
+        });
 
     QObject::connect(&loginForm, &LoginForm::loginSuccessful, [&]() {
         loginForm.close();

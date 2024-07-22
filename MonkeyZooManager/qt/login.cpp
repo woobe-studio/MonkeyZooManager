@@ -19,6 +19,11 @@ LoginForm::~LoginForm()
     delete ui;
 }
 
+void LoginForm::on_pushButtonRegister_clicked()
+{
+    emit goRegister();
+}
+
 void LoginForm::on_pushButtonLogin_clicked()
 {
     QString username = ui->lineEditUsername->text();

@@ -16,10 +16,12 @@ public:
     ~LoginForm();
 
 signals:
+    void goRegister();
     void loginSuccessful();
 
 private slots:
     void on_pushButtonLogin_clicked();
+    void on_pushButtonRegister_clicked();
     bool CheckTakenData(const std::string& login, const std::string& password);
 
 private:
