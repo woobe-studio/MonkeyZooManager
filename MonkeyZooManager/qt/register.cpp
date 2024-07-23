@@ -20,6 +20,9 @@ RegisterForm::~RegisterForm()
 }
 
 void RegisterForm::on_pushButtonGoBack_clicked() {
+    ui->lineEditUsername->setText("");
+    ui->lineEditPassword->setText("");
+    ui->lineEditConfirmPassword->setText("");
     emit goBack();
 }
 

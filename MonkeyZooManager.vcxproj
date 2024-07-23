@@ -131,6 +131,10 @@
     <QtRcc Include="MonkeyZooManager\qt\zoo_areas.qrc" />
     <QtUic Include="MonkeyZooManager\qt\login.ui" />
     <QtUic Include="MonkeyZooManager\qt\register.ui" />
+    <QtUic Include="MonkeyZooManager\qt\zoo_register.ui" />
+    <QtRcc Include="MonkeyZooManager\qt\zoo_register.qrc" />
+    <QtUic Include="MonkeyZooManager\qt\zoo_select.ui" />
+    <QtRcc Include="MonkeyZooManager\qt\zoo_select.qrc" />
     <QtUic Include="MonkeyZooManager\qt\zoo_areas.ui" />
     <QtUic Include="MonkeyZooManager\qt\zoo_space.ui" />
     <QtRcc Include="MonkeyZooManager\qt\zoo_space.qrc" />
@@ -144,6 +148,8 @@
   <ItemGroup>
     <Image Include="MonkeyZooManager\qt\Cage.png" />
     <Image Include="MonkeyZooManager\qt\Login.png" />
+    <Image Include="MonkeyZooManager\qt\ZooRegister.png" />
+    <Image Include="MonkeyZooManager\qt\ZooSelect.png" />
     <Image Include="MonkeyZooManager\qt\register.png" />
     <Image Include="MonkeyZooManager\qt\Heisen Monkey.png" />
     <Image Include="MonkeyZooManager\qt\Student Monkey.png" />

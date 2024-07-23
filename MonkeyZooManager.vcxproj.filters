@@ -45,6 +45,8 @@
   <ItemGroup>
     <Image Include="MonkeyZooManager\qt\Login.png" />
     <Image Include="MonkeyZooManager\qt\Register.png" />
+    <Image Include="MonkeyZooManager\qt\ZooRegister.png" />
+    <Image Include="MonkeyZooManager\qt\ZooSelect.png" />
     <Image Include="MonkeyZooManager\qt\Cage.png" />
     <Image Include="MonkeyZooManager\qt\Heisen Monkey.png" />
     <Image Include="MonkeyZooManager\qt\Student Monkey.png" />
@@ -68,6 +70,8 @@
   <ItemGroup>
     <QtUic Include="MonkeyZooManager\qt\login.ui" />
     <QtUic Include="MonkeyZooManager\qt\register.ui" />
+    <QtUic Include="MonkeyZooManager\qt\zoo_select.ui" />
+    <QtUic Include="MonkeyZooManager\qt\zoo_register.ui" />
     <QtUic Include="MonkeyZooManager\qt\zoo_areas.ui" />
     <QtUic Include="MonkeyZooManager\qt\zoo_space.ui" />
   </ItemGroup>
