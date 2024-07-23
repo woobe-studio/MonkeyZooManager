@@ -7,6 +7,9 @@ ZooSelect::ZooSelect(QWidget* parent) :
 {
     ui->setupUi(this);
 
+    setMinimumSize(360, 640);
+    resize(360, 640);
+
     Monkey::AuthDaemon* authorizationDaemon = Monkey::AuthDaemon::getInstance();
     Monkey::Zoo* zoo = authorizationDaemon->retPointerOfLoggedInUser()->getZoo();
     settingValues(zoo);

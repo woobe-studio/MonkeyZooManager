@@ -63,6 +63,7 @@ int main(int argc, char* argv[])
                                 });
                         }
                         zooAreas->close();
+                        areaModify->currentAreaIndex = zooAreas->currentAreaIndex;
                         areaModify->show();
                         });
                     QObject::connect(zooAreas, &ZooAreas::goSpace, [&]() {

@@ -16,6 +16,7 @@ class AreaModify : public QMainWindow
 public:
     explicit AreaModify(QWidget* parent = nullptr);
     ~AreaModify();
+    int currentAreaIndex;
 
 signals:
     void goBack();
