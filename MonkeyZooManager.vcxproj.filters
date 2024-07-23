@@ -56,6 +56,7 @@
     <Image Include="MonkeyZooManager\qt\images\Galactic Monkey.png" />
     <Image Include="MonkeyZooManager\qt\images\Hospital.png" />
     <Image Include="MonkeyZooManager\qt\images\Enclosure.png" />
+    <Image Include="MonkeyZooManager\qt\images\Rich Monkey.png" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MonkeyZooManager\qt\login.h" />

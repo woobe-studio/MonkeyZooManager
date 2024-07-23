@@ -145,6 +145,7 @@
   <ItemGroup>
     <Image Include="MonkeyZooManager\qt\images\Cage.png" />
     <Image Include="MonkeyZooManager\qt\images\Login.png" />
+    <Image Include="MonkeyZooManager\qt\images\Rich Monkey.png" />
     <Image Include="MonkeyZooManager\qt\images\ZooSelect.png" />
     <Image Include="MonkeyZooManager\qt\images\register.png" />
     <Image Include="MonkeyZooManager\qt\Heisen Monkey.png" />

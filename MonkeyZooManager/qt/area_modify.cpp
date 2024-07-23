@@ -6,6 +6,10 @@ AreaModify::AreaModify(QWidget* parent) :
     ui(new Ui::AreaModify)
 {
     ui->setupUi(this);
+
+    Monkey::AuthDaemon* authorizationDaemon = Monkey::AuthDaemon::getInstance();
+    Monkey::Zoo* zoo = authorizationDaemon->retPointerOfLoggedInUser()->getZoo();
+    settingValues(zoo);
 }
 
 AreaModify::~AreaModify()
@@ -26,4 +30,17 @@ void AreaModify::on_GoTo_clicked()
 void AreaModify::on_GoBack_clicked()
 {
     emit goBack();
+}
+
+void AreaModify::on_TypeComboBox_currentIndexChanged(const QString& text)
+{
+    // Handle the event when a new item is selected from the combo box
+    qDebug() << "Selected item:" << text;
+}
+
+void AreaModify::settingValues(Monkey::Zoo* zoo)
+{
+    ui->TypeComboBox->addItem("Hospital");
+    ui->TypeComboBox->addItem("Enclosure");
+    ui->TypeComboBox->addItem("Cage");
 }

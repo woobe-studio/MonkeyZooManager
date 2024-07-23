@@ -109,7 +109,7 @@ font-weight: bold;
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>MonkeyZooManager/qt/ZooSelect.png</pixmap>
+       <pixmap>MonkeyZooManager/qt/images/ZooSelect.png</pixmap>
       </property>
  <property name="scaledContents">
        <bool>true</bool>

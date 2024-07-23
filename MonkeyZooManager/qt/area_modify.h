@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include "../src/monkey.hpp"
+
 QT_BEGIN_NAMESPACE
 namespace Ui { class AreaModify; }
 QT_END_NAMESPACE
@@ -22,9 +24,11 @@ private slots:
     void on_DeleteButton_clicked();
     void on_GoTo_clicked();
     void on_GoBack_clicked();
+    void on_TypeComboBox_currentIndexChanged(const QString& text);
 
 private:
     Ui::AreaModify* ui;
+    void settingValues(Monkey::Zoo* zoo);
 };
 
 #endif // AREAMODIFY_H
