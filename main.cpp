@@ -70,29 +70,6 @@ int main(int argc, char* argv[])
                 zooAreas->show();
                  });
         }
-        
-        // if (!zooAreas) {
-        //     zooAreas = new ZooAreas;
-        //     QObject::connect(zooAreas, &ZooAreas::goBack, [&]() {
-        //         zooAreas->close();
-        //         loginForm.show();
-        //         });
-        //     QObject::connect(zooAreas, &ZooAreas::goSpace, [&]() {
-        //         if (!zooSpace) {
-        //             zooSpace = new ZooSpace;
-        //             QObject::connect(zooSpace, &ZooSpace::goBack, [&]() {
-        //                 zooSpace->close();
-        //                 zooAreas->show();
-        //                 });
-        //         }
-        //         zooAreas->close();
-        //         zooSpace->currentAreaIndex = zooAreas->currentAreaIndex;
-        //         zooSpace->custom_init();
-        //         zooSpace->show();
-        //         });
-        // }
-
-        // zooAreas->show();
         zooSelect->show();
         });
 
