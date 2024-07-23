@@ -79,12 +79,19 @@ font-weight: bold;
      </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="nameSpaceLayout">
+     <widget class="QLabel" name="Icon">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="comboBoxLayout">
       <property name="spacing">
-       <number>0</number>
+       <number>15</number>
       </property>
       <item>
-       <widget class="QLineEdit" name="Name">
+       <widget class="QComboBox" name="TypeComboBox">
         <property name="font">
          <font>
           <family>Roboto</family>
@@ -93,7 +100,7 @@ font-weight: bold;
          </font>
         </property>
         <property name="styleSheet">
-         <string notr="true">QLineEdit {
+         <string notr="true">QComboBox {
 background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
                             stop: 0 rgba(60, 60, 60, 255),
                             stop: 1 rgba(40, 40, 40, 255));
@@ -105,25 +112,9 @@ font-weight: bold;
 }
 </string>
         </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
-        </property>
-        <property name="readOnly">
-         <bool>true</bool>
-        </property>
        </widget>
       </item>
      </layout>
-    </item>
-    <item>
-     <widget class="QLabel" name="Icon">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
     </item>
     <item>
      <layout class="QHBoxLayout" name="integerValueLayout">
@@ -181,44 +172,6 @@ font-weight: bold;
        </widget>
       </item>
      </layout>
-    </item>
-    <item>
-     <layout class="QHBoxLayout" name="comboBoxLayout">
-      <property name="spacing">
-       <number>15</number>
-      </property>
-      <item>
-       <widget class="QComboBox" name="TypeComboBox">
-        <property name="font">
-         <font>
-          <family>Roboto</family>
-          <pointsize>16</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QComboBox {
-background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                            stop: 0 rgba(60, 60, 60, 255),
-                            stop: 1 rgba(40, 40, 40, 255));
-color: white;
-border-radius: 8px;
-border: 1px solid rgba(100, 100, 100, 200);
-padding: 10px;
-font-weight: bold;
-}
-</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
-     <widget class="QLabel" name="Spacer">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
     </item>
     <item>
      <layout class="QHBoxLayout" name="actionButtonsLayout">
