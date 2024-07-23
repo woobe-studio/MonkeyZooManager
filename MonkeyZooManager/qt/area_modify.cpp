@@ -6,7 +6,7 @@ AreaModify::AreaModify(QWidget* parent) :
     ui(new Ui::AreaModify)
 {
     ui->setupUi(this);
-
+    connect(ui->TypeComboBox, &QComboBox::currentTextChanged, this, &AreaModify::on_TypeComboBox_currentIndexChanged);
     Monkey::AuthDaemon* authorizationDaemon = Monkey::AuthDaemon::getInstance();
     Monkey::Zoo* zoo = authorizationDaemon->retPointerOfLoggedInUser()->getZoo();
     settingValues(zoo);
