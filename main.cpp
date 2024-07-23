@@ -7,6 +7,7 @@
 #include "register.h"
 #include "zoo_select.h"
 #include "zoo_areas.h"
+#include "area_modify.h"
 #include "zoo_space.h"
 
 int main(int argc, char* argv[])
@@ -22,6 +23,7 @@ int main(int argc, char* argv[])
 
     ZooSelect* zooSelect = nullptr;
     ZooAreas* zooAreas = nullptr;
+    AreaModify* areaModify = nullptr;
     ZooSpace* zooSpace = nullptr;
     loginForm.show();
 
@@ -51,6 +53,17 @@ int main(int argc, char* argv[])
                     QObject::connect(zooAreas, &ZooAreas::goBack, [&]() {
                         zooAreas->close();
                         zooSelect->show();
+                        });
+                    QObject::connect(zooAreas, &ZooAreas::modifyArea, [&]() {
+                        if (!areaModify) {
+                            areaModify = new AreaModify;
+                            QObject::connect(areaModify, &AreaModify::goBack, [&]() {
+                                areaModify->close();
+                                zooAreas->show();
+                                });
+                        }
+                        zooAreas->close();
+                        areaModify->show();
                         });
                     QObject::connect(zooAreas, &ZooAreas::goSpace, [&]() {
                         if (!zooSpace) {

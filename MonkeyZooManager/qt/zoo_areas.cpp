@@ -37,6 +37,12 @@ void ZooAreas::on_Next_clicked()
     move_through_spaces(false);
 }
 
+void ZooAreas::on_Modify_clicked()
+{
+    emit modifyArea();
+}
+
+
 void ZooAreas::on_GoTo_clicked()
 {
     emit goSpace();

@@ -28,6 +28,7 @@
     <ClCompile Include="MonkeyZooManager\libs\bcrypt.cpp" />
     <ClCompile Include="MonkeyZooManager\libs\blowfish.cpp" />
     <ClCompile Include="MonkeyZooManager\qt\zoo_areas.cpp" />
+    <ClCompile Include="MonkeyZooManager\qt\area_modify.cpp" />
     <ClCompile Include="MonkeyZooManager\qt\zoo_space.cpp" />
     <ClCompile Include="MonkeyZooManager\qt\register.cpp" />
     <ClCompile Include="MonkeyZooManager\qt\zoo_select.cpp" />
@@ -60,12 +61,14 @@
     <QtMoc Include="MonkeyZooManager\qt\login.h" />
     <QtMoc Include="MonkeyZooManager\qt\zoo_areas.h" />
     <QtMoc Include="MonkeyZooManager\qt\zoo_space.h" />
+    <QtMoc Include="MonkeyZooManager\qt\area_modify.h" />
     <QtMoc Include="MonkeyZooManager\qt\register.h" />
     <QtMoc Include="MonkeyZooManager\qt\zoo_select.h" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="MonkeyZooManager\qt\login.qrc" />
     <QtRcc Include="MonkeyZooManager\qt\zoo_areas.qrc" />
+    <QtRcc Include="MonkeyZooManager\qt\area_modify.qrc" />
     <QtRcc Include="MonkeyZooManager\qt\zoo_space.qrc" />
     <QtRcc Include="MonkeyZooManager\qt\zoo_select.qrc" />
   </ItemGroup>
@@ -73,6 +76,7 @@
     <QtUic Include="MonkeyZooManager\qt\login.ui" />
     <QtUic Include="MonkeyZooManager\qt\register.ui" />
     <QtUic Include="MonkeyZooManager\qt\zoo_select.ui" />
+    <QtUic Include="MonkeyZooManager\qt\area_modify.ui" />
     <QtUic Include="MonkeyZooManager\qt\zoo_areas.ui" />
     <QtUic Include="MonkeyZooManager\qt\zoo_space.ui" />
   </ItemGroup>

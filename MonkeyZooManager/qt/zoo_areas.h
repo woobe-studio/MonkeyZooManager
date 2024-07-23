@@ -24,10 +24,12 @@ public:
 signals:
     void goBack();
     void goSpace();
+    void modifyArea();
 
 private slots:
     void on_Previous_clicked();
     void on_Next_clicked();
+    void on_Modify_clicked();
     void on_GoTo_clicked();
     void on_GoBack_clicked();
 

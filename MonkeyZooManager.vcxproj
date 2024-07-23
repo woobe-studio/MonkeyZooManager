@@ -103,6 +103,7 @@
   <ItemGroup>
     <ClCompile Include="MonkeyZooManager\qt\register.cpp" />
     <ClCompile Include="MonkeyZooManager\qt\zoo_areas.cpp" />
+    <ClCompile Include="MonkeyZooManager\qt\area_modify.cpp" />
     <ClCompile Include="MonkeyZooManager\qt\zoo_select.cpp" />
     <ClCompile Include="MonkeyZooManager\qt\zoo_space.cpp" />
     <ClCompile Include="MonkeyZooManager\src\animal.cpp" />
@@ -134,6 +135,8 @@
     <QtUic Include="MonkeyZooManager\qt\register.ui" />
     <QtUic Include="MonkeyZooManager\qt\zoo_select.ui" />
     <QtRcc Include="MonkeyZooManager\qt\zoo_select.qrc" />
+        <QtUic Include="MonkeyZooManager\qt\area_modify.ui" />
+    <QtRcc Include="MonkeyZooManager\qt\area_modify.qrc" />
     <QtUic Include="MonkeyZooManager\qt\zoo_areas.ui" />
     <QtUic Include="MonkeyZooManager\qt\zoo_space.ui" />
     <QtRcc Include="MonkeyZooManager\qt\zoo_space.qrc" />
@@ -161,6 +164,7 @@
     <ClInclude Include="MonkeyZooManager\libs\bcrypt.h" />
     <ClInclude Include="MonkeyZooManager\libs\json.hpp" />
     <QtMoc Include="MonkeyZooManager\qt\zoo_areas.h" />
+    <QtMoc Include="MonkeyZooManager\qt\area_modify.h" />
     <QtMoc Include="MonkeyZooManager\qt\zoo_space.h" />
     <QtMoc Include="MonkeyZooManager\qt\register.h" />
     <QtMoc Include="MonkeyZooManager\qt\zoo_select.h" />
