@@ -129,17 +129,12 @@
     <ClCompile Include="MonkeyZooManager\src\user.cpp" />
     <ClCompile Include="MonkeyZooManager\qt\login.cpp" />
     <ClCompile Include="MonkeyZooManager\qt\scripts.cpp" />
-    <QtRcc Include="MonkeyZooManager\qt\login.qrc" />
-    <QtRcc Include="MonkeyZooManager\qt\zoo_areas.qrc" />
-    <QtUic Include="MonkeyZooManager\qt\login.ui" />
-    <QtUic Include="MonkeyZooManager\qt\register.ui" />
-    <QtUic Include="MonkeyZooManager\qt\zoo_select.ui" />
-    <QtRcc Include="MonkeyZooManager\qt\zoo_select.qrc" />
-        <QtUic Include="MonkeyZooManager\qt\area_modify.ui" />
-    <QtRcc Include="MonkeyZooManager\qt\area_modify.qrc" />
-    <QtUic Include="MonkeyZooManager\qt\zoo_areas.ui" />
-    <QtUic Include="MonkeyZooManager\qt\zoo_space.ui" />
-    <QtRcc Include="MonkeyZooManager\qt\zoo_space.qrc" />
+    <QtUic Include="MonkeyZooManager\qt\ui\login.ui" />
+    <QtUic Include="MonkeyZooManager\qt\ui\register.ui" />
+    <QtUic Include="MonkeyZooManager\qt\ui\zoo_select.ui" />
+    <QtUic Include="MonkeyZooManager\qt\ui\area_modify.ui" />
+    <QtUic Include="MonkeyZooManager\qt\ui\zoo_areas.ui" />
+    <QtUic Include="MonkeyZooManager\qt\ui\zoo_space.ui" />
     <ClCompile Include="main.cpp" />
     <None Include="MonkeyZooManager.ico" />
     <ResourceCompile Include="MonkeyZooManager.rc" />
@@ -148,17 +143,17 @@
     <QtMoc Include="MonkeyZooManager\qt\login.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="MonkeyZooManager\qt\Cage.png" />
-    <Image Include="MonkeyZooManager\qt\Login.png" />
-    <Image Include="MonkeyZooManager\qt\ZooSelect.png" />
-    <Image Include="MonkeyZooManager\qt\register.png" />
+    <Image Include="MonkeyZooManager\qt\images\Cage.png" />
+    <Image Include="MonkeyZooManager\qt\images\Login.png" />
+    <Image Include="MonkeyZooManager\qt\images\ZooSelect.png" />
+    <Image Include="MonkeyZooManager\qt\images\register.png" />
     <Image Include="MonkeyZooManager\qt\Heisen Monkey.png" />
-    <Image Include="MonkeyZooManager\qt\Student Monkey.png" />
-    <Image Include="MonkeyZooManager\qt\Dart Monkey.png" />
-    <Image Include="MonkeyZooManager\qt\Lava Monkey.png" />
-    <Image Include="MonkeyZooManager\qt\Galactic Monkey.png" />
-    <Image Include="MonkeyZooManager\qt\Hospital.png" />
-    <Image Include="MonkeyZooManager\qt\Enclosure.png" />
+    <Image Include="MonkeyZooManager\qt\images\Student Monkey.png" />
+    <Image Include="MonkeyZooManager\qt\images\Dart Monkey.png" />
+    <Image Include="MonkeyZooManager\qt\images\Lava Monkey.png" />
+    <Image Include="MonkeyZooManager\qt\images\Galactic Monkey.png" />
+    <Image Include="MonkeyZooManager\qt\images\Hospital.png" />
+    <Image Include="MonkeyZooManager\qt\images\Enclosure.png" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MonkeyZooManager\libs\bcrypt.h" />

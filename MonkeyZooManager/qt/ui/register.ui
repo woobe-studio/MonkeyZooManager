@@ -72,7 +72,7 @@ font-weight: bold;
        </size>
       </property>
       <property name="pixmap">
-       <pixmap>MonkeyZooManager/qt/register.png</pixmap>
+       <pixmap>MonkeyZooManager/qt/images/register.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -248,8 +248,5 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 3px rgba(255, 255, 255, 0.2); /* R
    </layout>
   </widget>
  </widget>
- <resources>
-  <include location="login.qrc"/>
- </resources>
  <connections/>
 </ui>

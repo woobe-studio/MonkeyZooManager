@@ -69,7 +69,7 @@ void ZooSpace::settingValues(Monkey::Space* space)
 
 void ZooSpace::setAreaImage(const std::string& icon_name) {
     QString iconNameQString = QString::fromStdString(icon_name);
-    QString filePath = QString("MonkeyZooManager/qt/") + iconNameQString;
+    QString filePath = QString("MonkeyZooManager/qt/images/") + iconNameQString;
     QPixmap pixmap(filePath);
 
     ui->Icon->setPixmap(pixmap);

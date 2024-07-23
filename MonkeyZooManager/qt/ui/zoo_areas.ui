@@ -362,8 +362,5 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 3px rgba(255, 255, 255, 0.2); /* R
    </layout>
   </widget>
  </widget>
- <resources>
-  <include location="zoo_areas.qrc"/>
- </resources>
  <connections/>
 </ui>

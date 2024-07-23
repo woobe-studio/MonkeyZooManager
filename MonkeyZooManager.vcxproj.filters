@@ -45,17 +45,17 @@
     <ResourceCompile Include="MonkeyZooManager.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="MonkeyZooManager\qt\Login.png" />
-    <Image Include="MonkeyZooManager\qt\Register.png" />
-    <Image Include="MonkeyZooManager\qt\ZooSelect.png" />
-    <Image Include="MonkeyZooManager\qt\Cage.png" />
+    <Image Include="MonkeyZooManager\qt\images\Login.png" />
+    <Image Include="MonkeyZooManager\qt\images\register.png" />
+    <Image Include="MonkeyZooManager\qt\images\ZooSelect.png" />
+    <Image Include="MonkeyZooManager\qt\images\Cage.png" />
     <Image Include="MonkeyZooManager\qt\Heisen Monkey.png" />
-    <Image Include="MonkeyZooManager\qt\Student Monkey.png" />
-    <Image Include="MonkeyZooManager\qt\Dart Monkey.png" />
-    <Image Include="MonkeyZooManager\qt\Lava Monkey.png" />
-    <Image Include="MonkeyZooManager\qt\Galactic Monkey.png" />
-    <Image Include="MonkeyZooManager\qt\Hospital.png" />
-    <Image Include="MonkeyZooManager\qt\Enclosure.png" />
+    <Image Include="MonkeyZooManager\qt\images\Student Monkey.png" />
+    <Image Include="MonkeyZooManager\qt\images\Dart Monkey.png" />
+    <Image Include="MonkeyZooManager\qt\images\Lava Monkey.png" />
+    <Image Include="MonkeyZooManager\qt\images\Galactic Monkey.png" />
+    <Image Include="MonkeyZooManager\qt\images\Hospital.png" />
+    <Image Include="MonkeyZooManager\qt\images\Enclosure.png" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="MonkeyZooManager\qt\login.h" />
@@ -66,19 +66,12 @@
     <QtMoc Include="MonkeyZooManager\qt\zoo_select.h" />
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="MonkeyZooManager\qt\login.qrc" />
-    <QtRcc Include="MonkeyZooManager\qt\zoo_areas.qrc" />
-    <QtRcc Include="MonkeyZooManager\qt\area_modify.qrc" />
-    <QtRcc Include="MonkeyZooManager\qt\zoo_space.qrc" />
-    <QtRcc Include="MonkeyZooManager\qt\zoo_select.qrc" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtUic Include="MonkeyZooManager\qt\login.ui" />
-    <QtUic Include="MonkeyZooManager\qt\register.ui" />
-    <QtUic Include="MonkeyZooManager\qt\zoo_select.ui" />
-    <QtUic Include="MonkeyZooManager\qt\area_modify.ui" />
-    <QtUic Include="MonkeyZooManager\qt\zoo_areas.ui" />
-    <QtUic Include="MonkeyZooManager\qt\zoo_space.ui" />
+    <QtUic Include="MonkeyZooManager\qt\ui\login.ui" />
+    <QtUic Include="MonkeyZooManager\qt\ui\register.ui" />
+    <QtUic Include="MonkeyZooManager\qt\ui\zoo_select.ui" />
+    <QtUic Include="MonkeyZooManager\qt\ui\area_modify.ui" />
+    <QtUic Include="MonkeyZooManager\qt\ui\zoo_areas.ui" />
+    <QtUic Include="MonkeyZooManager\qt\ui\zoo_space.ui" />
   </ItemGroup>
   <ItemGroup>
     <None Include="MonkeyZooManager.ico" />
