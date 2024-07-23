@@ -108,6 +108,16 @@ font-weight: bold;
       <property name="text">
        <string/>
       </property>
+      <property name="pixmap">
+       <pixmap>MonkeyZooManager/qt/ZooSelect.png</pixmap>
+      </property>
+ <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignmentFlag::AlignCenter</set>
+      </property>
+
      </widget>
     </item>
     <item>

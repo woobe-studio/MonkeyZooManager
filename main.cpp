@@ -45,19 +45,30 @@ int main(int argc, char* argv[])
                 zooSelect->close();
                 loginForm.show();
                 });
-            // QObject::connect(zooSelect, &ZooSelect::goSpace, [&]() {
-            //     if (!zooSpace) {
-            //         zooSpace = new ZooSpace;
-            //         QObject::connect(zooSpace, &ZooSpace::goBack, [&]() {
-            //             zooSpace->close();
-            //             zooSelect->show();
-            //             });
-            //     }
-            //     zooSelect->close();
-            //     zooSpace->currentAreaIndex = zooSelect->currentAreaIndex;
-            //     zooSpace->custom_init();
-            //     zooSpace->show();
-            //     });
+             QObject::connect(zooSelect, &ZooSelect::goArea, [&]() {
+                 if (!zooAreas) {
+                    zooAreas = new ZooAreas;
+                    QObject::connect(zooAreas, &ZooAreas::goBack, [&]() {
+                        zooAreas->close();
+                        zooSelect->show();
+                        });
+                    QObject::connect(zooAreas, &ZooAreas::goSpace, [&]() {
+                        if (!zooSpace) {
+                            zooSpace = new ZooSpace;
+                            QObject::connect(zooSpace, &ZooSpace::goBack, [&]() {
+                                zooSpace->close();
+                                zooAreas->show();
+                                });
+                        }
+                        zooAreas->close();
+                        zooSpace->currentAreaIndex = zooAreas->currentAreaIndex;
+                        zooSpace->custom_init();
+                        zooSpace->show();
+                        });
+                }
+                zooSelect->close();
+                zooAreas->show();
+                 });
         }
         
         // if (!zooAreas) {

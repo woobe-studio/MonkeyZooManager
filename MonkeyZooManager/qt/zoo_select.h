@@ -20,7 +20,7 @@ public:
 
 signals:
     void goBack();
-    void goSpace();
+    void goArea();
 
 private slots:
     void on_GoTo_clicked();

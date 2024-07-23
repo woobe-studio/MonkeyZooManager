@@ -9,7 +9,7 @@ ZooSelect::ZooSelect(QWidget* parent) :
 
     Monkey::AuthDaemon* authorizationDaemon = Monkey::AuthDaemon::getInstance();
     Monkey::Zoo* zoo = authorizationDaemon->retPointerOfLoggedInUser()->getZoo();
-    //settingValues(zoo);
+    settingValues(zoo);
 }
 
 ZooSelect::~ZooSelect()
@@ -19,8 +19,7 @@ ZooSelect::~ZooSelect()
 
 void ZooSelect::on_GoTo_clicked()
 {
-    // Add your go to zoo button handling code here
-    QMessageBox::information(this, "Go To Zoo", "Go to Zoo button clicked!");
+    emit goArea();
 }
 
 void ZooSelect::on_GoBack_clicked()
