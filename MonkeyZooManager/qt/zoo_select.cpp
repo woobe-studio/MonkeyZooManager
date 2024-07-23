@@ -6,6 +6,10 @@ ZooSelect::ZooSelect(QWidget* parent) :
     ui(new Ui::ZooSelect)
 {
     ui->setupUi(this);
+
+    Monkey::AuthDaemon* authorizationDaemon = Monkey::AuthDaemon::getInstance();
+    Monkey::Zoo* zoo = authorizationDaemon->retPointerOfLoggedInUser()->getZoo();
+    //settingValues(zoo);
 }
 
 ZooSelect::~ZooSelect()
@@ -21,6 +25,11 @@ void ZooSelect::on_GoTo_clicked()
 
 void ZooSelect::on_GoBack_clicked()
 {
-    // Add your go back button handling code here
-    QMessageBox::information(this, "Go Back", "Go Back button clicked!");
+    emit goBack();
+}
+
+void ZooSelect::settingValues(Monkey::Zoo* zoo)
+{
+    std::string zoo_name = zoo->getZooName();
+    ui->Name->setText(QString::fromStdString(zoo_name));
 }
