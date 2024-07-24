@@ -1,6 +1,8 @@
 #include "area_modify.h"
 #include "ui_area_modify.h"
 
+#include "scripts.h"
+
 #include <QMessageBox>
 
 AreaModify::AreaModify(QWidget* parent) :
@@ -35,7 +37,8 @@ void AreaModify::on_DeleteButton_clicked()
                 QMessageBox::Yes | QMessageBox::No);
 
             if (reply == QMessageBox::Yes) {
-                // Code to delete the empty area
+                zoo->removeSpace(zoo->getSpace(currentAreaIndex));
+                QMessageBox::information(this, "Delete Zoo Area", "Delete Successful");
             }
         }
         else {
@@ -45,7 +48,8 @@ void AreaModify::on_DeleteButton_clicked()
                 QMessageBox::Yes | QMessageBox::No);
 
             if (reply == QMessageBox::Yes) {
-                // Code to delete the area
+                zoo->removeSpace(zoo->getSpace(currentAreaIndex));
+                QMessageBox::information(this, "Delete Zoo Area", "Delete Successful");
             }
         }
     }
@@ -57,9 +61,41 @@ void AreaModify::on_DeleteButton_clicked()
 }
 
 
+void AreaModify::on_CreateButton_clicked() {
+
+}
+
 void AreaModify::on_EditButton_clicked()
 {
-    // Handle modify button click
+    Monkey::AuthDaemon* authorizationDaemon = Monkey::AuthDaemon::getInstance();
+    Monkey::Zoo* zoo = authorizationDaemon->retPointerOfLoggedInUser()->getZoo();
+    if (zoo->getSpaceCount() != 0) {
+        QString area_capacity_text = ui->IntegerValue->text();
+        if (area_capacity_text.isEmpty()) {
+            QMessageBox::warning(this, "Edit Zoo Area", "Please set capacity of the area.");
+        }
+        else {
+            int area_capacity = area_capacity_text.toInt();
+            if (area_capacity < zoo->getSpace(currentAreaIndex)->getCapacity()) {
+                QMessageBox::warning(this, "Edit Zoo Area", "New capacity is smaller than a current one.");
+            }
+            else {
+                QMessageBox::StandardButton reply = QMessageBox::question(
+                    this, "Edit Zoo Area",
+                    "Are you sure you want to edit this area?",
+                    QMessageBox::Yes | QMessageBox::No);
+
+                if (reply == QMessageBox::Yes) {
+                    zoo->getSpace(currentAreaIndex)->setCapacity(area_capacity);
+                    QMessageBox::information(this, "Edit Zoo Area", "Edit Successful");
+                }
+            }
+        }
+    }
+    else {
+        QMessageBox::warning(this, "Edit Zoo Area", "There are no Zoo Area to edit.");
+    }
+    ui->IntegerValue->setText("");
 }
 
 void AreaModify::on_GoBack_clicked()
@@ -71,6 +107,8 @@ void AreaModify::on_TypeComboBox_currentIndexChanged(const QString& text)
 {
     std::string area_name = text.toStdString();
     setAreaImage(area_name);
+    currentAreaImage = area_name;
+    ui->IntegerValue->setText("");
 }
 
 void AreaModify::settingValues(Monkey::Zoo* zoo)
@@ -90,4 +128,19 @@ void AreaModify::setAreaImage(const std::string& icon_name) {
     ui->Icon->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
     ui->Icon->resize(pixmap.size());
     ui->Icon->setAlignment(Qt::AlignCenter);
+}
+
+void AreaModify::custom_init()
+{
+    Monkey::AuthDaemon* authorizationDaemon = Monkey::AuthDaemon::getInstance();
+    Monkey::Zoo* zoo = authorizationDaemon->retPointerOfLoggedInUser()->getZoo();
+    if (zoo->getSpaceCount() != 0) {
+        std::string area_name = getSpaceName(zoo->getSpace(currentAreaIndex));
+        ui->TypeComboBox->setCurrentText(QString::fromStdString(area_name));
+        ui->IntegerValue->setText(QString::number(zoo->getSpace(currentAreaIndex)->getCapacity()));
+    }
+    else {
+        ui->TypeComboBox->setCurrentText("Cage");
+        ui->IntegerValue->setText("");
+    }
 }

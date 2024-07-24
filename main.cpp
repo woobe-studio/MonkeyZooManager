@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
 
-    //custom_init();
+    custom_init();
 
     // Create and configure LoginForm
     LoginForm loginForm;
@@ -64,6 +64,7 @@ int main(int argc, char* argv[])
                         }
                         zooAreas->close();
                         areaModify->currentAreaIndex = zooAreas->currentAreaIndex;
+                        areaModify->custom_init();
                         areaModify->show();
                         });
                     QObject::connect(zooAreas, &ZooAreas::goSpace, [&]() {
@@ -81,6 +82,7 @@ int main(int argc, char* argv[])
                         });
                 }
                 zooSelect->close();
+                zooAreas->custom_init();
                 zooAreas->show();
                  });
         }

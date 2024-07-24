@@ -16,7 +16,9 @@ class AreaModify : public QMainWindow
 public:
     explicit AreaModify(QWidget* parent = nullptr);
     ~AreaModify();
+    void custom_init();
     int currentAreaIndex;
+    std::string currentAreaImage;
 
 signals:
     void goBack();
@@ -24,6 +26,7 @@ signals:
 private slots:
     void on_DeleteButton_clicked();
     void on_EditButton_clicked();
+    void on_CreateButton_clicked();
     void on_GoBack_clicked();
     void on_TypeComboBox_currentIndexChanged(const QString& text);
 

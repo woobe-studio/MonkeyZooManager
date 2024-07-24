@@ -19,6 +19,7 @@ class ZooAreas : public QMainWindow
 public:
     explicit ZooAreas(QWidget* parent = nullptr);
     ~ZooAreas();
+    void custom_init();
     int currentAreaIndex;
 
 signals:
