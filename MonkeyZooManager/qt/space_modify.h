@@ -30,7 +30,6 @@ private slots:
     void on_CreateButton_clicked();
     void on_GoBack_clicked();
     void on_TypeComboBox_currentIndexChanged(const QString& text);
-    void on_RarityComboBox_currentIndexChanged(const QString& text);
 
 private:
     Ui::SpaceModify* ui;

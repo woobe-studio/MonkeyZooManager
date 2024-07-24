@@ -25,11 +25,13 @@ public:
 
 signals:
     void goBack();
+    void goEdit();
 
 private slots:
     void on_Previous_clicked();
     void on_Next_clicked();
     void on_GoBack_clicked();
+    void on_Edit_clicked();
 
 private:
     Ui::ZooSpace* ui;

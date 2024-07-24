@@ -10,7 +10,6 @@ ZooSpace::ZooSpace(QWidget* parent) :
     setMinimumSize(360, 640);
     resize(360, 640);
 
-    currentMonkeyIndex = 0;
     custom_init();
 }
 
@@ -32,6 +31,11 @@ void ZooSpace::on_Next_clicked()
 void ZooSpace::on_GoBack_clicked()
 {
     emit goBack();
+}
+
+void ZooSpace::on_Edit_clicked()
+{
+    emit goEdit();
 }
 
 void ZooSpace::move_through_spaces(bool reverse)
@@ -81,7 +85,6 @@ void ZooSpace::setAreaImage(const std::string& icon_name) {
 
 void ZooSpace::custom_init()
 {
-    currentAreaIndex = 0;
     currentMonkeyIndex = 0;
     Monkey::AuthDaemon* authorizationDaemon = Monkey::AuthDaemon::getInstance();
     Monkey::Zoo* zoo = authorizationDaemon->retPointerOfLoggedInUser()->getZoo();

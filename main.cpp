@@ -9,6 +9,7 @@
 #include "zoo_areas.h"
 #include "area_modify.h"
 #include "zoo_space.h"
+#include "space_modify.h"
 
 int main(int argc, char* argv[])
 {
@@ -25,6 +26,8 @@ int main(int argc, char* argv[])
     ZooAreas* zooAreas = nullptr;
     AreaModify* areaModify = nullptr;
     ZooSpace* zooSpace = nullptr;
+    SpaceModify* spaceModify = nullptr;
+
     loginForm.show();
 
 
@@ -76,6 +79,22 @@ int main(int argc, char* argv[])
                                 zooSpace->close();
                                 zooAreas->custom_init();
                                 zooAreas->show();
+                                });
+                            QObject::connect(zooSpace, &ZooSpace::goEdit, [&]() {
+                                if (!spaceModify)
+                                {
+                                    spaceModify = new SpaceModify;
+                                    QObject::connect(spaceModify, &SpaceModify::goBack, [&]() {
+                                        spaceModify->close();
+                                        zooSpace->custom_init();
+                                        zooSpace->show();
+                                        });
+                                }
+                                zooSpace->close();
+                                spaceModify->currentAreaIndex = zooSpace->currentAreaIndex;
+                                spaceModify->currentMonkeyIndex = zooSpace->currentMonkeyIndex;
+                                spaceModify->custom_init();
+                                spaceModify->show();
                                 });
                         }
                         zooAreas->close();

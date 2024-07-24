@@ -88,6 +88,8 @@ void SpaceModify::on_CreateButton_clicked() {
                     zoo->getSpace(currentAreaIndex)->addAnimal(new_monkey);
                     new_monkey->setAge(age);
                 }
+                std::string rarity = ui->RarityTypeComboBox->currentText().toStdString();
+                zoo->getSpace(currentAreaIndex)->getAnimal(currentMonkeyIndex)->setRarity(StringToRarity(rarity));
                 QMessageBox::information(this, "Create New Monkey", "Create Successful");
             }
         }
@@ -136,14 +138,6 @@ void SpaceModify::on_GoBack_clicked()
 }
 
 void SpaceModify::on_TypeComboBox_currentIndexChanged(const QString& text)
-{
-    std::string monkey_name = text.toStdString();
-    setAreaImage(monkey_name);
-    currentAreaImage = monkey_name;
-    ui->Age->setText("");
-}
-
-void SpaceModify::on_RarityComboBox_currentIndexChanged(const QString& text)
 {
     std::string monkey_name = text.toStdString();
     setAreaImage(monkey_name);
