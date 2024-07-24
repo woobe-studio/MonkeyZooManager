@@ -243,8 +243,8 @@ namespace Monkey
     class Monkey : public Animal
     {
     protected:
-        std::string monkeOrigin;
-        float monkeJumpHeight;
+        std::string monkeyOrigin;
+        float monkeyJumpHeight;
         float toleratedTempMax;
         float toleratedTempMin;
         float foodPounds;
@@ -253,14 +253,14 @@ namespace Monkey
         Monkey();
         virtual ~Monkey();
 
-        virtual std::string getMonkeOrigin();
-        virtual float getMonkeJumpHeight();
+        virtual std::string getMonkeyOrigin();
+        virtual float getMonkeyJumpHeight();
         virtual float getToleratedTempMax();
         virtual float getToleratedTempMin();
         virtual float getFoodPounds();
 
-        virtual void setMonkeOrigin(std::string newMonkeOrigin);
-        virtual void setMonkeJumpHeight(float newMonkeJumpHeight);
+        virtual void setMonkeyOrigin(std::string newMonkeyOrigin);
+        virtual void setMonkeyJumpHeight(float newMonkeyJumpHeight);
         virtual void setToleratedTempMax(float newTemp);
         virtual void setToleratedTempMin(float newTemp);
         virtual void setFoodPounds(float newFoodPounds);
