@@ -9,6 +9,7 @@ void custom_init();
 std::string getSpaceName(Monkey::Space* space);
 std::string getMonkeyName(Monkey::Animal* monkey);
 std::string rarityToString(Monkey::Rarity r);
+Monkey::Rarity StringToRarity(std::string r);
 
 
 #endif // SCRIPTS_H

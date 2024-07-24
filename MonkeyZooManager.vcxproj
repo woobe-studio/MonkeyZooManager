@@ -102,6 +102,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="MonkeyZooManager\qt\register.cpp" />
+    <ClCompile Include="MonkeyZooManager\qt\space_modify.cpp" />
+    <QtMoc Include="MonkeyZooManager\qt\space_modify.h" />
     <ClCompile Include="MonkeyZooManager\qt\zoo_areas.cpp" />
     <ClCompile Include="MonkeyZooManager\qt\area_modify.cpp" />
     <ClCompile Include="MonkeyZooManager\qt\zoo_select.cpp" />

@@ -99,3 +99,24 @@ std::string rarityToString(Monkey::Rarity r)
     default:                return "UNKNOWN";
     }
 }
+
+Monkey::Rarity StringToRarity(std::string r)
+{
+    std::map<std::string, Monkey::Rarity> rarityMap = {
+        {"COMMON", Monkey::Rarity::COMMON},
+        {"UNCOMMON", Monkey::Rarity::UNCOMMON},
+        {"RARE", Monkey::Rarity::RARE},
+        {"EPIC", Monkey::Rarity::EPIC},
+        {"LEGENDARY", Monkey::Rarity::LEGENDARY}
+    };
+
+    auto it = rarityMap.find(r);
+    if (it != rarityMap.end())
+    {
+        return it->second;
+    }
+    else
+    {
+        throw std::invalid_argument("Unknown rarity: " + r);
+    }
+}

@@ -117,66 +117,6 @@ font-weight: bold;
      </layout>
     </item>
     <item>
-     <layout class="QHBoxLayout" name="integerValueLayout">
-      <property name="spacing">
-       <number>15</number>
-      </property>
-      <item>
-       <widget class="QLabel" name="IntegerLabel">
-        <property name="font">
-         <font>
-          <family>Roboto</family>
-          <pointsize>16</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="text">
-         <string>Origin</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="Origin">
-        <property name="font">
-         <font>
-          <family>Roboto</family>
-          <pointsize>16</pointsize>
-          <bold>true</bold>
-         </font>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLineEdit {
-background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                            stop: 0 rgba(60, 60, 60, 255),
-                            stop: 1 rgba(40, 40, 40, 255));
-color: white;
-border-radius: 8px;
-border: 1px solid rgba(100, 100, 100, 200);
-padding: 10px;
-font-weight: bold;
-}
-</string>
-        </property>
-        <property name="inputMask">
-         <string>00000</string>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-        <property name="maxLength">
-         <number>5</number>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignmentFlag::AlignCenter</set>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </item>
-    <item>
      <layout class="QHBoxLayout" name="firstNewFieldLayout">
       <property name="spacing">
        <number>15</number>
@@ -191,7 +131,7 @@ font-weight: bold;
          </font>
         </property>
         <property name="text">
-         <string>Jump Height</string>
+         <string>Age</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -199,7 +139,7 @@ font-weight: bold;
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="JumpHeight">
+       <widget class="QLineEdit" name="Age">
         <property name="font">
          <font>
           <family>Roboto</family>
