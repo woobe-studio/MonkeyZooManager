@@ -69,6 +69,7 @@
   <ItemGroup>
     <QtUic Include="MonkeyZooManager\qt\ui\login.ui" />
     <QtUic Include="MonkeyZooManager\qt\ui\register.ui" />
+    <QtUic Include="MonkeyZooManager\qt\ui\space_modify.ui" />
     <QtUic Include="MonkeyZooManager\qt\ui\zoo_select.ui" />
     <QtUic Include="MonkeyZooManager\qt\ui\area_modify.ui" />
     <QtUic Include="MonkeyZooManager\qt\ui\zoo_areas.ui" />
