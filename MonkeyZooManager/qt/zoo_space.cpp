@@ -81,6 +81,8 @@ void ZooSpace::setAreaImage(const std::string& icon_name) {
 
 void ZooSpace::custom_init()
 {
+    currentAreaIndex = 0;
+    currentMonkeyIndex = 0;
     Monkey::AuthDaemon* authorizationDaemon = Monkey::AuthDaemon::getInstance();
     Monkey::Zoo* zoo = authorizationDaemon->retPointerOfLoggedInUser()->getZoo();
     QString new_space_name = QString::fromStdString(getSpaceName(zoo->getSpace(currentAreaIndex)));

@@ -10,4 +10,5 @@ std::string getSpaceName(Monkey::Space* space);
 std::string getMonkeyName(Monkey::Animal* monkey);
 std::string rarityToString(Monkey::Rarity r);
 
+
 #endif // SCRIPTS_H

@@ -62,7 +62,45 @@ void AreaModify::on_DeleteButton_clicked()
 
 
 void AreaModify::on_CreateButton_clicked() {
+    Monkey::AuthDaemon* authorizationDaemon = Monkey::AuthDaemon::getInstance();
+    Monkey::Zoo* zoo = authorizationDaemon->retPointerOfLoggedInUser()->getZoo();
+    QString area_capacity_text = ui->IntegerValue->text();
+    if (area_capacity_text.isEmpty()) {
+        QMessageBox::warning(this, "Create Zoo Area", "Please set capacity of the area.");
+    }
+    else {
+        int area_capacity = area_capacity_text.toInt();
+        if (area_capacity < 1) {
+            QMessageBox::warning(this, "Create Zoo Area", "New capacity will not hold any animal inside. Please set the value correctly.");
+        }
+        else {
+            QMessageBox::StandardButton reply = QMessageBox::question(
+                this, "Create Zoo Area",
+                "Are you sure you want to create this area?",
+                QMessageBox::Yes | QMessageBox::No);
 
+            if (reply == QMessageBox::Yes) {
+                std::string area_name = ui->TypeComboBox->currentText().toStdString();
+                if (area_name == "Cage") {
+                    Monkey::Cage* new_space = new Monkey::Cage;
+                    zoo->addSpace(new_space);
+                    new_space->setCapacity(area_capacity);
+                }
+                else if (area_name == "Hospital") {
+                    Monkey::Hospital* new_space = new Monkey::Hospital;
+                    zoo->addSpace(new_space);
+                    new_space->setCapacity(area_capacity);
+                }
+                else if (area_name == "Enclosure") {
+                    Monkey::Enclosure* new_space = new Monkey::Enclosure;
+                    zoo->addSpace(new_space);
+                    new_space->setCapacity(area_capacity);
+                }
+                QMessageBox::information(this, "Create Zoo Area", "Create Successful");
+            }
+        }
+    }
+    ui->IntegerValue->setText("");
 }
 
 void AreaModify::on_EditButton_clicked()

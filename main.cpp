@@ -27,6 +27,7 @@ int main(int argc, char* argv[])
     ZooSpace* zooSpace = nullptr;
     loginForm.show();
 
+
     QObject::connect(&loginForm, &LoginForm::goRegister, [&]() {
         loginForm.close();
         if (!registerForm) {
@@ -59,6 +60,7 @@ int main(int argc, char* argv[])
                             areaModify = new AreaModify;
                             QObject::connect(areaModify, &AreaModify::goBack, [&]() {
                                 areaModify->close();
+                                zooAreas->custom_init();
                                 zooAreas->show();
                                 });
                         }
@@ -72,6 +74,7 @@ int main(int argc, char* argv[])
                             zooSpace = new ZooSpace;
                             QObject::connect(zooSpace, &ZooSpace::goBack, [&]() {
                                 zooSpace->close();
+                                zooAreas->custom_init();
                                 zooAreas->show();
                                 });
                         }

@@ -3,6 +3,8 @@
 
 #include "scripts.h"
 
+#include <QMessageBox>
+
 ZooAreas::ZooAreas(QWidget* parent) :
     QMainWindow(parent), ui(new Ui::ZooAreas)
 {
@@ -45,7 +47,14 @@ void ZooAreas::on_Modify_clicked()
 
 void ZooAreas::on_GoTo_clicked()
 {
-    emit goSpace();
+    Monkey::AuthDaemon* authorizationDaemon = Monkey::AuthDaemon::getInstance();
+    Monkey::Zoo* zoo = authorizationDaemon->retPointerOfLoggedInUser()->getZoo();
+    if (zoo->getSpaceCount() != 0) {
+        emit goSpace();
+    }
+    else
+        QMessageBox::warning(this, "Go to Space", "No Spaces available. Please create a new one.");
+
 }
 
 void ZooAreas::on_GoBack_clicked()
@@ -98,6 +107,7 @@ void ZooAreas::setAreaImage(const std::string& icon_name) {
 
 void ZooAreas::custom_init()
 {
+    currentAreaIndex = 0;
     Monkey::AuthDaemon* authorizationDaemon = Monkey::AuthDaemon::getInstance();
     Monkey::Zoo* zoo = authorizationDaemon->retPointerOfLoggedInUser()->getZoo();
     if (zoo->getSpaceCount() != 0)
