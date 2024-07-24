@@ -23,13 +23,14 @@ signals:
 
 private slots:
     void on_DeleteButton_clicked();
-    void on_GoTo_clicked();
+    void on_EditButton_clicked();
     void on_GoBack_clicked();
     void on_TypeComboBox_currentIndexChanged(const QString& text);
 
 private:
     Ui::AreaModify* ui;
     void settingValues(Monkey::Zoo* zoo);
+    void setAreaImage(const std::string& icon_name);
 };
 
 #endif // AREAMODIFY_H

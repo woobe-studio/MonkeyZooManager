@@ -257,7 +257,7 @@ box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 0 3px rgba(255, 255, 255, 0.2); /* R
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="GoTo">
+       <widget class="QPushButton" name="EditButton">
         <property name="font">
          <font>
           <family>Roboto</family>

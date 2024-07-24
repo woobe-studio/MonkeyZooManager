@@ -57,7 +57,7 @@ void AreaModify::on_DeleteButton_clicked()
 }
 
 
-void AreaModify::on_GoTo_clicked()
+void AreaModify::on_EditButton_clicked()
 {
     // Handle modify button click
 }
@@ -69,8 +69,8 @@ void AreaModify::on_GoBack_clicked()
 
 void AreaModify::on_TypeComboBox_currentIndexChanged(const QString& text)
 {
-    // Handle the event when a new item is selected from the combo box
-    qDebug() << "Selected item:" << text;
+    std::string area_name = text.toStdString();
+    setAreaImage(area_name);
 }
 
 void AreaModify::settingValues(Monkey::Zoo* zoo)
@@ -78,4 +78,16 @@ void AreaModify::settingValues(Monkey::Zoo* zoo)
     ui->TypeComboBox->addItem("Hospital");
     ui->TypeComboBox->addItem("Enclosure");
     ui->TypeComboBox->addItem("Cage");
+}
+
+void AreaModify::setAreaImage(const std::string& icon_name) {
+    QString iconNameQString = QString::fromStdString(icon_name);
+    QString filePath = QString("MonkeyZooManager/qt/images/") + iconNameQString;
+    QPixmap pixmap(filePath);
+
+    ui->Icon->setPixmap(pixmap);
+    ui->Icon->setScaledContents(true);
+    ui->Icon->setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+    ui->Icon->resize(pixmap.size());
+    ui->Icon->setAlignment(Qt::AlignCenter);
 }
