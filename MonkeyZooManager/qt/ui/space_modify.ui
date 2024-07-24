@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>AreaModify</class>
- <widget class="QMainWindow" name="AreaModify">
+ <class>SpaceModify</class>
+ <widget class="QMainWindow" name="SpaceModify">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -17,10 +17,10 @@
    </size>
   </property>
   <property name="windowTitle">
-   <string>Area Modify</string>
+   <string>Space Modify</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#AreaModify {
+   <string notr="true">#SpaceModify {
 background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(40, 40, 40, 255), stop:1 rgba(20, 20, 20, 255));
 }
 </string>
