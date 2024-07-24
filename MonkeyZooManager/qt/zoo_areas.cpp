@@ -100,10 +100,9 @@ void ZooAreas::custom_init()
 {
     Monkey::AuthDaemon* authorizationDaemon = Monkey::AuthDaemon::getInstance();
     Monkey::Zoo* zoo = authorizationDaemon->retPointerOfLoggedInUser()->getZoo();
-    if (zoo->getSpaceCount() != 0 && currentAreaIndex < zoo->getSpaceCount())
+    if (zoo->getSpaceCount() != 0)
         settingValues(zoo->getSpace(currentAreaIndex));
     else {
-        currentAreaIndex = 0;
         ui->Icon->setPixmap(QPixmap());
         ui->Name->setText("");
         ui->Space->setText("");
