@@ -18,7 +18,7 @@ jobs:
         run: |
           choco install ninja --yes
           choco install cmake --yes
-          choco install visualstudio2022buildtools --yes --params "'/NoWeb /IncludeRecommended /IncludeOptional /LogPath install.log'"
+          choco install visualstudio2022buildtools --yes --package-parameters "--add Microsoft.VisualStudio.Workload.VCTools --includeRecommended --includeOptional --passive"
 
       - name: Download Qt installer
         run: |
