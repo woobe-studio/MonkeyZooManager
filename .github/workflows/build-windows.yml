@@ -14,24 +14,25 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up Qt
-        uses: miurahr/setup-qt-action@v2
-        with:
-          version: "6.7.2"
-          host: windows
-          target: desktop
-          arch: win64_msvc2019_64
-
       - name: Install dependencies
         run: |
           choco install ninja --yes
           choco install cmake --yes
           choco install visualstudio2022buildtools --yes --params "'/NoWeb /IncludeRecommended /IncludeOptional /LogPath install.log'"
 
+      - name: Download Qt installer
+        run: |
+          curl -Lo qt-installer.exe "https://download.qt.io/official_releases/online_installers/qt-unified-windows-x64-online.exe"
+
+      - name: Install Qt
+        run: |
+          qt-installer.exe --quiet --no-force-installations --accept-licenses --confirm-command install qt.qt6.672.win64_msvc2019_64
+
       - name: Configure Visual Studio environment
         shell: cmd
         run: |
           call "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
+          set PATH=%PATH%;C:\Qt\6.7.2\msvc2019_64\bin
           msbuild MonkeyZooManager.sln /p:Configuration=Release
 
       - name: Archive build artifacts
