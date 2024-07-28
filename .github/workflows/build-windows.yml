@@ -1,0 +1,41 @@
+name: Build Qt App
+
+on:
+  push:
+    branches: [progress]
+  pull_request:
+    branches: [progress]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Qt
+        uses: miurahr/setup-qt-action@v2
+        with:
+          version: "6.7.2"
+          host: windows
+          target: desktop
+          arch: win64_msvc2019_64
+
+      - name: Install dependencies
+        run: |
+          choco install ninja --yes
+          choco install cmake --yes
+          choco install visualstudio2022buildtools --yes --params "'/NoWeb /IncludeRecommended /IncludeOptional /LogPath install.log'"
+
+      - name: Configure Visual Studio environment
+        shell: cmd
+        run: |
+          call "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
+          msbuild MonkeyZooManager.sln /p:Configuration=Release
+
+      - name: Archive build artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: QtApp
+          path: "**/Release/*"
