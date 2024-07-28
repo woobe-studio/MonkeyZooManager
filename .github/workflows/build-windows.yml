@@ -23,10 +23,18 @@ jobs:
       - name: Download Qt installer
         run: |
           curl -Lo qt-installer.exe "https://download.qt.io/official_releases/online_installers/qt-unified-windows-x64-online.exe"
+          echo "Downloaded Qt installer:"
+          dir qt-installer.exe
+
+      - name: Make Qt installer executable
+        run: |
+          icacls qt-installer.exe /grant Everyone:F
+          echo "Made Qt installer executable:"
+          dir qt-installer.exe
 
       - name: Install Qt
         run: |
-          qt-installer.exe --quiet --no-force-installations --accept-licenses --confirm-command install qt.qt6.672.win64_msvc2019_64
+          ./qt-installer.exe --quiet --no-force-installations --accept-licenses --confirm-command install qt.qt6.672.win64_msvc2019_64
 
       - name: Configure Visual Studio environment
         shell: cmd

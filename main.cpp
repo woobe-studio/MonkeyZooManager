@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
 
-    custom_init();
+    //custom_init();
 
     // Create and configure LoginForm
     LoginForm loginForm;

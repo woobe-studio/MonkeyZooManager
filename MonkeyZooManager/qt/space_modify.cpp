@@ -68,28 +68,37 @@ void SpaceModify::on_CreateButton_clicked() {
 
             if (reply == QMessageBox::Yes) {
                 std::string monkey_name = ui->TypeComboBox->currentText().toStdString();
+                std::string rarity = ui->RarityTypeComboBox->currentText().toStdString();
                 if (monkey_name == "Rich Monkey") {
                     Monkey::RichMonkey* new_monkey = new Monkey::RichMonkey;
                     zoo->getSpace(currentAreaIndex)->addAnimal(new_monkey);
                     new_monkey->setAge(age);
+                    new_monkey->setRarity(StringToRarity(rarity));
                 }
                 else if (monkey_name == "Student Monkey") {
                     Monkey::StudentMonkey* new_monkey = new Monkey::StudentMonkey;
                     zoo->getSpace(currentAreaIndex)->addAnimal(new_monkey);
                     new_monkey->setAge(age);
+                    new_monkey->setRarity(StringToRarity(rarity));
                 }
                 else if (monkey_name == "Lava Monkey") {
                     Monkey::LavaMonkey* new_monkey = new Monkey::LavaMonkey;
                     zoo->getSpace(currentAreaIndex)->addAnimal(new_monkey);
                     new_monkey->setAge(age);
+                    new_monkey->setRarity(StringToRarity(rarity));
                 }
                 else if (monkey_name == "Dart Monkey") {
                     Monkey::DartMonkey* new_monkey = new Monkey::DartMonkey;
                     zoo->getSpace(currentAreaIndex)->addAnimal(new_monkey);
                     new_monkey->setAge(age);
+                    new_monkey->setRarity(StringToRarity(rarity));
                 }
-                std::string rarity = ui->RarityTypeComboBox->currentText().toStdString();
-                zoo->getSpace(currentAreaIndex)->getAnimal(currentMonkeyIndex)->setRarity(StringToRarity(rarity));
+                else if (monkey_name == "Galactic Monkey") {
+                    Monkey::GalacticMonkey* new_monkey = new Monkey::GalacticMonkey;
+                    zoo->getSpace(currentAreaIndex)->addAnimal(new_monkey);
+                    new_monkey->setAge(age);
+                    new_monkey->setRarity(StringToRarity(rarity));
+                }
                 QMessageBox::information(this, "Create New Monkey", "Create Successful");
             }
         }
