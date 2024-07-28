@@ -92,10 +92,10 @@ std::string rarityToString(Monkey::Rarity r)
     switch (r)
     {
     case Monkey::Rarity::COMMON:    return "COMMON";
-    case Monkey::Rarity::UNCOMMON:  return "UNCOMMON";
+    case Monkey::Rarity::UNIQUE:  return "UNIQUE";
     case Monkey::Rarity::RARE:      return "RARE";
     case Monkey::Rarity::EPIC:      return "EPIC";
-    case Monkey::Rarity::LEGENDARY: return "LEGENDARY";
+    case Monkey::Rarity::MAGIC: return "MAGIC";
     default:                return "UNKNOWN";
     }
 }
@@ -104,10 +104,10 @@ Monkey::Rarity StringToRarity(std::string r)
 {
     std::map<std::string, Monkey::Rarity> rarityMap = {
         {"COMMON", Monkey::Rarity::COMMON},
-        {"UNCOMMON", Monkey::Rarity::UNCOMMON},
+        {"UNIQUE", Monkey::Rarity::UNIQUE},
         {"RARE", Monkey::Rarity::RARE},
         {"EPIC", Monkey::Rarity::EPIC},
-        {"LEGENDARY", Monkey::Rarity::LEGENDARY}
+        {"MAGIC", Monkey::Rarity::MAGIC}
     };
 
     auto it = rarityMap.find(r);

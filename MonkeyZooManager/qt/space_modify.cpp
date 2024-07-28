@@ -163,10 +163,10 @@ void SpaceModify::settingValues(Monkey::Zoo* zoo)
     ui->TypeComboBox->addItem("Student Monkey");
 
     ui->RarityTypeComboBox->addItem("COMMON");
-    ui->RarityTypeComboBox->addItem("UNCOMMON");
+    ui->RarityTypeComboBox->addItem("UNIQUE");
     ui->RarityTypeComboBox->addItem("RARE");
     ui->RarityTypeComboBox->addItem("EPIC");
-    ui->RarityTypeComboBox->addItem("LEGENDARY");
+    ui->RarityTypeComboBox->addItem("MAGIC");
 }
 
 void SpaceModify::setAreaImage(const std::string& icon_name) {

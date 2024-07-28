@@ -204,10 +204,10 @@ namespace Monkey
     enum class Rarity
     {
         COMMON,
-        UNCOMMON,
+        Unique,
         RARE,
         EPIC,
-        LEGENDARY
+        MAGIC
     };
 
     class Animal
