@@ -37,6 +37,8 @@ void SpaceModify::on_DeleteButton_clicked()
 
         if (reply == QMessageBox::Yes) {
             zoo->getSpace(currentAreaIndex)->removeAnimal(zoo->getSpace(currentAreaIndex)->getAnimal(currentMonkeyIndex));
+            Monkey::SerializationDaemon* serDeamon = Monkey::SerializationDaemon::getInstance();
+            serDeamon->save();
             QMessageBox::information(this, "Delete Monkey", "Delete Successful");
         }
     }
@@ -99,6 +101,8 @@ void SpaceModify::on_CreateButton_clicked() {
                     new_monkey->setAge(age);
                     new_monkey->setRarity(StringToRarity(rarity));
                 }
+                Monkey::SerializationDaemon* serDeamon = Monkey::SerializationDaemon::getInstance();
+                serDeamon->save();
                 QMessageBox::information(this, "Create New Monkey", "Create Successful");
             }
         }
@@ -130,6 +134,8 @@ void SpaceModify::on_EditButton_clicked()
                     zoo->getSpace(currentAreaIndex)->getAnimal(currentMonkeyIndex)->setAge(age);
                     std::string rarity = ui->RarityTypeComboBox->currentText().toStdString();
                     zoo->getSpace(currentAreaIndex)->getAnimal(currentMonkeyIndex)->setRarity(StringToRarity(rarity));
+                    Monkey::SerializationDaemon* serDeamon = Monkey::SerializationDaemon::getInstance();
+                    serDeamon->save();
                     QMessageBox::information(this, "Edit Monkey", "Edit Successful");
                 }
             }

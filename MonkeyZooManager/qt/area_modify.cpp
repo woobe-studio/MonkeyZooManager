@@ -38,6 +38,8 @@ void AreaModify::on_DeleteButton_clicked()
 
             if (reply == QMessageBox::Yes) {
                 zoo->removeSpace(zoo->getSpace(currentAreaIndex));
+                Monkey::SerializationDaemon* serDeamon = Monkey::SerializationDaemon::getInstance();
+                serDeamon->save();
                 QMessageBox::information(this, "Delete Zoo Area", "Delete Successful");
             }
         }
@@ -49,6 +51,8 @@ void AreaModify::on_DeleteButton_clicked()
 
             if (reply == QMessageBox::Yes) {
                 zoo->removeSpace(zoo->getSpace(currentAreaIndex));
+                Monkey::SerializationDaemon* serDeamon = Monkey::SerializationDaemon::getInstance();
+                serDeamon->save();
                 QMessageBox::information(this, "Delete Zoo Area", "Delete Successful");
             }
         }
@@ -96,6 +100,8 @@ void AreaModify::on_CreateButton_clicked() {
                     zoo->addSpace(new_space);
                     new_space->setCapacity(area_capacity);
                 }
+                Monkey::SerializationDaemon* serDeamon = Monkey::SerializationDaemon::getInstance();
+                serDeamon->save();
                 QMessageBox::information(this, "Create Zoo Area", "Create Successful");
             }
         }
@@ -125,6 +131,8 @@ void AreaModify::on_EditButton_clicked()
 
                 if (reply == QMessageBox::Yes) {
                     zoo->getSpace(currentAreaIndex)->setCapacity(area_capacity);
+                    Monkey::SerializationDaemon* serDeamon = Monkey::SerializationDaemon::getInstance();
+                    serDeamon->save();
                     QMessageBox::information(this, "Edit Zoo Area", "Edit Successful");
                 }
             }

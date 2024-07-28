@@ -16,6 +16,8 @@ int main(int argc, char* argv[])
     QApplication app(argc, argv);
 
     //custom_init();
+    Monkey::SerializationDaemon* serDeamon = Monkey::SerializationDaemon::getInstance();
+    serDeamon->load();
 
     // Create and configure LoginForm
     LoginForm loginForm;
@@ -38,10 +40,10 @@ int main(int argc, char* argv[])
             QObject::connect(registerForm, &RegisterForm::goBack, [&]() {
                 registerForm->close();
                 loginForm.show();
-                });
+            });
         }
         registerForm->show();
-        });
+    });
 
     QObject::connect(&loginForm, &LoginForm::loginSuccessful, [&]() {
         loginForm.close();
@@ -50,14 +52,14 @@ int main(int argc, char* argv[])
             QObject::connect(zooSelect, &ZooSelect::goBack, [&]() {
                 zooSelect->close();
                 loginForm.show();
-                });
-             QObject::connect(zooSelect, &ZooSelect::goArea, [&]() {
-                 if (!zooAreas) {
+            });
+            QObject::connect(zooSelect, &ZooSelect::goArea, [&]() {
+                if (!zooAreas) {
                     zooAreas = new ZooAreas;
                     QObject::connect(zooAreas, &ZooAreas::goBack, [&]() {
                         zooAreas->close();
                         zooSelect->show();
-                        });
+                    });
                     QObject::connect(zooAreas, &ZooAreas::modifyArea, [&]() {
                         if (!areaModify) {
                             areaModify = new AreaModify;
@@ -65,13 +67,13 @@ int main(int argc, char* argv[])
                                 areaModify->close();
                                 zooAreas->custom_init();
                                 zooAreas->show();
-                                });
+                            });
                         }
                         zooAreas->close();
                         areaModify->currentAreaIndex = zooAreas->currentAreaIndex;
                         areaModify->custom_init();
                         areaModify->show();
-                        });
+                    });
                     QObject::connect(zooAreas, &ZooAreas::goSpace, [&]() {
                         if (!zooSpace) {
                             zooSpace = new ZooSpace;
@@ -79,7 +81,7 @@ int main(int argc, char* argv[])
                                 zooSpace->close();
                                 zooAreas->custom_init();
                                 zooAreas->show();
-                                });
+                            });
                             QObject::connect(zooSpace, &ZooSpace::goEdit, [&]() {
                                 if (!spaceModify)
                                 {
@@ -88,28 +90,27 @@ int main(int argc, char* argv[])
                                         spaceModify->close();
                                         zooSpace->custom_init();
                                         zooSpace->show();
-                                        });
+                                    });
                                 }
                                 zooSpace->close();
                                 spaceModify->currentAreaIndex = zooSpace->currentAreaIndex;
                                 spaceModify->currentMonkeyIndex = zooSpace->currentMonkeyIndex;
                                 spaceModify->custom_init();
                                 spaceModify->show();
-                                });
+                            });
                         }
                         zooAreas->close();
                         zooSpace->currentAreaIndex = zooAreas->currentAreaIndex;
                         zooSpace->custom_init();
                         zooSpace->show();
-                        });
+                    });
                 }
                 zooSelect->close();
                 zooAreas->custom_init();
                 zooAreas->show();
-                 });
+            });
         }
         zooSelect->show();
-        });
-
-    return app.exec();
+    });
+        return app.exec();
 }

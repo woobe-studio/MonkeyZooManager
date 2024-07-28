@@ -61,7 +61,9 @@ void RegisterForm::on_pushButtonRegister_clicked()
     zoo->setZooName("Local Zoo");
     usr->setZoo(zoo);
     authorizationDaemon->addUser(usr);
-
+    Monkey::SerializationDaemon* serDeamon = Monkey::SerializationDaemon::getInstance();
+    serDeamon->addZoo(zoo);
+    serDeamon->save();
     QMessageBox* msgBox = new QMessageBox(QMessageBox::Information, "Register", "Register successful!", QMessageBox::Ok, this);
     ui->lineEditUsername->setText("");
     ui->lineEditPassword->setText("");

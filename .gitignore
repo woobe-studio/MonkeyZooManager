@@ -17,3 +17,4 @@ _deps
 MonkeyZooManager/x64/
 x64/
 .vscode/
+serialization.json
