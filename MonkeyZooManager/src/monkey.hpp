@@ -204,7 +204,7 @@ namespace Monkey
     enum class Rarity
     {
         COMMON,
-        Unique,
+        UNIQUE,
         RARE,
         EPIC,
         MAGIC
